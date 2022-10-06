@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Software by 0E9B061F</title>
+
+    <meta name="author" content="0E9B061F" />
+    <meta name="description" content="A collection of software written by 0E9B061F" />
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-192x192.png">
+
+    <link href="/site.css" rel="stylesheet" type="text/css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@700;900&family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <meta name="robots" content="index, follow">
+	  <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+
+  <body>
+    <div class="page">
+
+      <div class="frontis">
+        <div class="top">
+          <img class="bowler" src="/images/bowler2.png" />
+          <p class="code">
+            @spec.get_opts.each do |name, opt|
+              options[name] = opt.value
+              counts[name]  = opt.count
+            end
+            @spec.get_args.each do |name, arg|
+              args &lt;&lt; arg.value
+              named[name] = arg.value
+            end
+            args.flatten!
+            args += trailing
+            @report = Report.new(args, named, trailing, options, counts)
+            if @report.opt(:help)
+              self.print_usage()
+            end
+            unless @spec.get_args.values.all? {|arg| arg.fulfilled? }
+              raise InterfaceError, "Required argument '#{name.upcase}' was not given."
+            end
+            if @spec.trailing_error &amp;&amp; !@report.trailing.empty?
+              raise InterfaceError, "Error: got trailing argument(s): #{trailing.join
+          </p>
+        </div>
+        <div class="bottom">
+          <h1 class="title">
+            <span class="software">Software</span><br/>
+            <span class="byline">by</span>
+            <span class="name">0E9B061F</span>
+          </h1>
+          <div class="prompt">
+            <span class="money">nn:~$</span>
+            <div class="cursor"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img class="rule" src="/images/dash-4.png" />
+
+        <div class="software-lists">
+          <div class="software-list">
+            <h2 class="list-heading">Ruby&nbsp;Gems</h2>
+            <dl>
+              <dt>
+                <a href="https://github.com/grimheart/arkweb">ARKWEB</a>
+              </dt>
+              <dd>A flat website compiler</dd>
+
+              <dt>
+                <a href="https://github.com/grimheart/ark-cli">ark-cli</a>
+                <span class="docs-link">[<a href="/docs/ark-cli">docs</a>]</span>
+              </dt>
+              <dd>Full-featured command line interface library for Ruby</dd>
+
+              <dt>
+                <a href="https://github.com/grimheart/ark-util">ark-util</a>
+                <span class="docs-link">[<a href="/docs/ark-util">docs</a>]</span>
+              </dt>
+              <dd>Utility library in Ruby used by other ark* gems</dd>
+            </dl>
+          </div>
+
+          <div class="software-list">
+            <h2 class="list-heading">CLI&nbsp;Tools</h2>
+            <dl>
+              <dt>
+                <a href="https://github.com/grimheart/invisibleink">invisibleink</a>
+              </dt>
+              <dd>Simple script for working with GPG-encrypted text</dd>
+
+              <dt>
+                <a href="https://github.com/grimheart/xthemes">xthemes</a>
+              </dt>
+              <dd>Manage color themes for X</dd>
+            </dl>
+          </div>
+
+          <div class="software-list">
+            <h2 class="list-heading">GUI&nbsp;Applications</h2>
+            <dl>
+              <dt>
+                <a href="https://github.com/grimheart/batchrename">batchrename</a>
+              </dt>
+              <dd>Batch file renamer for Windows</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
