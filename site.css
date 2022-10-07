@@ -66,18 +66,18 @@ body {
 }
 
 .frontis .title .software {
-  font-size: 3em
+  font-size: 3em;
 }
 
 .frontis .title .byline {
-  font-size: .5em;
+  font-size: .6em;
   font-family: "Josefin Sans", Arial, sans
 }
 
 .frontis .title .name {
-  font-size: 1.4em;
-  font-family: "Azeret Mono", Terminus, Consolas, monospace;
-  font-weight: 900;
+  font-size: 1.5em;
+  font-family: "Courier Prime", Terminus, Consolas, monospace;
+  font-weight: 700;
 }
 
 .frontis .prompt {
@@ -124,14 +124,14 @@ body {
 
 .content .rule {
   margin: 0 auto;
-  clear: both
+  clear: both;
+  margin-top: 1rem;
 }
 
 .software-lists {
   width: 100%;
   clear: both;
   overflow: hidden;
-  margin-top: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -152,7 +152,8 @@ body {
   font-family: "Josefin Sans", Arial, sans;
   font-weight: normal;
   font-size: 1.2em;
-  font-weight: bold
+  font-weight: bold;
+  text-align: center;
 }
 
 .software-list a {
@@ -177,6 +178,11 @@ body {
   font-weight: bold
 }
 
+.software-list dl {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .software-list .docs-link {
   font-weight: normal;
   font-size: .9em;
@@ -184,51 +190,10 @@ body {
 }
 
 
-@media (max-width: 768px) {
-  :root {
-    --tilew: 50%;
-  }
-  .software-list dl {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .list-heading {
-    text-align: center;
-  }
-}
-@media (max-width: 600px) {
-  :root {
-    --tilew: 100%;
-  }
-  .software-list dl {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .list-heading {
-    text-align: center;
-  }
-}
-
-@media (min-width: 541px) {
-  .content .rule {
-    width: 500px;
-  }
-}
-@media (max-width: 540px) {
-  .content .rule {
-    width: 350px;
-  }
-}
-@media (max-width: 375px) {
-  .content .rule {
-    width: 250px;
-  }
-}
-
-
-@media (min-width: 200px) {
+@media (min-width: 0px) {
   :root {
     --width: 200px;
+    --tilew: 100%;
   }
   .frontis .bowler {
     width: 200px;
@@ -243,23 +208,29 @@ body {
   .frontis .title {
     font-size: 1rem;
   }
+  .frontis .prompt {
+    display: none;
+  }
+  .content .rule {
+    width: calc(var(--width) - 40px);
+  }
 }
 @media (min-width: 320px) {
   :root {
     --width: 320px;
   }
   .frontis .bowler {
-    width: 300px;
+    width: 320px;
   }
   .frontis .top {
-    height: 138px;
+    height: 160px;
   }
   .frontis .code {
-    width: 250px;
-    font-size: 9px;
+    width: 320px;
+    font-size: 10px;
   }
   .frontis .title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 @media (min-width: 425px) {
@@ -267,31 +238,41 @@ body {
     --width: 425px;
   }
   .frontis .bowler {
-    width: 300px;
+    width: 425px;
   }
   .frontis .top {
-    height: 138px;
+    height: 205px;
   }
   .frontis .code {
-    width: 250px;
-    font-size: 9px;
+    width: 425px;
+    font-size: 13px;
   }
   .frontis .title {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 }
 @media (min-width: 768px) {
   :root {
     --width: 768px;
+    --tilew: 50%;
   }
   .frontis .bowler {
-    width: 400px;
+    width: 481px;
   }
   .frontis .top {
-    height: 182px;
+    height: 210px;
   }
   .frontis .code {
-    width: 400px;
-    font-size: 13px;
+    width: 768px;
+    font-size: 19px;
+  }
+  .content .rule {
+    width: 500px;
+  }
+  .frontis .title {
+    font-size: 3.1rem;
+  }
+  .frontis .prompt {
+    display: block;
   }
 }
