@@ -48,11 +48,11 @@
 
 
     <section class="readme">
-        <article><h1>🏰 <strong>ghast.js</strong> v0.6.1 'FLAY'</h1>
-<p><a href="https://github.com/0E9B061F"><img src="https://img.shields.io/github/package-json/v/0E9B061F/ghast.js.svg?style=flat-square&amp;logo=github&amp;color=%236e7fd2" alt="Version"></a>
+        <article><h1>🏰 <strong>ghast.js</strong> v0.6.2 'FLAY'</h1>
+<p><a href="https://github.com/0E9B061F/ghast.js"><img src="https://img.shields.io/github/package-json/v/0E9B061F/ghast.js.svg?style=flat-square&amp;logo=github&amp;color=%236e7fd2" alt="Version"></a>
 <a href="https://github.com/0E9B061F"><img src="https://img.shields.io/badge/dynamic/json?color=%236e7fd2&amp;label=series&amp;prefix=%27&amp;query=series&amp;suffix=%27&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2F0E9B061F%2Fghast.js%2Fmaster%2Fpackage.json&amp;style=flat-square" alt="Series"></a>
 <a href="https://github.com/0E9B061F/ghast.js/blob/master/LICENSE"><img src="https://img.shields.io/github/license/0E9B061F/ghast.js.svg?style=flat-square&amp;color=%236e7fd2" alt="License"></a>
-<a href="https://0e9b061f.github.io/ghast.js"><img src="https://img.shields.io/badge/dynamic/json?color=%236e7fd2&amp;label=docs&amp;prefix=v&amp;query=version&amp;url=https%3A%2F%2F0e9b061f.github.io%2Fghast.js%2Fpackage.json" alt="Documentation"></a><br/>
+<a href="https://0e9b061f.github.io/docs/ghast.js"><img src="https://img.shields.io/badge/dynamic/json?color=%236e7fd2&amp;label=docs&amp;prefix=v&amp;query=version&amp;url=https%3A%2F%2F0e9b061f.github.io%2Fdocs%2Fghast.js%2Fpackage.json" alt="Documentation"></a><br/>
 <a href="https://www.npmjs.com/package/ghast.js"><img src="https://img.shields.io/npm/v/ghast.js.svg?style=flat-square&amp;logo=npm&amp;color=%23de2657" alt="NPM"></a></p>
 <p><strong>ghast.js</strong> is an abstract syntax tree designed for use with
 <a href="https://github.com/peggyjs/peggy">Peggy</a>/<a href="https://github.com/pegjs/pegjs">PEG.js</a>.</p>
@@ -61,12 +61,12 @@
 <pre class="prettyprint source lang-sh"><code>npm install ghast.js
 </code></pre>
 <h2>The <code>ast</code> function</h2>
-<p><strong>ghast.js</strong> provides the <a href="https://0e9b061f.github.io/ghast.js/AST.html"><code>AST</code></a> class and <a href="https://0e9b061f.github.io/ghast.js/global.html#ast"><code>ast</code></a> helper function:</p>
+<p><strong>ghast.js</strong> provides the <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html"><code>AST</code></a> class and <a href="https://0e9b061f.github.io/docs/ghast.js/global.html#ast"><code>ast</code></a> helper function:</p>
 <pre class="prettyprint source lang-javascript"><code>const { AST, ast } = require('ghast.js')
 </code></pre>
-<p>You probably won't need to interact with the <a href="https://0e9b061f.github.io/ghast.js/AST.html"><code>AST</code></a> class itself. The helper is
+<p>You probably won't need to interact with the <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html"><code>AST</code></a> class itself. The helper is
 a wrapper around <code>new AST()</code>. It takes an ID and zero-or-more syntax elements.
-A syntax element may be a string, another <a href="https://0e9b061f.github.io/ghast.js/AST.html"><code>AST</code></a> node or an array of these.
+A syntax element may be a string, another <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html"><code>AST</code></a> node or an array of these.
 Example:</p>
 <pre class="prettyprint source lang-javascript"><code>ast('Function',
   ast('Ident', 'foo'),
@@ -97,7 +97,7 @@ created, available as <code>node.location</code>. Note that all nodes created in
 will share the same location information; to get information on a portion of the
 match, create another rule for just that portion.</p>
 <h2>Using <strong>ghast.js</strong> in a Grammar File</h2>
-<p>To use <strong>ghast</strong> in a grammar file, create a parser and place the <a href="https://0e9b061f.github.io/ghast.js/global.html#ast"><code>ast</code></a> helper
+<p>To use <strong>ghast</strong> in a grammar file, create a parser and place the <a href="https://0e9b061f.github.io/docs/ghast.js/global.html#ast"><code>ast</code></a> helper
 function in the parser's options. For example:</p>
 <pre class="prettyprint source lang-javascript"><code>const peggy = require('peggy')
 const { ast } = require('ghast.js')
@@ -106,7 +106,7 @@ const parser = peggy.generate(GRAMMAR)
 
 const tree = parser.parse(INPUT, {ast})
 </code></pre>
-<p>The <a href="https://0e9b061f.github.io/ghast.js/global.html#ast"><code>ast</code></a> function will be available in your grammar:</p>
+<p>The <a href="https://0e9b061f.github.io/docs/ghast.js/global.html#ast"><code>ast</code></a> function will be available in your grammar:</p>
 <pre class="prettyprint source lang-pegjs"><code>{
   const ast = options.ast.locate(location)
   const node = ast.classify('Node')
@@ -124,14 +124,14 @@ N = n:$[0-9]+ { return val('Number', n) }
 S = &quot;'&quot; C &quot;'&quot;
 C = c:$[^']+ { return val('String', c) }
 </code></pre>
-<p>The parser will now return a <strong>ghast</strong> <a href="https://0e9b061f.github.io/ghast.js/AST.html"><code>AST</code></a> which can be used to manipulate the
+<p>The parser will now return a <strong>ghast</strong> <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html"><code>AST</code></a> which can be used to manipulate the
 parsed syntax. This will remove all B elements directly below an A element:</p>
 <pre class="prettyprint source lang-javascript"><code>const tree = parser.parse(INPUT, {ast})
 tree.select(&quot;A&quot;, {id: &quot;B&quot;, depth: 0}, b=> b.remove())
 </code></pre>
 <h2>API</h2>
-<p><a href="https://0e9b061f.github.io/ghast.js">Complete API documentation</a> is available. Below is an overview of common methods:</p>
-<p>The <a href="https://0e9b061f.github.io/ghast.js/AST.html#each"><code>each</code></a> method is used to query the tree:</p>
+<p><a href="https://0e9b061f.github.io/docs/ghast.js">Complete API documentation</a> is available. Below is an overview of common methods:</p>
+<p>The <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html#each"><code>each</code></a> method is used to query the tree:</p>
 <pre class="prettyprint source lang-javascript"><code>node.each()                       // return all descendants of `node`
 node.each({self: true})           // return `node` and all of its descendants
 node.each('Section')              // return all descendants with id `Section`
@@ -149,11 +149,11 @@ node.each({up: true, tag: 'x'})   // return all ancestors of `node` tagged `x`
 node.ancestor({tag: 'x'})         // same as above
 node.climb(3)                     // return nth ancestor of `node`
 </code></pre>
-<p>The <a href="https://0e9b061f.github.io/ghast.js/AST.html#select"><code>select</code></a> method creates complex selections from multiple <a href="https://0e9b061f.github.io/ghast.js/Traverse.html">traverses</a>,
+<p>The <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html#select"><code>select</code></a> method creates complex selections from multiple <a href="https://0e9b061f.github.io/docs/ghast.js/Traverse.html">traverses</a>,
 similar to CSS selectors. The following is similar to <code>A .foo &gt; B</code>:</p>
 <pre class="prettyprint source lang-javascript"><code>node.select('A', {tag: 'foo'}, {id: 'B', depth: 0})
 </code></pre>
-<p>The <a href="https://0e9b061f.github.io/ghast.js/AST.html#when"><code>whem</code></a> method is used to visit nodes. Each visitor is an array of
+<p>The <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html#when"><code>whem</code></a> method is used to visit nodes. Each visitor is an array of
 queries followed by a callback which will be called for each node
 matching any of its associated queries:</p>
 <pre class="prettyprint source lang-javascript"><code>node.when(
@@ -190,7 +190,7 @@ node.attr({foo: 1, bar: 2}) // set one or more attributes
 node.attrs.foo              // accessing attributes
 node.attrs['foo']           // accessing attributes
 </code></pre>
-<p>The <a href="https://0e9b061f.github.io/ghast.js/AST.html#read"><code>read</code></a> method deep-reads attributes; it merges the attributes of this node
+<p>The <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html#read"><code>read</code></a> method deep-reads attributes; it merges the attributes of this node
 with all of its descendants and returns the value of the given property:</p>
 <pre class="prettyprint source lang-javascript"><code>const node = ast('Function',
   ast('Ident', 'foo').attr('foo', 1),
@@ -199,7 +199,7 @@ with all of its descendants and returns the value of the given property:</p>
 node.read('foo') // returns 1
 node.read('bar') // returns 2
 </code></pre>
-<p>Location data for a node can be set with <a href="https://0e9b061f.github.io/ghast.js/AST.html#loc"><code>loc</code></a>:</p>
+<p>Location data for a node can be set with <a href="https://0e9b061f.github.io/docs/ghast.js/AST.html#loc"><code>loc</code></a>:</p>
 <pre class="prettyprint source lang-javascript"><code>node.loc({start: 1, end: 2})
 node.location // read set location data
 </code></pre>
@@ -224,7 +224,7 @@ node.location // read set location data
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Thu Oct 06 2022 02:45:17 GMT-0400 (Eastern Daylight Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Sat Oct 08 2022 15:18:05 GMT-0400 (Eastern Daylight Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
