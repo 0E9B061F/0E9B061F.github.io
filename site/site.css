@@ -137,10 +137,24 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.wide-list .lists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wide-list, .software-list {
+  font-size: 1.5rem;  
+}
+
+.wide-list .lists .software-list:not(:first-child) dl {
+  margin-top: var(--dl-margin);
+}
+.wide-list .lists .software-list:not(:last-child) dl {
+  margin-bottom: var(--dl-margin);
+}
+
 .software-list {
-  font-size: 1.5em;
   font-family: var(--josefin);
-  float: left;
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
@@ -149,12 +163,14 @@ a:hover {
 }
 
 .software-list .list-heading,
+.wide-list .list-heading,
 .contact-title {
   font-family: var(--josefin);
   font-weight: bold;
   text-align: center;
 }
 
+.wide-list .list-heading,
 .software-list .list-heading {
   font-size: 1.2em;
 }
@@ -179,6 +195,9 @@ a:hover {
 .software-list dl {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.software-list h2:not(:first-child) {
+  margin-top: 2.5rem;
 }
 
 .software-list .docs-link {
@@ -259,6 +278,7 @@ a:hover {
     --rule-width: calc(var(--width) - 40px);
     --code-size: 6px;
     --pm-width: 200px;
+    --dl-margin: 0;
   }
   .start-contact,
   .contact-area .phoneman,
@@ -341,6 +361,7 @@ a:hover {
     --top-height: 205px;
     --rule-width: 500px;
     --code-size: 20px;
+    --dl-margin: 1rem;
   }
   .contact-heading,
   .frontis .prompt,
