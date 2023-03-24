@@ -1,0 +1,13 @@
+{{#if href}}
+  <a class="link active" href="{{href}}">
+    {{#> @partial-block }}
+    {{text}}
+    {{/ @partial-block }}
+  </a>
+{{else}}
+  <span class="link current">
+    {{#> @partial-block }}
+    {{text}}
+    {{/ @partial-block }}
+  </span>
+{{/if}}
