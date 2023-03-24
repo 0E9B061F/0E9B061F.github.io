@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Notes On Svelte - Work Log - 0E9B061F</title>
+
+  <meta name="author" content="0E9B061F" />
+  <meta name="description" content="The personal website of 0E9B061F. featuring open source projects, documentation and writings. The work log includes updates on the author&#x27;s work and general writings about technology and design. This post contains the authors rough notes on svelte." />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/site/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/site/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/site/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/site/favicons/favicon-192x192.png">
+
+  <link href="/site/0E9B061F.css" rel="stylesheet" type="text/css" />
+  <script defer="defer" src="/site/0E9B061F.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500&family=Courier+Prime:wght@400;700&family=Josefin+Sans&display=swap"
+    rel="stylesheet">
+
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+  <div class="page">
+    <div class="frontis">
+      <div class="top">
+        <img class="bowler" src="/site/images/bowler2.png" />
+        <p class="code">
+          @spec.get_opts.each do |name, opt|
+            options[name] = opt.value
+            counts[name]  = opt.count
+          end
+          @spec.get_args.each do |name, arg|
+            args &lt;&lt; arg.value
+            named[name] = arg.value
+          end
+          args.flatten!
+          args += trailing
+          @report = Report.new(args, named, trailing, options, counts)
+          if @report.opt(:help)
+            self.print_usage()
+          end
+          unless @spec.get_args.values.all? {|arg| arg.fulfilled? }
+            raise InterfaceError, "Required argument '#{name.upcase}' was not given."
+          end
+          if @spec.trailing_error &amp;&amp; !@report.trailing.empty?
+            raise InterfaceError, "Error: got trailing argument(s): #{trailing.join
+        </p>
+      </div>
+      <div class="bottom">
+        <h1 class="title heading">
+          <span class="software">
+            Software
+          </span><br/>
+          <span class="byline">by</span>
+          <span class="name">
+              <a class="link active" href="/">
+                0E9B061F
+              </a>
+          </span>
+        </h1>
+        <div class="prompt">
+          <span class="money">nn:~$</span>
+          <div class="cursor"></div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="centered"><img class="rule" src="/site/images/dash-4.png" /></div>
+      <h1 class="page-title heading">  <a class="link active" href="/posts">
+    Work Log
+  </a>
+</h1>
+      <div class="post">
+  <div class="nav">
+    <div class="navdir prev">
+    <div class="navtitle">PREV</div>
+    <a class="link active button" href="/posts/test-2">Test 2</a>
+    </div>
+    <div class="navdir next">
+    <div class="navtitle">NEXT</div>
+    <a class="link active button" href="/posts/site-update-created-blog">Site Update: Created Blog</a>
+    </div>
+  </div>
+  <h1 class="title">Notes On Svelte</h1>
+  <div class="post-date">3-21-2023</div>
+  <ul>
+<li>cool framework</li>
+<li>pretty good name</li>
+<li>cool logo!</li>
+</ul>
+
+</div>
+
+
+
+    </div>
+    <div class="home">
+    <img class="rule start-contact" src="/site/images/dash-4.png" />
+
+    <div class="contact-heading">
+      <img class="phoneman" src="/site/images/contact.png" />
+      <div class="aligner"><h2 class="contact-title">Directory</h2></div>
+    </div>
+
+    <div class="contact-area">
+      <img class="phoneman" src="/site/images/contact.png" />
+      <dl class="directory">
+        <div class="pair">
+          <dt>Email</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="mailto:0E9B061F@protonmail.com">0E9B061F@protonmail.com</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Personal&nbsp;Site</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://0x2764.com">0x2764.com</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>GitHub</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://github.com/0E9B061F">github.com/0E9B061F</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>NPM&nbsp;Packages</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://npmjs.com/~0e9b061f">npmjs.com/~0e9b061f</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Keybase</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://keybase.io/0e9b061f">keybase.io/0e9b061f</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Keybase&nbsp;Files</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://keybase.pub/0e9b061f">keybase.pub/0e9b061f</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Mirror</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://0e9b061f.keybase.pub">0e9b061f.keybase.pub</a></dd></div>
+        </div>
+      </dl>
+    </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="menu">
+      <div class="menu-item">
+        <div class="menu-bullet"><img src="/site/images/hedera-1.png" /></div>
+        <div class="menu-text">
+          <h2 class="menu-heading heading">  <a class="link active" href="/gallery">
+    GALLERY
+  </a>
+</h2>
+          <span class="menu-desc">Examples of past work.</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-bullet"><img src="/site/images/hedera-1.png" /></div>
+        <div class="menu-text">
+          <h2 class="menu-heading heading">  <a class="link active" href="/docs">
+    DOCS
+  </a>
+</h2>
+          <span class="menu-desc">Technical documentation for the projects listed here.</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-bullet"><img src="/site/images/hedera-1.png" /></div>
+        <div class="menu-text">
+          <h2 class="menu-heading heading">  <a class="link active" href="/posts">
+    WORK LOG
+  </a>
+</h2>
+          <span class="menu-desc">Notes about my work, technology, design, and other topics.</span>
+        </div>
+      </div>
+    </div>
+    <div class="long-index">
+      <div class="blog-index">
+  <ul>
+    <li class="heading">
+  <a class="link active" href="/posts/site-update-created-blog">
+        <span class="date">3-24-2023</span>
+        <span class="title">Site Update: Created Blog</span>
+  </a>
+    </li>
+    <li class="heading">
+  <span class="link current">
+        <span class="date">3-21-2023</span>
+        <span class="title">Notes On Svelte</span>
+  </span>
+    </li>
+    <li class="heading">
+  <a class="link active" href="/posts/test-2">
+        <span class="date">3-20-2023</span>
+        <span class="title">Test 2</span>
+  </a>
+    </li>
+    <li class="heading">
+  <a class="link active" href="/posts/test-post">
+        <span class="date">3-20-2023</span>
+        <span class="title">An Example Post, Created Only for Testing</span>
+  </a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+</body>
+
+</html>
