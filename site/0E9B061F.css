@@ -16,14 +16,21 @@ body {
 
 a {
   text-decoration: none;
-  color: #6e7fd2;
+  color: #191919;
+  transition: filter 0.2s ease-out;
 }
 
-a:hover {
-  text-decoration: underline;
-  filter: brightness(1.2);
+.link.active,
+.post a {
+  text-decoration: none;
+  color: #6e7fd2;
 }
-.frontis a:hover {
+.link.active:hover,
+.post a:hover {
+  text-decoration: underline;
+  filter: brightness(1.25);
+}
+.heading .link.active:hover {
   text-decoration: none;
 }
 
@@ -34,6 +41,9 @@ a:hover {
   margin-top: 1rem;
 }
 
+.blog-index {
+  text-align: left;
+}
 .blog-index ol,
 .blog-index ul {
   font-family: var(--alegreya);
@@ -46,12 +56,12 @@ a:hover {
 .blog-index li:not(:first-child) {
   margin-top: 0.75rem;
 }
-.blog-index .bloglink {
+.blog-index .link {
   text-decoration: none;
   display: flex;
   gap: 0.5rem;
 }
-.blog-index .bloglink .date {
+.blog-index .link .date {
   font-weight: 500;
   color: #252525;
   font-size: 1em;
@@ -59,12 +69,76 @@ a:hover {
   display: block;
   text-align: center;
 }
-.blog-index .bloglink .title {
+.blog-index .link:hover {
+  text-decoration: none;
+}
+.blog-index .link .title {
   font-size: 1.1em;
   font-weight: 500;
 }
-.blog-index .bloglink:hover .title {
+.blog-index .link.active:hover .title {
   text-decoration: underline;
+}
+.sidebar .blog-index .link.active:hover .title {
+  text-decoration: none;
+}
+
+.gallery {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.gallery .gallery-item {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--alegreya);
+  gap: 0.5rem;
+}
+.gallery .gallery-item .gallery-window {
+  position: relative;
+  background-color: #efefef;
+  width: 100%;
+  aspect-ratio: 1.777777777;
+  overflow: hidden;
+}
+.gallery .gallery-item .gallery-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-family: var(--josefin);
+  color: #6e7fd2;
+  display: inline;
+  padding-right: 0.5rem;
+}
+.gallery .gallery-item .gallery-desc {
+  font-size: 1.2rem;
+  display: inline;
+}
+.gallery .gallery-item:hover .gallery-title {
+  filter: brightness(1.2);
+  text-decoration: underline;
+}
+.gallery .gallery-item .gallery-window .gallery-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  opacity: 0.1;
+}
+.gallery .gallery-item .gallery-window img {
+  height: 100%;
+  filter: saturate(0.9);
+}
+.gallery .gallery-item:hover .gallery-window .gallery-screen {
+  opacity: 0;
+}
+.gallery .gallery-item:hover .gallery-window img {
+  filter: saturate(1);
 }
 
 .menu {
@@ -103,10 +177,32 @@ a:hover {
   display: block;
 }
 
+.hmenu {
+  display: flex;
+  margin-top: 2rem;
+}
+.hmenu .hmenu-item {
+  margin-top: 0;
+  width: calc(100% / 3);
+  text-align: center;
+}
+.hmenu-item .hmenu-heading {
+  font-size: 2rem;
+  margin: 0;
+  font-family: var(--josefin);
+  font-weight: 600;
+}
+
 .page {
-  max-width: var(--width);
+  width: var(--width);
   overflow: hidden;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
+}
+
+.page-title {
+  text-align: center;
+  font-family: var(--josefin);
+  font-size: 2.5rem;
 }
 
 .centered {
@@ -121,6 +217,8 @@ a:hover {
   font-family: var(--alegreya);
   font-size: 1.2rem;
   margin-top: 0.83rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .post .nav {
   display: flex;
@@ -218,6 +316,7 @@ a:hover {
 .frontis .title .software {
   font-size: 3em;
   z-index: 1;
+  pointer-events: none;
 }
 
 .frontis .title .byline {
@@ -462,8 +561,20 @@ a:hover {
   .software-list dd {
     margin-left: 0;
   }
+  .gallery .gallery-item {
+    width: 100%;
+  }
+  .short-index .hmenu-desc {
+    display: none;
+  }
+  .short-index .hmenu-heading {
+    font-size: 1rem;
+  }
 }
 @media (min-width: 320px) {
+  .short-index .hmenu-heading {
+    font-size: 1.4rem;
+  }
   :root {
     --width: 320px;
     --pm-width: 200px;
@@ -511,6 +622,9 @@ a:hover {
     margin-left: 1rem;
     gap: 0.75rem;
   }
+    .short-index .hmenu-heading {
+      font-size: 1.8rem;
+    }
 }
 @media (min-width: 768px) {
   :root {
@@ -531,6 +645,15 @@ a:hover {
   }
   .contact-heading .phoneman {
     display: none;
+  }
+  .gallery .gallery-item {
+    width: calc(50% - 0.5rem);
+  }
+  .short-index .hmenu-desc {
+    display: block;
+  }
+  .short-index .hmenu-heading {
+    font-size: 2rem;
   }
 }
 @media (min-width: 1088px) {
