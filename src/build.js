@@ -1,4 +1,4 @@
 "use strict"
 
-require("./site.css")
+require("./styles/site.scss")
 

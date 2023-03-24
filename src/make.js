@@ -1,6 +1,6 @@
 "use strict"
 
-const fs = require("fs")
+const fs = require("fs-extra")
 const { join, dirname, relative } = require("path")
 
 const matter = require('gray-matter')
@@ -78,6 +78,9 @@ class Gallery {
   compile() {
     fs.writeFileSync(this.index, this.render())
   }
+  clobber() {
+    fs.removeSync(this.index)
+  }
 }
 
 class Post {
@@ -90,21 +93,24 @@ class Post {
     this.path = join(this.blog.path, this.name)
     this.out = join(this.blog.out, this.core)
     this.index = join(this.out, "index.html")
-    const stat = fs.statSync(this.path)
-    this.mtime = stat.mtimeMs
-    this.btime = stat.birthtimeMs
-    this.bdate = new Date(this.btime).toLocaleDateString("en-US").replace(/\//g, "-")
-    this.prev = null
-    this.next = null
     const raw = fs.readFileSync(this.path, "utf-8")
     const pre = matter(raw)
     this.data = pre.data
+    const stat = fs.statSync(this.path)
+    this.mtime = stat.mtimeMs
+    this.btime = this.data.date ? Date.parse(this.data.date) : stat.birthtimeMs
+    this.bdate = this.msToDate(this.btime)
+    this.prev = null
+    this.next = null
     this.content = md.render(pre.content)
     this.title = this.data.title || this.pretty
     this.desc = this.data.desc
     this.href = relative(this.blog.site.path, this.out)
     this.href = `/${this.href}`
     this.abs = join(this.blog.site.host, this.href)
+  }
+  msToDate(ms) {
+    return new Date(ms).toLocaleDateString("en-US").replace(/\//g, "-")
   }
   render() {
     let data = { post: this, current: this, content: this.content}
@@ -114,6 +120,9 @@ class Post {
   compile() {
     fs.mkdirSync(dirname(this.index), {recursive: true})
     fs.writeFileSync(this.index, this.render())
+  }
+  clobber() {
+    fs.removeSync(this.out)
   }
 }
 class Blog {
@@ -162,6 +171,10 @@ class Blog {
   compile() {
     this.posts.forEach(p=> p.compile())
     fs.writeFileSync(this.outindex, this.render())
+  }
+  clobber() {
+    this.posts.forEach(p=> p.clobber())
+    fs.removeSync(this.outindex)
   }
 }
 
@@ -225,10 +238,17 @@ class Site {
     return this.template(data)
   }
   compile() {
+    this.clobber()
     this.blog.compile()
     this.gallery.compile()
     this.docs.compile()
     fs.writeFileSync(this.index, this.render())
+  }
+  clobber() {
+    this.blog.clobber()
+    this.gallery.clobber()
+    this.docs.clobber()
+    fs.removeSync(this.index)
   }
 }
 

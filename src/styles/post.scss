@@ -1,0 +1,62 @@
+.post {
+  font-size: 1.2rem;
+  margin-top: 0.83rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  .title {
+    font-size: 2.2rem;
+    text-align: left;
+    margin-top: 1rem;
+    font-weight: 900;
+  }
+  .post-date {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @include headtxt;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.55rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.45rem;
+  }
+  h5 {
+    font-size: 1.4rem;
+  }
+  h6 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  code {
+    font-family: var(--cprime);
+    background-color: var(--gray900);
+    padding: 0 0.35rem 0 0.35rem;
+  }
+}
+
+.post .nav {
+  display: flex;
+  .navdir {
+    width: 50%;
+  }
+  .navdir .button {
+    font-weight: 500;
+  }
+  .navtitle {
+    @include headtxt;
+    font-size: 0.9rem;
+  }
+  .navdir.next {
+    text-align: right;
+  }
+}

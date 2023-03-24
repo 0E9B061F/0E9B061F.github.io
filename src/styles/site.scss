@@ -2,12 +2,31 @@
   --cprime: "Courier Prime", Terminus, Consolas, monospace;
   --josefin: "Josefin Sans", Arial, sans;
   --alegreya: "Alegreya", "Times New Roman", Times, serif;
+
   --pagegap: 2rem;
+
+  --black: #191919;
+  --white: #fcfcff;
+  --blue: #6e7fd2;
+
+  --gray900: #efefef;
+  --gray800: #cccccc;
+  --gray700: #aaaaaa;
+  --gray600: #a0a0a0;
 }
 
+@mixin headtxt {
+  font-family: var(--josefin);
+  font-weight: 600;
+}
+
+@import "menu";
+@import "post";
+
 body {
-  color: #191919;
-  background-color: #fcfcff;
+  font-family: var(--alegreya);
+  color: var(--black);
+  background-color: var(--white);
   margin: 0;
   display: flex;
   justify-content: center;
@@ -16,14 +35,14 @@ body {
 
 a {
   text-decoration: none;
-  color: #191919;
+  color: var(--black);
   transition: filter 0.2s ease-out;
 }
 
 .link.active,
 .post a {
   text-decoration: none;
-  color: #6e7fd2;
+  color: var(--blue);
 }
 .link.active:hover,
 .post a:hover {
@@ -46,7 +65,6 @@ a {
 }
 .blog-index ol,
 .blog-index ul {
-  font-family: var(--alegreya);
   font-size: 1.3rem;
   list-style: none;
   padding: 0;
@@ -63,7 +81,7 @@ a {
 }
 .blog-index .link .date {
   font-weight: 500;
-  color: #252525;
+  color: var(--black);
   font-size: 1em;
   min-width: 6.25rem;
   display: block;
@@ -95,21 +113,19 @@ a {
 .gallery .gallery-item {
   display: flex;
   flex-direction: column;
-  font-family: var(--alegreya);
   gap: 0.5rem;
 }
 .gallery .gallery-item .gallery-window {
   position: relative;
-  background-color: #efefef;
+  background-color: var(--gray900);
   width: 100%;
   aspect-ratio: 1.777777777;
   overflow: hidden;
 }
 .gallery .gallery-item .gallery-title {
+  @include headtxt;
   font-size: 1.35rem;
-  font-weight: 600;
-  font-family: var(--josefin);
-  color: #6e7fd2;
+  color: var(--blue);
   display: inline;
   padding-right: 0.5rem;
 }
@@ -141,58 +157,6 @@ a {
   filter: saturate(1);
 }
 
-.menu {
-  height: calc(205px + 9.75rem);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.menu-item {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 3rem;
-}
-.menu-item:first-child {
-  margin-top: auto;
-}
-.menu-item .menu-bullet {
-  height: 3.25rem;
-  width: 6.25rem;
-}
-.menu-item .menu-bullet img {
-  height: 3.25rem;
-}
-.menu-item .menu-heading {
-  font-size: 2rem;
-  text-align: left;
-  margin: 0;
-  font-family: var(--josefin);
-  font-weight: 600;
-}
-.menu-item .menu-desc {
-  font-size: 1.2em;
-  font-weight: 400;
-  font-family: var(--alegreya);
-  display: block;
-}
-
-.hmenu {
-  display: flex;
-  margin-top: 2rem;
-}
-.hmenu .hmenu-item {
-  margin-top: 0;
-  width: calc(100% / 3);
-  text-align: center;
-}
-.hmenu-item .hmenu-heading {
-  font-size: 2rem;
-  margin: 0;
-  font-family: var(--josefin);
-  font-weight: 600;
-}
-
 .page {
   width: var(--width);
   overflow: hidden;
@@ -200,8 +164,8 @@ a {
 }
 
 .page-title {
+  @include headtxt;
   text-align: center;
-  font-family: var(--josefin);
   font-size: 2.5rem;
 }
 
@@ -213,66 +177,7 @@ a {
   margin-top: 1rem;
   width: var(--rule-width);
 }
-.post {
-  font-family: var(--alegreya);
-  font-size: 1.2rem;
-  margin-top: 0.83rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.post .nav {
-  display: flex;
-}
-.post .nav .navdir {
-  width: 50%;
-}
-.post .nav .navdir .button {
-  font-weight: 500;
-}
-.post .nav .navtitle {
-  font-family: var(--josefin);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-.post .nav .navdir.next {
-  text-align: right;
-}
-.post .title {
-  font-size: 2.4rem;
-  text-align: left;
-  margin: 0;
-  margin-top: 1rem;
-  font-weight: 900;
-}
-.post .post-date {
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
-  font-family: var(--josefin);
-  font-weight: 600;
-}
-.post h1 {
-  font-size: 2rem;
-}
-.post h2 {
-  font-size: 1.8rem;
-}
-.post h3 {
-  font-size: 1.7rem;
-}
-.post h4 {
-  font-size: 1.6rem;
-}
-.post h5 {
-  font-size: 1.5rem;
-}
-.post h6 {
-  font-size: 1.4rem;
-}
-.post p {
-  font-size: 1.4rem;
-}
+
 
 .frontis .top {
   width: 100%;
@@ -287,7 +192,7 @@ a {
 }
 
 .frontis .code {
-  color: #ccc;
+  color: var(--gray800);
   font-family: var(--cprime);
   position: absolute;
   top: 0;
@@ -306,7 +211,6 @@ a {
 }
 
 .frontis .title {
-  font-family: var(--alegreya);
   text-align: right;
   font-weight: 500;
   line-height: 1.2em;
@@ -337,7 +241,7 @@ a {
   left: 10px;
   font-family: var(--cprime);
   font-size: 1.6em;
-  color: #aaa
+  color: var(--gray700);
 }
 
 .frontis .money {
@@ -347,14 +251,14 @@ a {
 .frontis .cursor {
   width: .5em;
   height: .9em;
-  border: 1px solid #aaa;
+  border: 1px solid var(--gray700);
   color: white;
   float: left;
   margin-left: .3em
 }
 
 .frontis:hover .cursor {
-  background-color: #aaa
+  background-color: var(--gray700)
 }
 
 .home, .content {
@@ -369,7 +273,6 @@ a {
 
 .home .blurb {
   clear: both;
-  font-family: var(--alegreya);
   font-size: 1.5em;
   text-align: justify;
   text-align: left
@@ -407,7 +310,6 @@ a {
 }
 
 .software-list {
-  font-family: var(--josefin);
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
@@ -419,8 +321,7 @@ a {
 .wide-list .list-heading,
 .blog-index .list-heading,
 .contact-title {
-  font-family: var(--josefin);
-  font-weight: bold;
+  @include headtxt;
   text-align: center;
 }
 
@@ -437,7 +338,6 @@ a {
   font-size: .8em;
   margin-left: 1em;
   margin-bottom: .5em;
-  font-family: var(--alegreya);
 }
 
 .software-list dt {
@@ -457,7 +357,7 @@ a {
 .software-list .docs-link {
   font-weight: normal;
   font-size: .9em;
-  color: #191919;
+  color: var(--black);
 }
 
 .contact-area,
@@ -489,7 +389,6 @@ a {
   flex: 0 0 auto;
 }
 .directory .pair dt {
-  font-family: var(--alegreya);
   font-weight: 500;
   font-size: 1.2em;
 }
@@ -515,7 +414,7 @@ a {
 }
 .directory .pair .spacer .bar {
   height: 1px;
-  background-color: #a0a0a0;
+  background-color: var(--gray600);
 }
 
 .contact-heading .aligner {
@@ -564,11 +463,14 @@ a {
   .gallery .gallery-item {
     width: 100%;
   }
-  .short-index .hmenu-desc {
+  .short-index .menu-desc {
     display: none;
   }
-  .short-index .hmenu-heading {
+  .short-index .menu-heading {
     font-size: 1rem;
+  }
+  .short-index .menu-item {
+    width: 100%;
   }
 }
 @media (min-width: 320px) {
@@ -593,6 +495,9 @@ a {
   }
   .software-list dd {
     margin-left: 1em;
+  }
+  .short-index .menu-heading {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 425px) {
@@ -622,9 +527,9 @@ a {
     margin-left: 1rem;
     gap: 0.75rem;
   }
-    .short-index .hmenu-heading {
-      font-size: 1.8rem;
-    }
+  .short-index .menu-heading {
+    font-size: 1.8rem;
+  }
 }
 @media (min-width: 768px) {
   :root {
@@ -649,10 +554,10 @@ a {
   .gallery .gallery-item {
     width: calc(50% - 0.5rem);
   }
-  .short-index .hmenu-desc {
+  .short-index .menu-desc {
     display: block;
   }
-  .short-index .hmenu-heading {
+  .short-index .menu-heading {
     font-size: 2rem;
   }
 }
