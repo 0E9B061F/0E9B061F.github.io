@@ -30,6 +30,7 @@ class GalleryItem {
     this.mtime = stat.mtimeMs
     this.btime = stat.birthtimeMs
     this.bdate = new Date(this.btime).toLocaleDateString("en-US").replace(/\//g, "-")
+    this.mdate = new Date(this.mtime).toLocaleDateString("en-US").replace(/\//g, "-")
     this.prev = null
     this.next = null
     this.title = this.conf.title || this.pretty
@@ -39,6 +40,11 @@ class GalleryItem {
     console.log(this.image)
     this.href = relative(this.gallery.site.path, this.path)
     this.href = `/${this.href}`
+    this.abs = `${this.gallery.site.host}${this.href}`
+    this.coords = {
+      loc: this.abs,
+      date: this.mdate,
+    }
   }
   renderRaw() {
     let data = { item: this }
@@ -52,6 +58,9 @@ class Gallery {
     this.path = join(this.site.path, this.name)
     this.index = join(this.path, "index.html")
     this.conf_path = join(this.path, "conf.json")
+    const stat = fs.statSync(this.path)
+    this.mtime = stat.mtimeMs
+    this.mdate = new Date(this.mtime).toLocaleDateString("en-US").replace(/\//g, "-")
     const raw = fs.readFileSync(this.conf_path, "utf-8")
     this.conf = JSON.parse(raw)
     this.title = this.conf.title || this.name
@@ -60,7 +69,7 @@ class Gallery {
     this.template = this.site.temp("gallery")
     this.href = relative(this.site.path, this.path)
     this.href = `/${this.href}`
-    this.abs = join(this.site.host, this.href)
+    this.abs = `${this.site.host}${this.href}`
     let abs, conf
     fs.readdirSync(this.path).forEach(name=> {
       abs = join(this.path, name)
@@ -68,6 +77,10 @@ class Gallery {
         this.items.push(new GalleryItem(this, name))
       }
     })
+    this.coords = {
+      loc: this.abs,
+      date: this.mdate,
+    }
   }
   render() {
     const items = this.items.map(i=> i.renderRaw())
@@ -80,6 +93,9 @@ class Gallery {
   }
   clobber() {
     fs.removeSync(this.index)
+  }
+  list() {
+    return [this.coords, ...this.items.map(i => i.coords)]
   }
 }
 
@@ -100,6 +116,7 @@ class Post {
     this.mtime = stat.mtimeMs
     this.btime = this.data.date ? Date.parse(this.data.date) : stat.birthtimeMs
     this.bdate = this.msToDate(this.btime)
+    this.mdate = new Date(this.mtime).toLocaleDateString("en-US").replace(/\//g, "-")
     this.prev = null
     this.next = null
     this.content = md.render(pre.content)
@@ -107,7 +124,11 @@ class Post {
     this.desc = this.data.desc
     this.href = relative(this.blog.site.path, this.out)
     this.href = `/${this.href}`
-    this.abs = join(this.blog.site.host, this.href)
+    this.abs = `${this.blog.site.host}${this.href}`
+    this.coords = {
+      loc: this.abs,
+      date: this.mdate,
+    }
   }
   msToDate(ms) {
     return new Date(ms).toLocaleDateString("en-US").replace(/\//g, "-")
@@ -133,6 +154,9 @@ class Blog {
     this.outindex = join(this.out, "index.html")
     this.path = join(this.site.path, this.name)
     this.datapath = join(this.path, "conf.json")
+    const stat = fs.statSync(this.path)
+    this.mtime = stat.mtimeMs
+    this.mdate = new Date(this.mtime).toLocaleDateString("en-US").replace(/\//g, "-")
     const raw = fs.readFileSync(this.datapath, "utf-8")
     this.data = JSON.parse(raw)
     this.title = this.data.title || this.name
@@ -141,7 +165,7 @@ class Blog {
     this.template = this.site.temp("blog")
     this.href = relative(this.site.path, this.out)
     this.href = `/${this.href}`
-    this.abs = join(this.site.host, this.href)
+    this.abs = `${this.site.host}${this.href}`
     fs.readdirSync(this.path).forEach(file=> {
       if (file.match(/\.(md)$/i)) {
         this.posts.push(new Post(this, file))
@@ -152,7 +176,10 @@ class Blog {
       if (this.posts[x+1]) this.posts[x].prev = this.posts[x+1]
       if (this.posts[x-1]) this.posts[x].next = this.posts[x-1]
     }
-    console.log(this.posts.map(p=> p.title))
+    this.coords = {
+      loc: this.abs,
+      date: this.mdate,
+    }
   }
   renderRaw(data, n) {
     data = { ...data, list: this.posts.slice(0,n) }
@@ -175,6 +202,9 @@ class Blog {
   clobber() {
     this.posts.forEach(p=> p.clobber())
     fs.removeSync(this.outindex)
+  }
+  list() {
+    return [this.coords, ...this.posts.map(p => p.coords)]
   }
 }
 
@@ -205,6 +235,9 @@ class Site {
     this.path = path
     this.datapath = join(this.path, "conf.json")
     this.index = join(this.path, "index.html")
+    const stat = fs.statSync(this.path)
+    this.mtime = stat.mtimeMs
+    this.mdate = new Date(this.mtime).toLocaleDateString("en-US").replace(/\//g, "-")
     const raw = fs.readFileSync(this.datapath, "utf-8")
     this.data = JSON.parse(raw)
     this.title = this.data.title
@@ -212,12 +245,18 @@ class Site {
     this.host = this.data.host
     this.templates = new Templates(this, "src/templates")
     this.template = this.temp("site")
+    this.map_temp = this.temp("sitemap")
+    this.map_path = join(this.path, "sitemap.xml")
     this.home = this.temp("home")
     this.blog = new Blog(this, "src/posts", "posts")
     this.gallery = new Gallery(this, "gallery")
     this.docs = new Gallery(this, "docs")
     this.href = "/"
-    this.abs = join(this.host, this.href)
+    this.abs = this.host
+    this.coords = {
+      loc: this.abs,
+      date: this.mdate,
+    }
   }
   imgrel(name) {
     return `/site/images/${name}`
@@ -237,18 +276,31 @@ class Site {
     data = { ...data, site: this, long, short }
     return this.template(data)
   }
+  list() {
+    return [
+      this.coords,
+      ...this.blog.list(),
+      ...this.gallery.list(),
+      ...this.docs.list(),
+    ]
+  }
+  map() {
+    return this.map_temp({urls: this.list()})
+  }
   compile() {
     this.clobber()
     this.blog.compile()
     this.gallery.compile()
     this.docs.compile()
     fs.writeFileSync(this.index, this.render())
+    fs.writeFileSync(this.map_path, this.map())
   }
   clobber() {
     this.blog.clobber()
     this.gallery.clobber()
     this.docs.clobber()
     fs.removeSync(this.index)
+    fs.removeSync(this.map_path)
   }
 }
 
