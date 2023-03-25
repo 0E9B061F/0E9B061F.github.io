@@ -261,10 +261,24 @@ a {
   background-color: var(--gray700)
 }
 
+.deco {
+  position: absolute;
+  &.cat-bar-1 {
+    top: -55px;
+    left: 180px;
+  }
+  img {
+    max-height: 128px;
+    max-width: 128px;
+  }
+}
+
 .home, .content {
   clear: both;
   position: relative;
   bottom: 50px;
+}
+.home:first-child, .content:first-child {
   margin-top: 3em
 }
 .home {
@@ -291,6 +305,10 @@ a {
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
+}
+
+.long-index {
+  position: relative;
 }
 
 .wide-list .lists {
@@ -472,6 +490,16 @@ a {
   .short-index .menu-item {
     width: 100%;
   }
+  .deco {
+    &.cat-bar-1 {
+      top: -18px;
+      left: 35px;
+    }
+    img {
+      max-height: 60px;
+      max-width: 60 px;
+    }
+  }
 }
 @media (min-width: 320px) {
   .short-index .hmenu-heading {
@@ -498,6 +526,16 @@ a {
   }
   .short-index .menu-heading {
     font-size: 1.2rem;
+  }
+  .deco {
+    &.cat-bar-1 {
+      top: -43px;
+      left: 35px;
+    }
+    img {
+      max-height: 100px;
+      max-width: 100px;
+    }
   }
 }
 @media (min-width: 425px) {
@@ -530,6 +568,16 @@ a {
   .short-index .menu-heading {
     font-size: 1.8rem;
   }
+  .deco {
+    &.cat-bar-1 {
+      top: -59px;
+      left: 35px;
+    }
+    img {
+      max-height: 128px;
+      max-width: 128px;
+    }
+  }
 }
 @media (min-width: 768px) {
   :root {
@@ -559,6 +607,17 @@ a {
   }
   .short-index .menu-heading {
     font-size: 2rem;
+  }
+  .deco {
+    position: absolute;
+    &.cat-bar-1 {
+      top: -55px;
+      left: 150px;
+    }
+    img {
+      max-height: 128px;
+      max-width: 128px;
+    }
   }
 }
 @media (min-width: 1088px) {
