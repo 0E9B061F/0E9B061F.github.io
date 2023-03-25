@@ -4,8 +4,14 @@ const fs = require("fs-extra")
 const { join, dirname, relative } = require("path")
 
 const matter = require('gray-matter')
-const md = require('markdown-it')()
+const md = require('markdown-it')({
+  html: true,
+  typographer: true,
+})
+const emoji = require('markdown-it-emoji')
 const Handlebars = require("handlebars")
+
+md.use(emoji)
 
 Handlebars.registerHelper('mask', function(current, href, text) {
   const cur = current.href == href

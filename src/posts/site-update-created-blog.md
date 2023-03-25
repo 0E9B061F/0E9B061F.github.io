@@ -3,7 +3,9 @@ title: "Site Update: Created Blog"
 desc: Describes an update to the site, including the addition of this blog.
 ---
 
-[0E9B061F.github.io](https://0E9B061F.github.io) has been updated! A blog - creatively named the *Work Log* - has been added, as well as a gallery.
+:castle: :) :) :) :satellite:
+
+[0E9B061F.github.io](https://0E9B061F.github.io) has been updated! A blog -- creatively named the *Work Log* -- has been added, as well as a gallery.
 
 * [The Work Log](/posts) will feature updates to this site and my projects, as well as more general notes about programming, design, and related topics.
 * [The Gallery](/gallery) contains samples of my work.
