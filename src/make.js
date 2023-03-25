@@ -43,7 +43,7 @@ class GalleryItem {
     this.abs = `${this.gallery.site.host}${this.href}`
     this.coords = {
       loc: this.abs,
-      date: this.mdate,
+      date: new Date(this.mtime).toISOString().replace(/T.*$/, ""),
     }
   }
   renderRaw() {
@@ -79,7 +79,7 @@ class Gallery {
     })
     this.coords = {
       loc: this.abs,
-      date: this.mdate,
+      date: new Date(this.mtime).toISOString().replace(/T.*$/, ""),
     }
   }
   render() {
@@ -127,7 +127,7 @@ class Post {
     this.abs = `${this.blog.site.host}${this.href}`
     this.coords = {
       loc: this.abs,
-      date: this.mdate,
+      date: new Date(this.mtime).toISOString().replace(/T.*$/, ""),
     }
   }
   msToDate(ms) {
@@ -178,7 +178,7 @@ class Blog {
     }
     this.coords = {
       loc: this.abs,
-      date: this.mdate,
+      date: new Date(this.mtime).toISOString().replace(/T.*$/, ""),
     }
   }
   renderRaw(data, n) {
@@ -258,7 +258,7 @@ class Site {
     this.abs = this.host
     this.coords = {
       loc: this.abs,
-      date: this.mdate,
+      date: new Date(this.mtime).toISOString().replace(/T.*$/, ""),
     }
   }
   imgrel(name) {
