@@ -247,6 +247,9 @@ class Site {
     this.template = this.temp("site")
     this.map_temp = this.temp("sitemap")
     this.map_path = join(this.path, "sitemap.xml")
+    this.map_abs = `${this.host}/sitemap.xml`
+    this.robots_temp = this.temp("robots")
+    this.robots_path = join(this.path, "robots.txt")
     this.home = this.temp("home")
     this.blog = new Blog(this, "src/posts", "posts")
     this.gallery = new Gallery(this, "gallery")
@@ -287,6 +290,9 @@ class Site {
   map() {
     return this.map_temp({urls: this.list()})
   }
+  robots() {
+    return this.robots_temp({site: this})
+  }
   compile() {
     this.clobber()
     this.blog.compile()
@@ -294,6 +300,7 @@ class Site {
     this.docs.compile()
     fs.writeFileSync(this.index, this.render())
     fs.writeFileSync(this.map_path, this.map())
+    fs.writeFileSync(this.robots_path, this.robots())
   }
   clobber() {
     this.blog.clobber()
@@ -301,6 +308,7 @@ class Site {
     this.docs.clobber()
     fs.removeSync(this.index)
     fs.removeSync(this.map_path)
+    fs.removeSync(this.robots_path)
   }
 }
 
