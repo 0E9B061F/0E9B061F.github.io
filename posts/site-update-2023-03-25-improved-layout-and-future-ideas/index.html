@@ -5,10 +5,10 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>📣 Site Update: Created Blog - Work Log - 0E9B061F</title>
+  <title>🥳 Site Update: Improved Layout, Observations and Future Ideas - Work Log - 0E9B061F</title>
 
   <meta name="author" content="0E9B061F" />
-  <meta name="description" content="The personal website of 0E9B061F. featuring open source projects, documentation and writings. The work log includes updates on the author&#x27;s work and general writings about technology and design. Describes an update to the site, including the addition of this blog." />
+  <meta name="description" content="The personal website of 0E9B061F. featuring open source projects, documentation and writings. The work log includes updates on the author&#x27;s work and general writings about technology and design. Describes an update to the site, future ideas for development, and observations on emojis." />
 
   <link rel="icon" type="image/png" sizes="16x16" href="/site/favicons/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/site/favicons/favicon-32x32.png">
@@ -92,26 +92,27 @@
           <h1 class="page-title heading">  <a class="link active" href="/posts">
 Work Log  </a>
 </h1>
-          <div class="postnav-label postnav-next" >NEXT</div>
+          <div class="postnav-label postnav-next" style="visibility:hidden">NEXT</div>
         </div>
         <div class="postnav-titles">
           <div class="postnav-title postnav-prev">
-            <a class="link active button" href="/posts/ghast.js-v0.6.3">ghast.js updated to <code>v0.6.3</code></a>
+            <a class="link active button" href="/posts/ghast.js-v0.6.4">ghast.js updated to <code>v0.6.4</code></a>
           </div>
           <div class="postnav-title postnav-next">
-            <a class="link active button" href="/posts/ghast.js-v0.6.4">ghast.js updated to <code>v0.6.4</code></a>
           </div>
         </div>
       </div>
       <div class="post">
-  <h1 class="title">📣 Site Update: Created Blog</h1>
-  <div class="post-date">3-24-2023</div>
-  <p><a href="https://0E9B061F.github.io">0E9B061F.github.io</a> has been updated! A blog — creatively named the <em>Work Log</em> — has been added, as well as a gallery.</p>
-<ul>
-<li><a href="/posts">The Work Log</a> will feature updates to this site and my projects, as well as more general notes about programming, design, and related topics.</li>
-<li><a href="/gallery">The Gallery</a> contains samples of my work.</li>
-</ul>
-<p>Thank you for visiting and reading our inaugural post. <em>(Ed.: a few posts have been back-dated but this is the first one, I swear.)</em></p>
+  <h1 class="title">🥳 Site Update: Improved Layout, Observations and Future Ideas</h1>
+  <div class="post-date">3-25-2023</div>
+  <p>🎉 <a href="https://0E9B061F.github.io">0E9B061F.github.io</a> has been updated. This update adds minor visual improvements. Support for inline markdown in titles was added. Support for emojis in markdown was added 😁. Emojis are displayed using the monochrome <a href="https://fonts.google.com/noto/specimen/Noto+Emoji">Noto Emoji</a> for better consistency with the design. Minor tweaks and improvements to the layout were also made.</p>
+<h1>Observations</h1>
+<p>I’m unhappy with my options for emoji support in markdown. My goal was to add emoji support using monochrome emojis, with support for my own custom emojis. This turned out to be more difficult than I had hoped.</p>
+<p>Using <code>markdown-it</code> the only real option is <code>markdown-it-emoji</code>. This works well enough, but restricts you to three hardcoded sets of emoji names — there seems to be no way to add your own custom emojis. It does allow you to customize its output, but I didn’t have much luck with this. The icon fonts I looked at used different naming schemes (<code>mega</code> vs <code>megaphone</code>) making usage difficult, and while I liked fontawesome’s emojis many of them are paywalled. The documentation mentions using twemoji but twemoji offers no monochrome option and similar offerings seem to be the same. There are a couple of little-used plugins for <code>markdown-it</code> that add direct support for fontawesome, but the paywall issue remains, and I’d prefer to use normal emoji names.</p>
+<p>I haven’t researched or tried every available option. The <code>marked</code> ecosystem appears to be even more limited — the only available package for handling emojis is new and little-used. The <code>openmoji</code> set appears promising and offers a monochrome option but these are outlines rather than filled, which I would prefer.</p>
+<p>For now I’ll be using <code>markdown-it-emoji</code> and Google’s monochrome Noto Emoji webfont to display emojis. This approach means I have no custom emoji support, and I’d prefer solid emojis rather than lineart, but its otherwise suitable. In the future I may make my own plugin for <code>markdown-it</code> emojis with support for custom emojis.</p>
+<h1>Future Ideas</h1>
+<p>My next goal is to add a persistent pages feature. This will create a hierarchy of “persistent” posts that will be linked from the main menu (I’ll probably replace the docs link). This will allow me to highlight chosen posts and prevents them from getting lost in the blog index as it grows. Posts will be made persistent by assigning them a path in their frontmatter.</p>
 
 </div>
 
@@ -205,16 +206,22 @@ Work Log  </a>
       <div class="blog-index">
   <ul>
     <li>
+  <span class="plain link current">
+        <span class="date">3-25-2023</span>
+        <span class="title">🥳 Site Update: Improved Layout, Observations and Future Ideas</span>
+  </span>
+    </li>
+    <li>
   <a class="plain link active" href="/posts/ghast.js-v0.6.4">
         <span class="date">3-24-2023</span>
         <span class="title">ghast.js updated to <code>v0.6.4</code></span>
   </a>
     </li>
     <li>
-  <span class="plain link current">
+  <a class="plain link active" href="/posts/site-update-2023-03-24-created-blog">
         <span class="date">3-24-2023</span>
         <span class="title">📣 Site Update: Created Blog</span>
-  </span>
+  </a>
     </li>
     <li>
   <a class="plain link active" href="/posts/ghast.js-v0.6.3">

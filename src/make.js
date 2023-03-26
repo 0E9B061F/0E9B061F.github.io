@@ -221,7 +221,7 @@ class Blog {
   }
   clobber() {
     this.posts.forEach(p=> p.clobber())
-    fs.removeSync(this.outindex)
+    fs.removeSync(this.out)
   }
   list() {
     return [this.coords, ...this.posts.map(p => p.coords)]
