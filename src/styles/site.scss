@@ -113,6 +113,12 @@ a {
   display: block;
   text-align: center;
 }
+.blog-index .link.active .title {
+  @include linkmain;
+}
+.blog-index .link.active:hover .title {
+  @include linkover;
+}
 
 
 .gallery {

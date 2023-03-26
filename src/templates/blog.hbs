@@ -3,10 +3,10 @@
   <ul>
   {{#each list}}
     <li>
-      {{#>link (mask ../current this.href this.title)}}
+      {{#>plain (mask ../current this.href this.title)}}
         <span class="date">{{../bdate}}</span>
         <span class="title">{{{../titleHtml}}}</span>
-      {{/link}}
+      {{/plain}}
     </li>
   {{/each}}
   </ul>
