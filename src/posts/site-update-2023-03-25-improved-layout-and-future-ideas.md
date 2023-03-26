@@ -15,8 +15,8 @@ I haven't researched or tried every available option. The `marked` ecosystem app
 
 For now I'll be using `markdown-it-emoji` and Google's monochrome Noto Emoji webfont to display emojis. This approach means I have no custom emoji support, and I'd prefer solid emojis rather than lineart, but its otherwise suitable. In the future I may make my own plugin for `markdown-it` emojis with support for custom emojis.
 
-# Future Ideas
+# Plans
 
-My next goal is to add a persistent pages feature. This will create a hierarchy of "persistent" posts that will be linked from the main menu (I'll probably replace the docs link). This will allow me to highlight chosen posts and prevents them from getting lost in the blog index as it grows. Posts will be made persistent by assigning them a path in their frontmatter.
-
-I also need to add a TOC to posts.
+* My next goal is to add a persistent pages feature. This will create a hierarchy of "persistent" posts that will be linked from the main menu (I'll probably replace the docs link). This will allow me to highlight chosen posts and prevents them from getting lost in the blog index as it grows. Posts will be made persistent by assigning them a path in their frontmatter.
+* I need to add a TOC to posts.
+* I'm not entirely happy with my current font selections.
