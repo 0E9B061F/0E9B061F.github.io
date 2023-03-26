@@ -7,6 +7,7 @@
   &.menu-v {
     height: calc(205px + 9.75rem);
     flex-direction: column;
+    justify-content: space-around;
   }
   .menu-heading {
     @include headtxt;
@@ -24,10 +25,6 @@
 .menu.menu-v .menu-item {
   display: flex;
   gap: 0.5rem;
-  margin-top: 3rem;
-  &:first-child {
-    margin-top: auto;
-  }
   .menu-bullet {
     --bulw: 3.25rem;
     height: var(--bulw);

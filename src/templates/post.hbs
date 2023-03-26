@@ -1,23 +1,6 @@
 <div class="post">
-  <div class="nav">
-    <div class="navdir prev">
-    {{#if post.prev}}
-    <div class="navtitle">PREV</div>
-    <a class="link active button" href="{{post.prev.href}}">{{post.prev.title}}</a>
-    {{/if}}
-    </div>
-    <div class="navdir next">
-    {{#if post.next}}
-    <div class="navtitle">NEXT</div>
-    <a class="link active button" href="{{post.next.href}}">{{post.next.title}}</a>
-    {{/if}}
-    </div>
-  </div>
-  <h1 class="title">{{post.title}}</h1>
+  <h1 class="title">{{{post.titleHtml}}}</h1>
   <div class="post-date">{{post.bdate}}</div>
   {{{content}}}
-  <div class="centered">
-    <img class="asterism" src="/site/images/frog-bicycle-2-256.png"/>
-  </div>
 </div>
 

@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>{{#if post}}{{post.title}} - {{/if}}{{#if page}}{{page.title}} - {{/if}}{{site.title}}</title>
+  <title>{{#if post}}{{post.titlePlain}} - {{/if}}{{#if page}}{{page.titlePlain}} - {{/if}}{{site.titlePlain}}</title>
 
   <meta name="author" content="0E9B061F" />
   <meta name="description" content="{{site.desc}}{{#if page}}{{#if page.desc}} {{page.desc}}{{/if}}{{/if}}{{#if post}}{{#if post.desc}} {{post.desc}}{{/if}}{{/if}}" />
@@ -85,7 +85,29 @@
         <img src="/site/images/cat-bar-1.png" />
       </div>
       <div class="centered"><img class="rule" src="/site/images/dash-4.png" /></div>
-      <h1 class="page-title heading">{{>link (mask current page.href page.title)}}</h1>
+      {{#if post}}
+      <div class="postnav">
+        <div class="postnav-labels">
+          <div class="postnav-label postnav-prev" {{#unless post.prev}}style="visibility:hidden"{{/unless}}>PREV</div>
+          <h1 class="page-title heading">{{#>link (mask current page.href page.title)}}{{{../page.titleHtml}}}{{/link}}</h1>
+          <div class="postnav-label postnav-next" {{#unless post.next}}style="visibility:hidden"{{/unless}}>NEXT</div>
+        </div>
+        <div class="postnav-titles">
+          <div class="postnav-title postnav-prev">
+            {{#if post.prev}}
+            <a class="link active button" href="{{post.prev.href}}">{{{post.prev.titleHtml}}}</a>
+            {{/if}}
+          </div>
+          <div class="postnav-title postnav-next">
+            {{#if post.next}}
+            <a class="link active button" href="{{post.next.href}}">{{{post.next.titleHtml}}}</a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+      {{else}}
+      <h1 class="page-title heading">{{#>link (mask current page.href page.title)}}{{{../page.titleHtml}}}{{/link}}</h1>
+      {{/if}}
       {{{content}}}
     </div>
     {{else}}
@@ -173,6 +195,11 @@
       {{{long}}}
     </div>
     {{/unless}}
+    <div class="foot">
+    <div class="centered">
+      <img class="asterism" src="/site/images/frog-bicycle-4.png" />
+    </div>
+    </div>
   </div>
 </body>
 

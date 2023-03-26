@@ -1,9 +1,11 @@
 $blue: #6e7fd2;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@700&display=swap');
+
 :root {
-  --cprime: "Courier Prime", Terminus, Consolas, monospace;
-  --josefin: "Josefin Sans", Arial, sans;
-  --alegreya: "Alegreya", "Times New Roman", Times, serif;
+  --cprime: "Courier Prime", Terminus, Consolas, monospace, 'Noto Emoji';
+  --josefin: "Josefin Sans", Arial, sans, 'Noto Emoji';
+  --alegreya: "Alegreya", "Times New Roman", Times, serif, 'Noto Emoji';
 
   --pagegap: 2rem;
 
@@ -23,23 +25,38 @@ $blue: #6e7fd2;
   font-weight: 600;
 }
 @mixin linkmain {
-  text-decoration: underline;
-  text-decoration-color: var(--white);
-  text-decoration-thickness: 1px;
-  transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
-  color: var(--blue);
+  &:not(.plain) {
+    text-decoration: underline;
+    text-decoration-color: var(--white);
+    text-decoration-thickness: 1px;
+    transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
+    color: var(--blue);
+  }
+  &.plain {
+    text-decoration: none;
+    color: var(--black);
+  }
 }
 @mixin linkover {
-  text-decoration-color: var(--blue-lite);
-  color: var(--blue-lite);
+  &:not(.plain) {
+    text-decoration-color: var(--blue-lite);
+    color: var(--blue-lite);
+  }
 }
 @mixin linklike {
   @include linkmain;
   &:hover {
     @include linkover;
   }
+  .heading & {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
+@import "frontis";
 @import "menu";
 @import "post";
 
@@ -56,18 +73,18 @@ body {
 a {
   @include linklike;
 }
-.heading .link.active {
-  text-decoration: none;
-}
-.heading .link.active:hover {
-  text-decoration: none;
-}
 
 .sidebar {
   min-width: calc(320px - var(--pagegap));
   max-width: 500px;
   flex: 1 1 auto;
   margin-top: 1rem;
+  .foot {
+    margin-top: 4rem;
+  }
+  .asterism {
+    max-height: 256px;
+  }
 }
 
 .blog-index {
@@ -111,8 +128,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  color: var(--black);
-  text-decoration: none;
 }
 .gallery .gallery-item .gallery-window {
   position: relative;
@@ -162,6 +177,7 @@ a {
   @include headtxt;
   text-align: center;
   font-size: 2.5rem;
+  margin-top: 3rem;
 }
 
 .centered {
@@ -174,87 +190,7 @@ a {
 }
 
 
-.frontis .top {
-  width: 100%;
-  position: relative;
-  height: var(--top-height);
-}
 
-.frontis .bowler {
-  z-index: 1;
-  position: relative;
-  width: var(--bowler-width);
-}
-
-.frontis .code {
-  color: var(--gray800);
-  font-family: var(--cprime);
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  text-align: justify;
-  font-weight: bold;
-  margin: 0;
-  width: var(--width);
-  font-size: var(--code-size);
-}
-
-.frontis .bottom {
-  width: 100%;
-  position: relative;
-}
-
-.frontis .title {
-  text-align: right;
-  font-weight: 500;
-  line-height: 1.2em;
-  font-size: var(--title-size);
-}
-
-.frontis .title .software {
-  font-size: 3em;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.frontis .title .byline {
-  font-size: .6em;
-  font-family: var(--josefin);
-}
-
-.frontis .title .name {
-  font-size: 1.5em;
-  font-family: var(--cprime);
-  font-weight: 700;
-  z-index: 0;
-}
-
-.frontis .prompt {
-  position: absolute;
-  bottom: 0;
-  left: 10px;
-  font-family: var(--cprime);
-  font-size: 1.6em;
-  color: var(--gray700);
-}
-
-.frontis .money {
-  float: left
-}
-
-.frontis .cursor {
-  width: .5em;
-  height: .9em;
-  border: 1px solid var(--gray700);
-  color: white;
-  float: left;
-  margin-left: .3em
-}
-
-.frontis:hover .cursor {
-  background-color: var(--gray700)
-}
 
 .deco {
   position: absolute;
@@ -279,6 +215,43 @@ a {
 }
 .home {
   text-align: center;
+}
+
+.content .blog-index,
+.content .post,
+.content .gallery {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.postnav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  .postnav-labels {
+    display: flex;
+    align-items: end;
+    .postnav-label {
+      @include headtxt;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .page-title {
+      flex: 1 0 auto;
+      margin-bottom: 0;
+    }
+  }
+  .postnav-titles {
+    display: flex;
+    justify-content: space-between;
+    .postnav-title {
+      font-size: 1.1rem;
+      &.postnav-next {
+        text-align: right;
+      }
+    }
+  }
 }
 
 .home .blurb {

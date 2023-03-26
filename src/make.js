@@ -9,9 +9,15 @@ const md = require('markdown-it')({
   typographer: true,
 })
 const emoji = require('markdown-it-emoji')
+const plainText = require('markdown-it-plain-text')
 const Handlebars = require("handlebars")
 
 md.use(emoji)
+md.use(plainText)
+
+// md.renderer.rules.emoji = function (token, idx) {
+//   return '<span class="emoji emoji_' + token[idx].markup + '"></span>';
+// };
 
 Handlebars.registerHelper('mask', function(current, href, text) {
   const cur = current.href == href
@@ -40,6 +46,8 @@ class GalleryItem {
     this.prev = null
     this.next = null
     this.title = this.conf.title || this.pretty
+    this.titleHtml = md.renderInline(this.title)
+    this.titlePlain = md.plainText
     this.desc = this.conf.desc
     this.image = this.conf.image
     if (this.image) this.image = this.gallery.site.imgrel(this.image)
@@ -70,6 +78,8 @@ class Gallery {
     const raw = fs.readFileSync(this.conf_path, "utf-8")
     this.conf = JSON.parse(raw)
     this.title = this.conf.title || this.name
+    this.titleHtml = md.renderInline(this.title)
+    this.titlePlain = md.plainText
     this.desc = this.conf.desc
     this.items = []
     this.template = this.site.temp("gallery")
@@ -127,6 +137,8 @@ class Post {
     this.next = null
     this.content = md.render(pre.content)
     this.title = this.data.title || this.pretty
+    this.titleHtml = md.renderInline(this.title)
+    this.titlePlain = md.plainText
     this.desc = this.data.desc
     this.href = relative(this.blog.site.path, this.out)
     this.href = `/${this.href}`
@@ -166,6 +178,8 @@ class Blog {
     const raw = fs.readFileSync(this.datapath, "utf-8")
     this.data = JSON.parse(raw)
     this.title = this.data.title || this.name
+    this.titleHtml = md.renderInline(this.title)
+    this.titlePlain = md.plainText
     this.desc = this.data.desc
     this.posts = []
     this.template = this.site.temp("blog")
@@ -247,6 +261,8 @@ class Site {
     const raw = fs.readFileSync(this.datapath, "utf-8")
     this.data = JSON.parse(raw)
     this.title = this.data.title
+    this.titleHtml = md.renderInline(this.title)
+    this.titlePlain = md.plainText
     this.desc = this.data.desc
     this.host = this.data.host
     this.templates = new Templates(this, "src/templates")

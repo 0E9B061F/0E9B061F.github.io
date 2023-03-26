@@ -1,10 +1,10 @@
 ---
-title: "ghast.js updated to v0.6.3"
+title: "ghast.js updated to `v0.6.3`"
 desc: This post describes an update to ghast.js.
 date: 2023-03-20T16:00:00.000-05:00
 ---
 
-Updated [ghast.js](https://github.com/0E9B061F/ghast.js) to `v0.6.3`. This is a minor update to the project's documentation.
+Updated :european_castle: [ghast.js](https://github.com/0E9B061F/ghast.js) to `v0.6.3`. This is a minor update to the project's documentation.
 
 # CHANGES
 

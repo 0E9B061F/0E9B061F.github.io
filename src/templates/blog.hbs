@@ -5,7 +5,7 @@
     <li>
       {{#>link (mask ../current this.href this.title)}}
         <span class="date">{{../bdate}}</span>
-        <span class="title">{{../title}}</span>
+        <span class="title">{{{../titleHtml}}}</span>
       {{/link}}
     </li>
   {{/each}}
