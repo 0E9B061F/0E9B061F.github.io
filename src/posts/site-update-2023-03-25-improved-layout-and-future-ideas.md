@@ -1,5 +1,5 @@
 ---
-title: ":partying_face: Site Update: Improved Layout, Observations and Future Ideas"
+title: ":partying_face: Site Update: Improved Layout, Plus Observations and Plans"
 desc: Describes an update to the site, future ideas for development, and observations on emojis.
 ---
 
@@ -18,3 +18,5 @@ For now I'll be using `markdown-it-emoji` and Google's monochrome Noto Emoji web
 # Future Ideas
 
 My next goal is to add a persistent pages feature. This will create a hierarchy of "persistent" posts that will be linked from the main menu (I'll probably replace the docs link). This will allow me to highlight chosen posts and prevents them from getting lost in the blog index as it grows. Posts will be made persistent by assigning them a path in their frontmatter.
+
+I also need to add a TOC to posts.
