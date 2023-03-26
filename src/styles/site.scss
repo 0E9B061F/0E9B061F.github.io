@@ -79,6 +79,22 @@ a {
   max-width: 500px;
   flex: 1 1 auto;
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .sidebar-title {
+    @include headtxt;
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  .toc {
+    .table-of-contents {
+      font-size: 1.3rem;
+      ol {
+        margin: 0;
+      }
+    }
+  }
   .foot {
     margin-top: 4rem;
   }
@@ -95,8 +111,8 @@ a {
   font-size: 1.3rem;
   list-style: none;
   padding: 0;
-  margin-top: 2rem;
   width: 100%;
+  margin: 0;
 }
 .blog-index li:not(:first-child) {
   margin-top: 0.75rem;
@@ -597,7 +613,7 @@ a {
 }
 @media (min-width: 1088px) {
   .sidebar {
-    display: block;
+    display: flex;
   }
   .short-index {
     display: none;

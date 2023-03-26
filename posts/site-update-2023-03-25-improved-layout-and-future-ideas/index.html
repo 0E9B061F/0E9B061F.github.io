@@ -109,19 +109,19 @@ Work Log  </a>
       <div class="post">
   <h1 class="title">🥳 Site Update: Improved Layout, Plus Observations and Plans</h1>
   <div class="post-date">3-25-2023</div>
-  <p>🎉 <a href="https://0E9B061F.github.io">0E9B061F.github.io</a> has been updated. This update adds minor visual improvements. Support for inline markdown in titles was added. Support for emojis in markdown was added 😁. Emojis are displayed using the monochrome <a href="https://fonts.google.com/noto/specimen/Noto+Emoji">Noto Emoji</a> for better consistency with the design. Minor tweaks and improvements to the layout were also made.</p>
-<h1>Observations</h1>
+  <html><head></head><body><p>🎉 <a href="https://0E9B061F.github.io">0E9B061F.github.io</a> has been updated. This update adds minor visual improvements. Support for inline markdown in titles was added. Support for emojis in markdown was added 😁. Emojis are displayed using the monochrome <a href="https://fonts.google.com/noto/specimen/Noto+Emoji">Noto Emoji</a> for better consistency with the design. Minor tweaks and improvements to the layout were also made.</p>
+<h1 id="observations" tabindex="-1"><a class="header-anchor" href="#observations">§</a> Observations</h1>
 <p>I’m unhappy with my options for emoji support in markdown. My goal was to add emoji support using monochrome emojis, with support for my own custom emojis. This turned out to be more difficult than I had hoped.</p>
 <p>Using <code>markdown-it</code> the only real option is <code>markdown-it-emoji</code>. This works well enough, but restricts you to three hardcoded sets of emoji names — there seems to be no way to add your own custom emojis. It does allow you to customize its output, but I didn’t have much luck with this. The icon fonts I looked at used different naming schemes (<code>mega</code> vs <code>megaphone</code>) making usage difficult, and while I liked fontawesome’s emojis many of them are paywalled. The documentation mentions using twemoji but twemoji offers no monochrome option and similar offerings seem to be the same. There are a couple of little-used plugins for <code>markdown-it</code> that add direct support for fontawesome, but the paywall issue remains, and I’d prefer to use normal emoji names.</p>
 <p>I haven’t researched or tried every available option. The <code>marked</code> ecosystem appears to be even more limited — the only available package for handling emojis is new and little-used. The <code>openmoji</code> set appears promising and offers a monochrome option but these are outlines rather than filled, which I would prefer.</p>
 <p>For now I’ll be using <code>markdown-it-emoji</code> and Google’s monochrome Noto Emoji webfont to display emojis. This approach means I have no custom emoji support, and I’d prefer solid emojis rather than lineart, but its otherwise suitable. In the future I may make my own plugin for <code>markdown-it</code> emojis with support for custom emojis.</p>
-<h1>Plans</h1>
+<h1 id="plans" tabindex="-1"><a class="header-anchor" href="#plans">§</a> Plans</h1>
 <ul>
 <li>My next goal is to add a persistent pages feature. This will create a hierarchy of “persistent” posts that will be linked from the main menu (I’ll probably replace the docs link). This will allow me to highlight chosen posts and prevents them from getting lost in the blog index as it grows. Posts will be made persistent by assigning them a path in their frontmatter.</li>
 <li>I need to add a TOC to posts.</li>
 <li>I’m not entirely happy with my current font selections.</li>
 </ul>
-
+</body></html>
 </div>
 
 
@@ -210,7 +210,12 @@ Work Log  </a>
         </div>
       </div>
     </div>
+    <div class="toc">
+      <h2 class="sidebar-title">TABLE OF CONTENTS</h2>
+      <nav class="table-of-contents"><ol><li><a href="#observations"> Observations</a></li><li><a href="#plans"> Plans</a></li></ol></nav>
+    </div>
     <div class="long-index">
+      <h2 class="sidebar-title">INDEX</h2>
       <div class="blog-index">
   <ul>
     <li>

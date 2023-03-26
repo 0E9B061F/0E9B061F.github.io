@@ -194,8 +194,15 @@
         </div>
       </div>
     </div>
+    {{#if toc}}
+    <div class="toc">
+      <h2 class="sidebar-title">TABLE OF CONTENTS</h2>
+      {{{toc}}}
+    </div>
+    {{/if}}
     {{#unless hideSideIndex}}
     <div class="long-index">
+      <h2 class="sidebar-title">INDEX</h2>
       {{{long}}}
     </div>
     {{/unless}}

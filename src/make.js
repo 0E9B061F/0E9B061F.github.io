@@ -10,10 +10,16 @@ const md = require('markdown-it')({
 })
 const emoji = require('markdown-it-emoji')
 const plainText = require('markdown-it-plain-text')
+const anchorPlugin = require("markdown-it-anchor")
+const tocPlugin = require("markdown-it-toc-done-right")
 const Handlebars = require("handlebars")
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
 md.use(emoji)
 md.use(plainText)
+md.use(anchorPlugin, { permalink: true, permalinkBefore: true, permalinkSymbol: '§' })
+md.use(tocPlugin)
 
 // md.renderer.rules.emoji = function (token, idx) {
 //   return '<span class="emoji emoji_' + token[idx].markup + '"></span>';
@@ -135,11 +141,19 @@ class Post {
     this.mdate = new Date(this.mtime).toLocaleDateString("en-US").replace(/\//g, "-")
     this.prev = null
     this.next = null
+    pre.content = `[[toc]]\n\n${pre.content}`
     this.content = md.render(pre.content)
+    const dom = new JSDOM(this.content)
+    const toc = dom.window.document.querySelector("nav.table-of-contents")
+    this.hasToc = !!toc.innerHTML
+    this.toc = toc.outerHTML
+    toc.remove()
+    this.content = dom.serialize()
     this.title = this.data.title || this.pretty
     this.titleHtml = md.renderInline(this.title)
     this.titlePlain = md.plainText
     this.desc = this.data.desc
+    this.mount = this.data.mount
     this.href = relative(this.blog.site.path, this.out)
     this.href = `/${this.href}`
     this.abs = `${this.blog.site.host}${this.href}`
@@ -152,7 +166,7 @@ class Post {
     return new Date(ms).toLocaleDateString("en-US").replace(/\//g, "-")
   }
   render() {
-    let data = { post: this, current: this, content: this.content}
+    let data = { post: this, current: this, toc: this.hasToc ? this.toc : null, content: this.content}
     data = { ...data, content: this.template(data) }
     return this.blog.wrap(data)
   }
