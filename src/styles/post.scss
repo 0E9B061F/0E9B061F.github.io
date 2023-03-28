@@ -16,6 +16,8 @@
   }
   h1, h2, h3, h4, h5, h6 {
     @include headtxt;
+    clear: both;
+    margin-top: 3rem;
   }
   h1 {
     font-size: 1.6rem;
@@ -39,6 +41,49 @@
     font-family: var(--cprime);
     background-color: var(--gray900);
     padding: 0 0.35rem 0 0.35rem;
+  }
+  figure {
+    margin: 0 0 2rem 1rem;
+    clear: both;
+    figcaption {
+      font-size: 0.95rem;
+      width: min-content;
+      min-width: 100%;
+    }
+    &.fig-right,
+    &.fig-left {
+      max-width: 280px;
+    }
+    &.fig-right {
+      float: right;
+    }
+    &.fig-left {
+      float: left;
+    }
+    &.fig-center {
+      margin: 0 auto;
+      max-width: 450px;
+    }
+    a img:hover {
+      border: 2px solid var(--black);
+    }
+    img {
+      max-width: 100%;
+      border: 2px solid var(--white);
+      transition: border-color 0.2s ease-out;
+    }
+  }
+  .figallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    figure {
+      margin: 0;
+    }
+    p {
+      display: none;
+    }
   }
 }
 

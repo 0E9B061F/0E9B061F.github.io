@@ -12,14 +12,12 @@ const emoji = require('markdown-it-emoji')
 const plainText = require('markdown-it-plain-text')
 const anchorPlugin = require("markdown-it-anchor")
 const tocPlugin = require("markdown-it-toc-done-right")
+const figurePlugin = require("./figure-plugin.js")
+const containerPlugin = require('markdown-it-container')
 const Handlebars = require("handlebars")
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-
-md.use(emoji)
-md.use(plainText)
-md.use(anchorPlugin, { permalink: true, permalinkBefore: true, permalinkSymbol: '§' })
-md.use(tocPlugin)
+const jsdom = require("jsdom")
+const { JSDOM } = jsdom
+const sharp = require('sharp')
 
 // md.renderer.rules.emoji = function (token, idx) {
 //   return '<span class="emoji emoji_' + token[idx].markup + '"></span>';
@@ -32,6 +30,80 @@ Handlebars.registerHelper('mask', function(current, href, text) {
 
 const tcase =s=> {
   return s.split(" ").map(w=> w[0].toUpperCase() + w.slice(1)).join(" ")
+}
+
+const mkhref =(base, abs)=> {
+  const p = relative(base, abs)
+  return `/${p}`
+}
+
+class Image {
+  constructor(imgset, name) {
+    this.imgset = imgset
+    this.name = name
+    this.core = this.name.replace(/\..+?$/, "")
+    this.pretty = tcase(this.core.replace(/[_\-]+/g, " "))
+    this.ext = this.name.replace(/^.+\./, "")
+    this.path = join(this.imgset.path, this.name)
+    this.out = join(this.imgset.out, this.core)
+  }
+  thName(size) {
+    if (!size) size = "full"
+    return `${this.core}-${size}.${this.ext}`
+  }
+  thOut(size) {
+    return join(this.out, this.thName(size))
+  }
+  href(size) {
+    return mkhref(this.imgset.site.path, this.thOut(size))
+  }
+  thOut(size) {
+    return join(this.out, this.thName(size))
+  }
+  compile() {
+    fs.mkdirSync(this.out, { recursive: true })
+    // create thumbs
+    sharp(this.path)
+      .resize(2048, 2048, { fit: "inside", withoutEnlargement: true })
+      .toFile(this.thOut("full"), (err, info) => { })
+    sharp(this.path)
+      .resize(450, 450, { fit: "inside", withoutEnlargement: true })
+      .toFile(this.thOut(450), (err, info) => {})
+    sharp(this.path)
+      .resize(280, 280, { fit: "inside", withoutEnlargement: true })
+      .toFile(this.thOut(280), (err, info) => { })
+  }
+  clobber() {
+    fs.removeSync(this.out)
+  }
+}
+class ImageSet {
+  constructor(site, name, out) {
+    this.site = site
+    this.name = name
+    this.out = join(this.site.path, out)
+    this.path = join(this.site.path, this.name)
+    this.images = []
+    this.imgmap = {}
+    let abs, img
+    fs.readdirSync(this.path).forEach(name => {
+      abs = join(this.path, name)
+      if (name.match(/\.(?:jpe?g|gif|png|webp)$/) && fs.statSync(abs).isFile()) {
+        img = new Image(this, name)
+        this.images.push(img)
+        this.imgmap[img.core] = img
+      }
+    })
+  }
+  compile() {
+    this.images.forEach(i => i.compile())
+  }
+  clobber() {
+    this.images.forEach(i => i.clobber())
+  }
+  get(name) {
+    return this.imgmap[name]
+  }
 }
 
 class GalleryItem {
@@ -56,8 +128,6 @@ class GalleryItem {
     this.titlePlain = md.plainText
     this.desc = this.conf.desc
     this.image = this.conf.image
-    if (this.image) this.image = this.gallery.site.imgrel(this.image)
-    console.log(this.image)
     this.href = relative(this.gallery.site.path, this.path)
     this.href = `/${this.href}`
     this.abs = `${this.gallery.site.host}${this.href}`
@@ -266,7 +336,14 @@ class Templates {
 
 class Site {
   constructor(path) {
+    md.use(emoji)
+    md.use(plainText)
+    md.use(anchorPlugin, { permalink: true, permalinkBefore: true, permalinkSymbol: '§' })
+    md.use(tocPlugin)
+    md.use(containerPlugin, "figallery")
     this.path = path
+    this.images = new ImageSet(this, "src/images", "site/images")
+    md.use(figurePlugin((name, size) => this.images.get(name).href(size)))
     this.datapath = join(this.path, "conf.json")
     this.index = join(this.path, "index.html")
     const stat = fs.statSync(this.path)
@@ -288,10 +365,21 @@ class Site {
     this.robots_path = join(this.path, "robots.txt")
     this.home = this.temp("home")
     this.blog = new Blog(this, "src/posts", "posts")
+    
     this.gallery = new Gallery(this, "gallery")
     this.docs = new Gallery(this, "docs")
     this.href = "/"
     this.abs = this.host
+
+
+    Handlebars.registerHelper('image', (name, options)=> {
+      options.hash = {
+        size: "full",
+        ...options.hash,
+      }
+      return this.images.get(name).href(options.hash.size)
+    })
+   
     this.coords = {
       loc: this.abs,
       date: new Date(this.mtime).toISOString().replace(/T.*$/, ""),
@@ -334,6 +422,7 @@ class Site {
     this.blog.compile()
     this.gallery.compile()
     this.docs.compile()
+    this.images.compile()
     fs.writeFileSync(this.index, this.render())
     fs.writeFileSync(this.map_path, this.map())
     fs.writeFileSync(this.robots_path, this.robots())
@@ -342,6 +431,7 @@ class Site {
     this.blog.clobber()
     this.gallery.clobber()
     this.docs.clobber()
+    this.images.clobber()
     fs.removeSync(this.index)
     fs.removeSync(this.map_path)
     fs.removeSync(this.robots_path)

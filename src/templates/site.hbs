@@ -40,7 +40,7 @@
   <div class="page">
     <div class="frontis">
       <div class="top">
-        <img class="bowler" src="/site/images/bowler3.png" />
+        <img class="bowler" src="{{image "bowler3"}}" />
         <p class="code">
           @spec.get_opts.each do |name, opt|
             options[name] = opt.value
@@ -82,9 +82,9 @@
     {{#if content}}
     <div class="content">
       <div class="deco cat-bar-1">
-        <img src="/site/images/cat-bar-1.png" />
+        <img src="{{image "cat-bar-1"}}" />
       </div>
-      <div class="centered"><img class="rule" src="/site/images/dash-4.png" /></div>
+      <div class="centered"><img class="rule" src="{{image "dash-4"}}" /></div>
       {{#if post}}
       <div class="postnav">
         <div class="postnav-labels">
@@ -112,20 +112,20 @@
     </div>
     {{else}}
     <div class="home">
-      <img class="rule" src="/site/images/dash-4.png" />
+      <img class="rule" src="{{image "dash-4"}}" />
       {{{home}}}
     </div>
     {{/if}}
     <div class="home foot">
-    <img class="rule start-contact" src="/site/images/dash-4.png" />
+    <img class="rule start-contact" src="{{image "dash-4"}}" />
 
     <div class="contact-heading">
-      <img class="phoneman" src="/site/images/contact.png" />
+      <img class="phoneman" src="{{image "contact"}}" />
       <div class="aligner"><h2 class="contact-title">Directory</h2></div>
     </div>
 
     <div class="contact-area">
-      <img class="phoneman" src="/site/images/contact.png" />
+      <img class="phoneman" src="{{image "contact"}}" />
       <dl class="directory">
         <div class="pair">
           <dt>Email</dt>
@@ -169,21 +169,21 @@
   <div class="sidebar">
     <div class="menu menu-v">
       <div class="menu-item">
-        <div class="menu-bullet"><img src="/site/images/hedera-1.png" /></div>
+        <div class="menu-bullet"><img src="{{image "hedera-1"}}" /></div>
         <div class="menu-text">
           <h2 class="menu-heading heading">{{>link (mask current site.gallery.href "GALLERY")}}</h2>
           <span class="menu-desc">Examples of past work.</span>
         </div>
       </div>
       <div class="menu-item">
-        <div class="menu-bullet"><img src="/site/images/hedera-1.png" /></div>
+        <div class="menu-bullet"><img src="{{image "hedera-1"}}"/></div>
         <div class="menu-text">
           <h2 class="menu-heading heading">{{>link (mask current site.docs.href "DOCS")}}</h2>
           <span class="menu-desc">Technical documentation for the projects listed here.</span>
         </div>
       </div>
       <div class="menu-item">
-        <div class="menu-bullet"><img src="/site/images/hedera-1.png" /></div>
+        <div class="menu-bullet"><img src="{{image "hedera-1"}}" /></div>
         <div class="menu-text">
           <h2 class="menu-heading heading">{{>link (mask current site.blog.href "WORK LOG")}}</h2>
           <span class="menu-desc">Project updates and notes about programming, design, and other topics.</span>
@@ -204,7 +204,7 @@
     {{/unless}}
     <div class="foot">
     <div class="centered">
-      <img class="asterism" src="/site/images/frog-bicycle-4.png" />
+      <img class="asterism" src="{{image "frog-bicycle-4"}}" />
     </div>
     </div>
   </div>
