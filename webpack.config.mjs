@@ -1,10 +1,9 @@
-"use strict"
+import path from "path"
+import { fileURLToPath } from 'node:url'
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import Site from "./src/hexmachine/make.mjs"
 
-
-const path = require("path")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const Site = require("./src/make.js")
-
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const MODE = process.env.NODE_ENV || "production"
 
 
@@ -15,9 +14,10 @@ class MyExampleWebpackPlugin {
     // Specify the event hook to attach to
     compiler.hooks.beforeCompile.tapAsync('MyPlugin', (params, callback) => {
       console.log("PERFORMING STATIC COMPILATION")
-      const site = new Site(path.resolve(__dirname))
-      site.compile()
-      callback();
+      Site.make(path.resolve(__dirname)).then(site=> {
+        site.compile()
+        callback();
+      })
     });
   }
 }
@@ -40,8 +40,8 @@ const plugins = [
 
 console.log(`BUILDING ${MODE}`)
 
-module.exports = {
-  entry: "./src/build.js",
+export default {
+  entry: "./src/build.mjs",
   mode: MODE,
   devtool: "source-map",
   output: {
