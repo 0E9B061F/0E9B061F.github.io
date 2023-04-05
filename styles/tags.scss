@@ -1,0 +1,54 @@
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--josefin);
+  gap: 0 0.3em;
+  overflow: hidden;
+  .tag-link {
+    display: flex;
+    gap: 0 0.3em;
+    position: relative;
+    left: -0.5em;
+    align-items: baseline;
+    .tag-sep {
+      width: 0.2em;
+      user-select: none;
+      font-family: var(--josefin);
+    }
+  }
+}
+
+.tag-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  .tag-card {
+    width: calc((100% / 3) - (2rem / 3));
+    .tag-name {
+      padding-right: 0.5em;
+      a {
+        font-weight: 700;
+        font-size: 1.2em;
+      }
+    }
+    .tag-desc {
+      vertical-align: text-bottom;
+      &.unavailable {
+        color: var(--gray100);
+      }
+    }
+  }
+}
+
+
+.tag {
+  .tag-name {
+    .tag-count {
+      vertical-align: super;
+      font-family: 'Courgette', cursive;
+      font-size: 0.7em;
+      user-select: none;
+      color: var(--gray100);
+    }
+  }
+}

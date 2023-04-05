@@ -1,0 +1,7 @@
+{{#if list}}
+<div class="gallery">
+  {{#each list}}{{>item this}}{{/each}}
+</div>
+{{else}}
+{{{content}}}
+{{/if}}

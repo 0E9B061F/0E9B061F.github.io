@@ -1,0 +1,45 @@
+.menu {
+  display: flex;
+  box-sizing: border-box;
+  &.menu-h {
+    margin-top: 2rem;
+  }
+  &.menu-v {
+    height: calc(var(--top-height) + (1.6 * var(--title-size)) + (1.35 * var(--title-size)) + (0.666666666 * var(--title-size)));
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .menu-heading {
+    @include headtxt;
+    font-size: 2rem;
+    margin: 0;
+  }
+}
+
+.menu.menu-h .menu-item {
+  margin-top: 0;
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+.menu.menu-v .menu-item {
+  display: flex;
+  gap: 0.5rem;
+  .menu-bullet {
+    --bulw: 3.25rem;
+    height: var(--bulw);
+    width: 6.25rem;
+    img {
+      height: var(--bulw);
+    }
+  }
+  .menu-heading {
+    text-align: left;
+  }
+  .menu-desc {
+    font-size: 1.2em;
+    font-weight: 400;
+    font-family: var(--alegreya);
+    display: block;
+  }
+}

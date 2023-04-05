@@ -1,0 +1,9 @@
+{{#if content}}
+{{{content}}}
+{{else}}
+<div class="index tag-index">
+{{#each current.tags}}
+  {{>tagCard this current=../current}}
+{{/each}}
+</div>
+{{/if}}

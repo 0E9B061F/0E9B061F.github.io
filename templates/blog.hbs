@@ -1,0 +1,19 @@
+{{#if list}}
+<div class="blog-index">
+  <ul>
+  {{#each list}}
+    <li>
+      {{#>plain (mask ../current this.href this.title)}}
+        <span class="date">{{../bdate}}</span>
+        <span>
+          <span class="namespace">{{../namespace}}</span>
+          <span class="title">{{{../titleHtml}}}</span>
+        </span>
+      {{/plain}}
+    </li>
+  {{/each}}
+  </ul>
+</div>
+{{else}}
+{{#if content}}{{{content}}}{{/if}}
+{{/if}}

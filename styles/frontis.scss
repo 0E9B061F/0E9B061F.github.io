@@ -1,0 +1,87 @@
+.frontis {
+  .top {
+    width: 100%;
+    position: relative;
+    height: var(--top-height);
+    .bowler {
+      z-index: 2;
+      position: relative;
+      width: var(--bowler-width);
+    }
+    .code {
+      color: var(--gray800);
+      font-family: var(--cprime);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      text-align: justify;
+      font-weight: bold;
+      margin: 0;
+      width: var(--width);
+      font-size: var(--code-size);
+    }
+  }
+  .bottom {
+    width: 100%;
+    position: relative;
+    .title {
+      text-align: right;
+      font-weight: 500;
+      line-height: 1.2em;
+      font-size: var(--title-size);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.666666666em;
+      .title-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: end;
+        &.line1 {
+          height: 1.6em;
+          z-index: 1;
+        }
+        &.line2 {
+          z-index: 0;
+          height: 1.35em;
+        }
+      }
+      .software {
+        font-size: 3em; 
+        pointer-events: none;
+      }
+      .byline {
+        font-size: .6em;
+        font-family: var(--josefin);
+      }
+      .name {
+        font-size: 1.5em;
+        font-family: var(--cprime);
+        font-weight: 700;
+      }
+    }
+  }
+  .prompt {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-family: var(--cprime);
+    font-size: 1.6em;
+    color: var(--gray700);
+    .money {
+      float: left
+    }
+    .cursor {
+      width: .5em;
+      height: .9em;
+      border: 1px solid var(--gray700);
+      color: white;
+      float: left;
+      margin-left: .3em;
+    }
+  }
+  &:hover .cursor {
+    background-color: var(--gray700);
+  }
+}

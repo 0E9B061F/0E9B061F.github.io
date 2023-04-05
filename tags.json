@@ -1,0 +1,31 @@
+{
+  "title": "Tags",
+  "desc": "An index of tags used to categorize content on the site.",
+  "tags": {
+    "update": {
+      "color": "#6e7fd2",
+      "desc": "All updates to anything."
+    },
+    "project update": {
+      "desc": "Updates to my personal projects."
+    },
+    "site update": {
+      "desc": "Updates to this site."
+    },
+    "work sample": {
+      "desc": "Live samples of my work."
+    },
+    "ghast": {
+      "desc": "Posts about ghast.js"
+    },
+    "fantasma": {
+      "desc": "Posts about fantasma.js"
+    },
+    "project docs": {
+      "desc": "Documentation for my projects."
+    },
+    "media": {
+      "desc": "Any post with embedded media."
+    }
+  }
+}

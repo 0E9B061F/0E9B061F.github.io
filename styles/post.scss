@@ -1,0 +1,127 @@
+.post-info {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+    justify-content: center;
+    .post-date {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+
+.post {
+  font-size: 1.2rem;
+  margin-top: 0.83rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.25rem;
+  .title {
+    font-size: 2.2rem;
+    text-align: left;
+    margin: 1.5rem 0 0 0;
+    font-weight: 700;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @include headtxt;
+    clear: both;
+    margin-top: 3rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.55rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.45rem;
+  }
+  h5 {
+    font-size: 1.4rem;
+  }
+  h6 {
+    font-size: 1.4rem;
+  }
+  code {
+    font-family: var(--cprime);
+    background-color: var(--gray900);
+    padding: 0 0.35rem 0 0.35rem;
+  }
+  figure {
+    margin: 0 0 2rem 1rem;
+    clear: both;
+    figcaption {
+      font-size: 0.95rem;
+      width: min-content;
+      min-width: 100%;
+    }
+    &.fig-right,
+    &.fig-left {
+      max-width: 280px;
+    }
+    &.fig-right {
+      float: right;
+    }
+    &.fig-left {
+      float: left;
+    }
+    &.fig-center {
+      margin: 0 auto;
+      max-width: 450px;
+    }
+    a img:hover {
+      border: 2px solid var(--black);
+    }
+    img {
+      max-width: 100%;
+      border: 2px solid var(--white);
+      transition: border-color 0.2s ease-out;
+    }
+  }
+  .figallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    clear: both;
+    figure {
+      margin: 0;
+    }
+    p {
+      display: none;
+    }
+  }
+  .link-wiki:after,
+  .link-isfdb:after {
+    vertical-align: super;
+    font-size: 0.9rem;
+    font-family: 'Courgette', cursive;
+    font-weight: 500;
+    padding-left: 0.1rem;
+  }
+  .link-wiki:after {
+    content: "w";
+  }
+  .link-isfdb:after {
+    content: "sf";
+  }
+}
+
+.post .nav {
+  display: flex;
+  .navdir {
+    width: 50%;
+  }
+  .navdir .button {
+    font-weight: 500;
+  }
+  .navtitle {
+    @include headtxt;
+    font-size: 0.9rem;
+  }
+  .navdir.next {
+    text-align: right;
+  }
+}
