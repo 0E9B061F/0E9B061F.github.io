@@ -77,6 +77,10 @@ a {
   @include linklike;
 }
 
+.link.current {
+  font-weight: 700;
+}
+
 .namespace {
   font-family: var(--josefin);
   font-size: 0.8em;
@@ -286,15 +290,16 @@ a {
 .postnav {
   display: flex;
   flex-direction: column;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-align: left;
   .postnav-labels {
     display: flex;
     align-items: end;
     .postnav-label {
       @include headtxt;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.8em;
     }
     .page-title {
       flex: 1 0 auto;
@@ -306,7 +311,8 @@ a {
     display: flex;
     justify-content: space-between;
     .postnav-title {
-      font-size: 1.1rem;
+      font-size: 1em;
+      max-width: 45%;
       &.postnav-next {
         text-align: right;
       }

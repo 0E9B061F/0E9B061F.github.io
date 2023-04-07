@@ -59,9 +59,9 @@ export class SiteNode {
     this.bdate = new Date(this.btime).toLocaleDateString("en-US").replace(/\//g, "-")
     this.isdir = stat.isDirectory()
 
-    const base = basename(this.path)
-    this.core = this.isdir ? base : base.replace(/\.[^.]+?$/, "")
-    this.ext = this.isdir ? null : base.replace(/^.+\./, "")
+    this.base = basename(this.path)
+    this.core = this.isdir ? this.base : this.base.replace(/\.[^.]+?$/, "")
+    this.ext = this.isdir ? null : this.base.replace(/^.+\./, "")
     this.pretty = tcase(this.core.replace(/[_\-]+/g, " "))
 
     this.outPath = this.conf.outPath
@@ -102,7 +102,6 @@ export class SiteNode {
   }
   async visit(actions) {
     const ids = Object.keys(actions)
-    console.log(this.id)
     for (let x = 0; x < ids.length; x++) {
       if (this.hasId(ids[x])) {
         await actions[ids[x]](this)
@@ -153,9 +152,9 @@ export class SiteNode {
   async wrap(ctx) {
     if (this.hasMod("template") && this.wraps) {
       let ctxAll = this.ctxAll || {}
-      if (typeof (ctxAll) === "function") ctxAll = await ctxAll(this)
+      if (typeof (ctxAll) === "function") ctxAll = await ctxAll(this, ctx)
       let ctxWrap = this.ctxWrap || {}
-      if (typeof (ctxWrap) === "function") ctxWrap = await ctxWrap(this)
+      if (typeof (ctxWrap) === "function") ctxWrap = await ctxWrap(this, ctx)
       ctx = { ...ctx, local: this, trail: [...ctx.trail, this], ...ctxAll, ...ctxWrap }
       if (this.depthname) ctx[this.depthname] = this
       ctx = { ...ctx, content: this.wrapper ? this.wrapper(ctx) : this.template(ctx) }
@@ -173,11 +172,12 @@ export class SiteNode {
       ...conf,
     }
     if (this.hasMod("template")) {
+      let ctx = { site: this.root, current: this, local: this, trail: [this] }
       let ctxAll = this.ctxAll || {}
-      if (typeof (ctxAll) === "function") ctxAll = await ctxAll(this)
+      if (typeof (ctxAll) === "function") ctxAll = await ctxAll(this, ctx)
       let ctxSelf = this.ctxSelf || {}
-      if (typeof (ctxSelf) === "function") ctxSelf = await ctxSelf(this)
-      let ctx = { site: this.root, current: this, local: this, trail: [this], ...ctxAll, ...ctxSelf, ...conf.ctx }
+      if (typeof (ctxSelf) === "function") ctxSelf = await ctxSelf(this, ctx)
+      ctx = { ...ctx, ...ctxAll, ...ctxSelf, ...conf.ctx }
       if (this.depthname) ctx[this.depthname] = this
       ctx = { ...ctx, content: this.template(ctx) }
       if (this.wrapper) return await this.wrap(ctx)

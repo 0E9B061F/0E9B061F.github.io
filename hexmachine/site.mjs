@@ -11,6 +11,8 @@ import Gallery from "./gallery.mjs"
 import TagSet from "./tag-set.mjs"
 import { Index } from "./space.mjs"
 
+import fse from "fs-extra"
+
 
 const directiveMod = async node=> {
   node.hmd.directive("fig", ["leaf", "text"], ast=> {
@@ -99,6 +101,17 @@ const directiveMod = async node=> {
 }
 
 
+export class Copier extends SiteNode {
+  static modules = [
+    async node => {
+      node.hook("compile", async n => {
+        await fse.copy(n.path, n.outfile(n.base))
+      })
+    },
+  ]
+}
+
+
 class Site extends SiteNode {
   static modules = [
     async n=> {
@@ -115,10 +128,11 @@ class Site extends SiteNode {
     },
     templateMod("home", {
       wrapper: "site",
-      ctxAll: async node=> {
+      ctxAll: async (node, ctx)=> {
+        console.log(node.href, ctx?.current?.href)
         return {
-          long: await node.siteindex.external(25),
-          short: await node.siteindex.external(5),
+          long: await node.siteindex.external(25, ctx),
+          short: await node.siteindex.external(5, ctx),
           mainTags: node.tags.clip(10),
         }
       },
@@ -131,6 +145,8 @@ class Site extends SiteNode {
       n.docs = await n.add(Gallery, { name: "docs", outName: "docs" })
       n.tags = await n.add(TagSet, { name: "", outName: "tags" })
       n.siteindex = await n.add(Index, { name: "", outName: "index" })
+      await n.add(Copier, { name: "favicon.ico", outName: "" })
+      await n.add(Copier, { name: "favicons", outName: "site" })
     }
   ]
   async init() {

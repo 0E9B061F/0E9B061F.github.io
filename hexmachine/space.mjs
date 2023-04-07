@@ -26,7 +26,8 @@ export class Post extends SiteNode {
     },
   ]
   async finally() {
-    this.namespace = this.parent.href.slice(1)
+    const parts = this.parent.href.match(/[^/]+/g)
+    this.namespace = parts[parts.length - 1]
   }
 }
 
@@ -87,7 +88,6 @@ export const processPosts = async node=> {
     }
   }
 }
-
 export const postMod =(type, match)=> {
   return [
     scanMod(async (n, fn, abs) => {
@@ -113,10 +113,11 @@ export class Space extends SiteNode {
   clip(n = 0) {
     return n ? this.posts.slice(0, n) : this.posts
   }
-  async external(...args) {
+  async external(n=0, ctx={}) {
     return await this.render({
       solo: true, ctx: {
-        list: this.clip(...args),
+        ...ctx,
+        list: this.clip(n),
       }
     })
   }

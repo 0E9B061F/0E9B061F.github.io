@@ -37,7 +37,7 @@ export class Image extends SiteNode {
     return join(this.outPath, this.thName(size))
   }
   href(size) {
-    return mkhref(this.root.outPath, this.thOut(size))
+    return mkhref(this.root.outPath, this.thOut(size), true)
   }
 }
 

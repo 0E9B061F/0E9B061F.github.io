@@ -4,9 +4,10 @@ export const tcase = s => {
   return s.split(" ").map(w => w[0].toUpperCase() + w.slice(1)).join(" ")
 }
 
-export const mkhref = (base, abs) => {
+export const mkhref = (base, abs, file=false) => {
   const p = relative(base, abs)
-  return `/${p}`
+  const trail = file ? "" : "/"
+  return `/${p}${trail}`
 }
 
 export const ancestors =obj=> {

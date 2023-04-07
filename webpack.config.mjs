@@ -5,7 +5,7 @@ import Site from "./hexmachine/site.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const MODE = process.env.NODE_ENV || "production"
-const OUTP = "/tmp/build"
+const OUTP = "../0E9B061F.github.io"
 
 
 class MyExampleWebpackPlugin {

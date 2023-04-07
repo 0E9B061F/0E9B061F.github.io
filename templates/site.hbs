@@ -94,15 +94,33 @@
         {{#if post}}
           {{#if post.desc}}<div class="page-desc">{{post.desc}}</div>{{/if}}
           {{#if post.isPost}}
-          <div class="post-info">
-            {{#if post.bdate}}<div class="post-date">{{local.bdate}}</div>{{/if}}
-            {{#if post.taglist}}
-            <div class="tag-list">
-              {{#each post.taglist}}
-              {{>tagLink this current=../current}}
-              {{/each}}
+          <div class="postnav">
+            <div class="postnav-labels">
+              <div class="postnav-label postnav-prev" {{#unless post.prev}}style="visibility:hidden" {{/unless}}>PREV</div>
+              <div class="page-title heading">
+                <div class="post-info">
+                  <div class="post-date">{{post.bdate}}</div>
+                  <div class="tag-list">
+                    {{#each post.taglist}}
+                    {{>tagLink this current=../current}}
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+              <div class="postnav-label postnav-next" {{#unless post.next}}style="visibility:hidden" {{/unless}}>NEXT</div>
             </div>
-            {{/if}}
+            <div class="postnav-titles">
+              <div class="postnav-title postnav-prev">
+                {{#if post.prev}}
+                <a class="link active button" href="{{post.prev.href}}">{{{post.prev.titleHtml}}}</a>
+                {{/if}}
+              </div>
+              <div class="postnav-title postnav-next">
+                {{#if post.next}}
+                <a class="link active button" href="{{post.next.href}}">{{{post.next.titleHtml}}}</a>
+                {{/if}}
+              </div>
+            </div>
           </div>
           {{/if}}
         {{else}}
@@ -205,11 +223,11 @@
       <div class="inline sidebar-heading heading">
         <div class="inline-title">
           <h2 class="sidebar-title t1">
-            {{>link (mask current "/index" "INDEX")}}
+            {{>link (mask current site.siteindex.href "INDEX")}}
           </h2>
           <div class="sep">&middot;</div>
           <h3 class="sidebar-title t2">
-            {{>link (mask current "/tags" "TAGS")}}
+            {{>link (mask current site.tags.href "TAGS")}}
           </h2>
           <div class="sep">&middot;</div>
         </div>
