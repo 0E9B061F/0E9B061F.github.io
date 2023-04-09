@@ -191,28 +191,28 @@
       <div class="menu-item">
         <div class="menu-bullet"><img src="{{image "hedera-1"}}" /></div>
         <div class="menu-text">
-          <h2 class="menu-heading heading">{{>link (mask current site.gallery.href "GALLERY")}}</h2>
+          <h2 class="hextitle t2 heading">{{>link (mask current site.gallery.href "GALLERY")}}</h2>
           <span class="menu-desc">{{site.gallery.desc}}</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-bullet"><img src="{{image "hedera-1"}}"/></div>
         <div class="menu-text">
-          <h2 class="menu-heading heading">{{>link (mask current site.docs.href "DOCS")}}</h2>
+          <h2 class="hextitle t2 heading">{{>link (mask current site.docs.href "DOCS")}}</h2>
           <span class="menu-desc">{{site.docs.desc}}</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-bullet"><img src="{{image "hedera-1"}}" /></div>
         <div class="menu-text">
-          <h2 class="menu-heading heading">{{>link (mask current site.blog.href "WORK LOG")}}</h2>
+          <h2 class="hextitle t2 heading">{{>link (mask current site.blog.href "WORK LOG")}}</h2>
           <span class="menu-desc">{{site.blog.desc}}</span>
         </div>
       </div>
     </div>
     {{#if toc}}
     <div class="toc">
-      <h2 class="sidebar-title sidebar-heading">TABLE OF CONTENTS</h2>
+      <div class="hextitle t3 hexblock">TABLE OF CONTENTS</div>
       {{{toc}}}
     </div>
     {{/if}}
@@ -220,17 +220,15 @@
     {{#unless hideSideIndex}}
     <div class="long-index">
 
-      <div class="inline sidebar-heading heading">
-        <div class="inline-title">
-          <h2 class="sidebar-title t1">
-            {{>link (mask current site.siteindex.href "INDEX")}}
-          </h2>
-          <div class="sep">&middot;</div>
-          <h3 class="sidebar-title t2">
-            {{>link (mask current site.tags.href "TAGS")}}
-          </h2>
-          <div class="sep">&middot;</div>
-        </div>
+      <div class="hexblock hexline heading">
+        <h2 class="hexline-item hextitle t3">
+          {{>link (mask current site.siteindex.href "INDEX")}}
+        </h2>
+        <div class="sep hextitle t3">&middot;</div>
+        <h3 class="hexline-item hextitle t4">
+          {{>link (mask current site.tags.href "TAGS")}}
+        </h3>
+        <div class="sep hextitle t3">&middot;</div>
         <div class="tag-list">
           {{#each mainTags}}
           {{>tagLink this current=../current}}

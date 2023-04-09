@@ -1,0 +1,50 @@
+.hextitle {
+  @include headtxt;
+  margin: 0;
+  &.t1 {
+    font-size: 2.5em;
+  }
+  &.t2 {
+    font-size: 2em;
+  }
+  &.t3 {
+    font-size: 1.5em;
+  }
+  &.t4 {
+    font-size: 1.17em;
+  }
+}
+
+.hexline {
+  display: flex;
+  align-items: end;
+  gap: 0.35em;
+  .hexline-item {
+    display: flex;
+    align-items: baseline;
+    gap: inherit;
+  }
+  .sep {
+    user-select: none;
+  }
+}
+
+.hexblock {
+  margin: 0;
+  margin-bottom: 0.5em;
+  &.b1 {
+    margin-bottom: 1em;
+  }
+  &.b2 {
+    margin-bottom: 2em;
+  }
+  &.b3 {
+    margin-bottom: 3em;
+  }
+  &.b4 {
+    margin-bottom: 4em;
+  }
+  &.b5 {
+    margin-bottom: 5em;
+  }
+}

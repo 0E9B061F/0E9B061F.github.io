@@ -58,6 +58,7 @@ $blue: #6e7fd2;
   }
 }
 
+@import "core";
 @import "frontis";
 @import "menu";
 @import "post";
@@ -92,39 +93,9 @@ a {
   min-width: calc(320px - var(--pagegap));
   max-width: 500px;
   flex: 1 1 auto;
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  .sidebar-title {
-    @include headtxt;
-    margin: 0;
-    &.t1 {
-      font-size: 1.5em;
-    }
-    &.t2 {
-      font-size: 1.17em;
-    }
-  }
-  .sidebar-heading {
-    margin: 0;
-    margin-bottom: 0.5rem;
-  }
-  .inline {
-    display: flex;
-    align-items: end;
-    gap: 0.35rem;
-    .inline-title {
-      display: flex;
-      align-items: baseline;
-      gap: inherit;
-    }
-    .sep {
-      font-family: var(--josefin);
-      font-size: 1.5em;
-      user-select: none;
-    }
-  }
   .toc {
     ol, ul {
       font-size: 1.3rem;
@@ -258,7 +229,10 @@ a {
   margin-top: 1rem;
   width: var(--rule-width);
 }
-
+.page-content .rule {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
 
 
 
@@ -296,13 +270,17 @@ a {
   .postnav-labels {
     display: flex;
     align-items: end;
+    gap: 1em;
     .postnav-label {
       @include headtxt;
       font-weight: 600;
       font-size: 0.8em;
+      flex: 1 0 auto;
+    }
+    .postnav-next {
+      text-align: right;
     }
     .page-title {
-      flex: 1 0 auto;
       margin-bottom: 0;
       text-align: center;
     }
@@ -485,6 +463,11 @@ a {
     --code-size: 6px;
     --pm-width: 200px;
     --dl-margin: 0;
+  }
+  .postnav .post-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
   }
   .sidebar {
     display: none;

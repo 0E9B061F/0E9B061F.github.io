@@ -1,21 +1,37 @@
 <div class="short-index">
-  <div class="menu menu-h">
+  <div class="menu menu-h hexblock b2">
     <div class="menu-item">
       <h2 class="menu-heading heading">{{>link (mask current site.blog.href "WORK LOG")}}</h2>
-      <span class="menu-desc">Project updates and notes about programming, design, and other topics.</span>
+      <span class="menu-desc">{{site.blog.desc}}</span>
     </div>
     <div class="menu-item">
       <h2 class="menu-heading heading">{{>link (mask current site.gallery.href "GALLERY")}}</h2>
-      <span class="menu-desc">Examples of past work.</span>
+      <span class="menu-desc">{{site.gallery.desc}}</span>
     </div>
     <div class="menu-item">
       <h2 class="menu-heading heading">{{>link (mask current site.docs.href "DOCS")}}</h2>
-      <span class="menu-desc">Technical documentation for the projects listed here.</span>
+      <span class="menu-desc">{{site.docs.desc}}</span>
     </div>
-    
+  </div>
+  <div class="hexblock b1 hexline heading">
+    <h2 class="hexline-item hextitle t3">
+      {{>link (mask current site.siteindex.href "INDEX")}}
+    </h2>
+    <div class="sep hextitle t3">&middot;</div>
+    <h3 class="hexline-item hextitle t4">
+      {{>link (mask current site.tags.href "TAGS")}}
+    </h3>
+    <div class="sep hextitle t3">&middot;</div>
+    <div class="tag-list">
+      {{#each mainTags}}
+      {{>tagLink this current=../current}}
+      {{/each}}
+    </div>
   </div>
   {{{short}}}
-  <img class="rule start-index" src="{{image "dash-4"}}" />
+  <div class="centered">
+    <img class="rule" src="{{image "dash-4"}}" />
+  </div>
 </div>
 
 <div class="software-lists">
