@@ -59,6 +59,7 @@ $blue: #6e7fd2;
 }
 
 @import "core";
+@import "listing";
 @import "frontis";
 @import "menu";
 @import "post";
@@ -82,6 +83,10 @@ a {
   font-weight: 700;
 }
 
+ol, ul {
+  margin: 0;
+}
+
 .namespace {
   font-family: var(--josefin);
   font-size: 0.8em;
@@ -90,59 +95,21 @@ a {
 }
 
 .sidebar {
+  --sidebar-gap: 2em;
   min-width: calc(320px - var(--pagegap));
   max-width: 500px;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  .toc {
-    ol, ul {
-      font-size: 1.3rem;
-      margin: 0;
-    }
-  }
+  gap: var(--sidebar-gap);
+  padding-top: var(--sidebar-gap);
   .foot {
-    margin-top: 4rem;
+    margin-top: var(--sidebar-gap);
   }
   .asterism {
     max-height: 256px;
   }
 }
-
-.blog-index {
-  text-align: left;
-}
-.blog-index ol,
-.blog-index ul {
-  font-size: 1.3rem;
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  margin: 0;
-}
-.blog-index li:not(:first-child) {
-  margin-top: 0.75rem;
-}
-.blog-index .link {
-  display: flex;
-  gap: 0.5rem;
-}
-.blog-index .link .date {
-  font-weight: 500;
-  color: var(--black);
-  font-size: 1em;
-  min-width: 6.25rem;
-  display: block;
-  text-align: center;
-}
-.blog-index .link.active .title {
-  @include linkmain;
-}
-.blog-index .link.active:hover .title {
-  @include linkover;
-}
-
 
 .gallery {
   display: flex;
@@ -246,6 +213,10 @@ a {
     max-height: 128px;
     max-width: 128px;
   }
+}
+
+.home-navigation {
+  margin: 0 1em 0 1em;
 }
 
 .home, .content {
@@ -472,7 +443,7 @@ a {
   .sidebar {
     display: none;
   }
-  .short-index {
+  .page .home-navigation {
     display: block;
   }
   .start-contact,
@@ -499,15 +470,6 @@ a {
   .gallery .gallery-item {
     width: 100%;
   }
-  .short-index .menu-desc {
-    display: none;
-  }
-  .short-index .menu-heading {
-    font-size: 1rem;
-  }
-  .short-index .menu-item {
-    width: 100%;
-  }
   .deco {
     &.cat-bar-1 {
       top: -18px;
@@ -520,9 +482,6 @@ a {
   }
 }
 @media (min-width: 320px) {
-  .short-index .hmenu-heading {
-    font-size: 1.4rem;
-  }
   :root {
     --width: 320px;
     --pm-width: 200px;
@@ -541,9 +500,6 @@ a {
   }
   .software-list dd {
     margin-left: 1em;
-  }
-  .short-index .menu-heading {
-    font-size: 1.2rem;
   }
   .deco {
     &.cat-bar-1 {
@@ -583,9 +539,6 @@ a {
     margin-left: 1rem;
     gap: 0.75rem;
   }
-  .short-index .menu-heading {
-    font-size: 1.8rem;
-  }
   .deco {
     &.cat-bar-1 {
       top: -59px;
@@ -620,12 +573,6 @@ a {
   .gallery .gallery-item {
     width: calc(50% - 0.5rem);
   }
-  .short-index .menu-desc {
-    display: block;
-  }
-  .short-index .menu-heading {
-    font-size: 2rem;
-  }
   .deco {
     position: absolute;
     &.cat-bar-1 {
@@ -642,7 +589,7 @@ a {
   .sidebar {
     display: flex;
   }
-  .short-index {
+  .page .home-navigation {
     display: none;
   }
 }

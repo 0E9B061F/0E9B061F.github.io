@@ -1,5 +1,4 @@
-.hextitle {
-  @include headtxt;
+.hextitle, .hextxt {
   margin: 0;
   &.t1 {
     font-size: 2.5em;
@@ -10,9 +9,27 @@
   &.t3 {
     font-size: 1.5em;
   }
-  &.t4 {
-    font-size: 1.17em;
+  &, &.t4 {
+    font-size: 1.2em;
   }
+  &.t5 {
+    font-size: 1.1em;
+  }
+  &.t6 {
+    font-size: 1em;
+  }
+  &.c1 {
+    font-weight: 700;
+  }
+  &.c2 {
+    font-weight: 600;
+  }
+  &.c3 {
+    font-weight: 500;
+  }
+}
+.hextitle {
+  font-family: var(--josefin);
 }
 
 .hexline {
@@ -31,7 +48,9 @@
 
 .hexblock {
   margin: 0;
-  margin-bottom: 0.5em;
+  &, &.b0 {
+    margin-bottom: 0.5em;
+  }
   &.b1 {
     margin-bottom: 1em;
   }

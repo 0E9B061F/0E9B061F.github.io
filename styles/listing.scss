@@ -1,0 +1,22 @@
+.hexlisting {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  .hexentry {
+    text-indent: -1em;
+    padding-left: 1em;
+  }
+}
+
+.blog-listing {
+  .link.active .title {
+    @include linkmain;
+  }
+  .link.active:hover .title {
+    @include linkover;
+  }
+}

@@ -1,8 +1,10 @@
 .tag-list {
+  --lineh: 1.35375em;
   display: flex;
   flex-wrap: wrap;
   font-family: var(--josefin);
   gap: 0 0.3em;
+  max-height: calc(var(--lineh) * 3);
   overflow: hidden;
   .tag-link {
     display: flex;
@@ -39,7 +41,6 @@
     }
   }
 }
-
 
 .tag {
   .tag-name {

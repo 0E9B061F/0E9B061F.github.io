@@ -9,7 +9,7 @@ export class Tag extends SiteNode {
     async node=> {
       node.tag = node.outName
       node.title = node.tag
-      node.titlePlain = `${node.tag} (Tag)`
+      node.titlePlain = node.tag
       node.titleHtml = node.tag
       node.posts = node.parent.raw[node.tag]
       node.count = node.posts.length

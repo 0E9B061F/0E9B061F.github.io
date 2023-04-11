@@ -62,26 +62,4 @@
       }
     }
   }
-  .prompt {
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    font-family: var(--cprime);
-    font-size: 1.6em;
-    color: var(--gray700);
-    .money {
-      float: left
-    }
-    .cursor {
-      width: .5em;
-      height: .9em;
-      border: 1px solid var(--gray700);
-      color: white;
-      float: left;
-      margin-left: .3em;
-    }
-  }
-  &:hover .cursor {
-    background-color: var(--gray700);
-  }
 }

@@ -1,19 +1,15 @@
 {{#if list}}
-<div class="blog-index">
-  <ul>
-  {{#each list}}
-    <li>
-      {{#>plain (mask ../current this.href this.title)}}
-        <span class="date">{{../bdate}}</span>
-        <span>
-          <span class="namespace">{{../namespace}}</span>
-          <span class="title">{{{../titleHtml}}}</span>
-        </span>
-      {{/plain}}
-    </li>
-  {{/each}}
-  </ul>
-</div>
+<ul class="hexlisting blog-listing">
+{{#each list}}
+  <li class="hexentry">
+    {{#>plain (mask ../current this.href this.title)}}
+      <span class="date hextxt t6 c3">{{../bdate}}</span>
+      <span class="namespace hextxt t6">{{../namespace}}</span>
+      <span class="title hextxt t4">{{{../titleHtml}}}</span>
+    {{/plain}}
+  </li>
+{{/each}}
+</ul>
 {{else}}
 {{#if content}}{{{content}}}{{/if}}
 {{/if}}
