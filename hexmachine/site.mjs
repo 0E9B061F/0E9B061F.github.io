@@ -52,7 +52,7 @@ const directiveMod = async node=> {
 
     data.hName = "div"
     data.hProperties = {
-      class: ["figallery"]
+      class: ["figallery", "hexblock", "b1"]
     }
   })
 

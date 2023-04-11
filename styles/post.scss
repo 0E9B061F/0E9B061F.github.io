@@ -1,65 +1,81 @@
 .post-info {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.75em;
     align-items: baseline;
     justify-content: center;
     .post-date {
-      font-size: 1.2rem;
+      font-size: 1.2em;
       font-weight: 500;
     }
   }
 
 .post {
-  font-size: 1.2rem;
-  margin-top: 0.83rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.2em;
+  margin-top: 0.83em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: 1.25em;
   .title {
-    font-size: 2.2rem;
+    font-size: 2.2em;
     text-align: left;
-    margin: 1.5rem 0 0 0;
+    margin: 1.5em 0 0 0;
     font-weight: 700;
   }
   h1, h2, h3, h4, h5, h6 {
     @include headtxt;
     clear: both;
-    margin-top: 3rem;
+    margin-top: 3em;
   }
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.6em;
   }
   h2 {
-    font-size: 1.55rem;
+    font-size: 1.55em;
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
   h4 {
-    font-size: 1.45rem;
+    font-size: 1.45em;
   }
   h5 {
-    font-size: 1.4rem;
+    font-size: 1.4em;
   }
   h6 {
-    font-size: 1.4rem;
+    font-size: 1.4em;
   }
   code {
     font-family: var(--cprime);
     background-color: var(--gray900);
-    padding: 0 0.35rem 0 0.35rem;
+    padding: 0 0.35em 0 0.35em;
   }
   figure {
-    margin: 0 0 2rem 1rem;
     clear: both;
+    margin: 0 0 0.5em 0.5em;
+    @media (min-width: 768px) {
+      margin: 0 0 2em 1em;
+    }
     figcaption {
-      font-size: 0.95rem;
+      font-size: 0.75em;
       width: min-content;
       min-width: 100%;
+      @media (min-width: 425px) {
+        font-size: 0.85em;
+      }
+      @media (min-width: 768px) {
+        font-size: 0.95em;
+      }
     }
     &.fig-right,
     &.fig-left {
-      max-width: 280px;
+      --thsize: 280px;
+      max-width: calc(var(--thsize) * 0.4);
+      @media (min-width: 425px) {
+        max-width: calc(var(--thsize) * 0.5);
+      }
+      @media (min-width: 768px) {
+        max-width: var(--thsize);
+      }
     }
     &.fig-right {
       float: right;
@@ -84,7 +100,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1em;
     clear: both;
     figure {
       margin: 0;
@@ -96,10 +112,10 @@
   .link-wiki:after,
   .link-isfdb:after {
     vertical-align: super;
-    font-size: 0.9rem;
+    font-size: 0.9em;
     font-family: 'Courgette', cursive;
     font-weight: 500;
-    padding-left: 0.1rem;
+    padding-left: 0.1em;
   }
   .link-wiki:after {
     content: "w";
@@ -119,7 +135,7 @@
   }
   .navtitle {
     @include headtxt;
-    font-size: 0.9rem;
+    font-size: 0.9em;
   }
   .navdir.next {
     text-align: right;

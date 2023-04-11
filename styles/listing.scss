@@ -1,5 +1,4 @@
 .hexlisting {
-  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -13,6 +12,9 @@
 }
 
 .blog-listing {
+  .page & {
+    margin: 0 1em 0 1em;
+  }
   .link.active .title {
     @include linkmain;
   }

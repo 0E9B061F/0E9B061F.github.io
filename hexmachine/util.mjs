@@ -6,8 +6,12 @@ export const tcase = s => {
 
 export const mkhref = (base, abs, file=false) => {
   const p = relative(base, abs)
-  const trail = file ? "" : "/"
-  return `/${p}${trail}`
+  if (p) {
+    const trail = file ? "" : "/"
+    return `/${p}${trail}`
+  } else {
+    return "/"
+  }
 }
 
 export const ancestors =obj=> {

@@ -87,9 +87,9 @@
       <div class="centered"><img class="rule" src="{{image "dash-4"}}" /></div>
       <div class="page-content">
       <div class="page-header">
-        <div class="page-titles heading">
-          <h1 class="page-title">{{#>link (mask current page.href page.title)}}{{{../page.titleHtml}}}{{/link}}</h1>
-          {{#if post}} &mdash; <h2 class="post-title">{{{post.titleHtml}}}</h2>{{/if}}
+        <div class="hextitle t1 c1 heading">
+          {{#>link (mask current page.href page.title)}}{{{../page.titleHtml}}}{{/link}}
+          {{#if post}} &mdash; <span>{{{post.titleHtml}}}</span>{{/if}}
         </div>
         {{#if post}}
           {{#if post.desc}}<div class="page-desc">{{post.desc}}</div>{{/if}}

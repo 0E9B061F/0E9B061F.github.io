@@ -3,12 +3,20 @@ $blue: #6e7fd2;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+$desk-min: 768px;
+$desk-max: 1000px;
+$side-min: 300px;
+$side-max: 400px;
+$pagegap: 2em;
+$break-desktop: calc($desk-min + $pagegap + $side-min);
+$break-wide: calc($desk-min + $pagegap + $side-max);
+
 :root {
   --cprime: "Courier Prime", Terminus, Consolas, monospace, 'Noto Emoji';
   --josefin: "Josefin Sans", Arial, sans, 'Noto Emoji';
   --alegreya: "Alegreya", "Times New Roman", Times, serif, 'Noto Emoji';
 
-  --pagegap: 2rem;
+  --pagegap: #{$pagegap};
 
   --black: #191919;
   --white: #fcfcff;
@@ -96,8 +104,8 @@ ol, ul {
 
 .sidebar {
   --sidebar-gap: 2em;
-  min-width: calc(320px - var(--pagegap));
-  max-width: 500px;
+  min-width: $side-min;
+  max-width: $side-max;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -107,7 +115,7 @@ ol, ul {
     margin-top: var(--sidebar-gap);
   }
   .asterism {
-    max-height: 256px;
+    max-height: 16em;
   }
 }
 
@@ -167,17 +175,17 @@ ol, ul {
   width: var(--width);
   overflow: hidden;
   flex: 0 0 auto;
-}
-
-.page-titles {
-  @include headtxt;
-  font-size: 2.5rem;
-  font-weight: 700;
-  .page-title, .post-title {
-    font-size: 1em;
-    display: inline;
+  @media (min-width: 0px) {
+    font-size: 0.9rem;
+  }
+  @media (min-width: 425px) {
+    font-size: 0.95rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1rem;
   }
 }
+
 .page-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -220,10 +228,7 @@ ol, ul {
 }
 
 .home, .content {
-  clear: both;
   position: relative;
-  bottom: 50px;
-  margin-top: 3em
 }
 .home.foot {
   margin-top: 0;
@@ -585,7 +590,8 @@ ol, ul {
     }
   }
 }
-@media (min-width: 1088px) {
+
+@media (min-width: $break-desktop) {
   .sidebar {
     display: flex;
   }

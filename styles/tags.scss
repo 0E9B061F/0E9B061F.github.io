@@ -24,8 +24,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin: 0 1em 0 1em;
   .tag-card {
-    width: calc((100% / 3) - (2rem / 3));
+    width: 100%;
+    @media (min-width: 425px) {
+      width: calc((100% / 2) - (2rem / 2));
+    }
+    @media (min-width: 768px) {
+      width: calc((100% / 3) - (2rem / 3));
+    }
     .tag-name {
       padding-right: 0.5em;
       a {
