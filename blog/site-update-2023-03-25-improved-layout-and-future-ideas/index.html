@@ -134,15 +134,44 @@ Work Log  </a>
           </div>
       </div>
       <div class="post">
-  <p>🎉 <a href="https://0E9B061F.github.io">0E9B061F.github.io</a> has been updated. This update adds minor visual improvements. Support for inline markdown in titles was added. Support for emojis in markdown was added 😁. Emojis are displayed using the monochrome <a href="https://fonts.google.com/noto/specimen/Noto+Emoji">Noto Emoji</a> for better consistency with the design. Minor tweaks and improvements to the layout were also made.</p>
+  <p>🎉 <a href="https://0E9B061F.github.io">0E9B061F.github.io</a> has been updated. This
+update adds minor visual improvements. Support for inline markdown in titles was
+added. Support for emojis in markdown was added 😁. Emojis are displayed
+using the monochrome
+<a href="https://fonts.google.com/noto/specimen/Noto+Emoji">Noto Emoji</a> for better
+consistency with the design. Minor tweaks and improvements to the layout were
+also made.</p>
 <h1 id="observations"><a aria-hidden="true" tabindex="-1" href="#observations"><span>§</span></a>Observations</h1>
-<p>I'm unhappy with my options for emoji support in markdown. My goal was to add emoji support using monochrome emojis, with support for my own custom emojis. This turned out to be more difficult than I had hoped.</p>
-<p>Using <code>markdown-it</code> the only real option is <code>markdown-it-emoji</code>. This works well enough, but restricts you to three hardcoded sets of emoji names — there seems to be no way to add your own custom emojis. It does allow you to customize its output, but I didn't have much luck with this. The icon fonts I looked at used different naming schemes (<code>mega</code> vs <code>megaphone</code>) making usage difficult, and while I liked fontawesome's emojis many of them are paywalled. The documentation mentions using twemoji but twemoji offers no monochrome option and similar offerings seem to be the same. There are a couple of little-used plugins for <code>markdown-it</code> that add direct support for fontawesome, but the paywall issue remains, and I'd prefer to use normal emoji names.</p>
-<p>I haven't researched or tried every available option. The <code>marked</code> ecosystem appears to be even more limited — the only available package for handling emojis is new and little-used. The <code>openmoji</code> set appears promising and offers a monochrome option but these are outlines rather than filled, which I would prefer.</p>
-<p>For now I'll be using <code>markdown-it-emoji</code> and Google's monochrome Noto Emoji webfont to display emojis. This approach means I have no custom emoji support, and I'd prefer solid emojis rather than lineart, but its otherwise suitable. In the future I may make my own plugin for <code>markdown-it</code> emojis with support for custom emojis.</p>
+<p>I'm unhappy with my options for emoji support in markdown. My goal was to add
+emoji support using monochrome emojis, with support for my own custom emojis.
+This turned out to be more difficult than I had hoped.</p>
+<p>Using <code>markdown-it</code> the only real option is <code>markdown-it-emoji</code>. This works well
+enough, but restricts you to three hardcoded sets of emoji names — there seems
+to be no way to add your own custom emojis. It does allow you to customize its
+output, but I didn't have much luck with this. The icon fonts I looked at used
+different naming schemes (<code>mega</code> vs <code>megaphone</code>) making usage difficult, and
+while I liked fontawesome's emojis many of them are paywalled. The documentation
+mentions using twemoji but twemoji offers no monochrome option and similar
+offerings seem to be the same. There are a couple of little-used plugins for
+<code>markdown-it</code> that add direct support for fontawesome, but the paywall issue
+remains, and I'd prefer to use normal emoji names.</p>
+<p>I haven't researched or tried every available option. The <code>marked</code> ecosystem
+appears to be even more limited — the only available package for handling
+emojis is new and little-used. The <code>openmoji</code> set appears promising and offers a
+monochrome option but these are outlines rather than filled, which I would
+prefer.</p>
+<p>For now I'll be using <code>markdown-it-emoji</code> and Google's monochrome Noto Emoji
+webfont to display emojis. This approach means I have no custom emoji support,
+and I'd prefer solid emojis rather than lineart, but its otherwise suitable. In
+the future I may make my own plugin for <code>markdown-it</code> emojis with support for
+custom emojis.</p>
 <h1 id="plans"><a aria-hidden="true" tabindex="-1" href="#plans"><span>§</span></a>Plans</h1>
 <ul>
-<li>My next goal is to add a persistent pages feature. This will create a hierarchy of "persistent" posts that will be linked from the main menu (I'll probably replace the docs link). This will allow me to highlight chosen posts and prevents them from getting lost in the blog index as it grows. Posts will be made persistent by assigning them a path in their frontmatter.</li>
+<li>My next goal is to add a persistent pages feature. This will create a
+hierarchy of "persistent" posts that will be linked from the main menu (I'll
+probably replace the docs link). This will allow me to highlight chosen posts
+and prevents them from getting lost in the blog index as it grows. Posts will
+be made persistent by assigning them a path in their frontmatter.</li>
 <li>I need to add a TOC to posts.</li>
 <li>I'm not entirely happy with my current font selections.</li>
 </ul>
@@ -281,6 +310,14 @@ Work Log  </a>
           </div>      <div class="tag tag-link">
             <div class="tag-sep">&middot;</div>
             <span class="tag-name">
+                <a class="link active" href="/tags/work sample/">
+              work sample
+            </a>
+          <span class="tag-count">3</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
                 <a class="link active" href="/tags/ghast/">
               ghast
             </a>
@@ -291,14 +328,6 @@ Work Log  </a>
             <span class="tag-name">
                 <a class="link active" href="/tags/site update/">
               site update
-            </a>
-          <span class="tag-count">2</span>
-            </span>
-          </div>      <div class="tag tag-link">
-            <div class="tag-sep">&middot;</div>
-            <span class="tag-name">
-                <a class="link active" href="/tags/work sample/">
-              work sample
             </a>
           <span class="tag-count">2</span>
             </span>
@@ -346,6 +375,13 @@ Work Log  </a>
       </div>
     
       <ul class="hexlisting blog-listing">
+      <li class="hexentry">
+      <a class="plain link active" href="/gallery/majesty/">
+          <span class="date hextxt t6 c3">5-6-2023</span>
+          <span class="namespace hextxt t6">gallery</span>
+          <span class="title hextxt t4">Majesty WIP</span>
+      </a>
+      </li>
       <li class="hexentry">
       <a class="plain link active" href="/blog/introducing-weatherman-v0.1.0/">
           <span class="date hextxt t6 c3">5-4-2023</span>
