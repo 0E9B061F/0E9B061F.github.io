@@ -8,7 +8,8 @@ tags:
   - ghast
 ---
 
-Updated :european_castle: [ghast.js](https://github.com/0E9B061F/ghast.js) to `v0.6.3`. This is a minor update to the project's documentation.
+Updated :european_castle: [ghast.js](https://github.com/0E9B061F/ghast.js) to
+`v0.6.3`. This is a minor update to the project's documentation.
 
 # CHANGES
 
