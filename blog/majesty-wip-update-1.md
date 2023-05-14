@@ -1,6 +1,10 @@
 ---
 title: "Majesty WIP: Update #1"
 desc: "Incidental abstract pieces from the pixel mines."
+tags:
+  - update
+  - project update
+  - majesty
 ---
 
 I've been doing game dev stuff, working on a project I'm calling **Majesty**. So

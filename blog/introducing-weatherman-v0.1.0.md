@@ -1,6 +1,10 @@
 ---
 title: Introducing Weatherman (v0.2.2)
 desc: TUI widget to display current weather information for one or more locations.
+tags:
+  - update
+  - project update
+  - weatherman
 ---
 
 I have a monitor hooked up to a ~headless~ server to passively display some
