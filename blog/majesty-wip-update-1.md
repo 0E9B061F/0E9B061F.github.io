@@ -5,6 +5,9 @@ tags:
   - update
   - project update
   - majesty
+  - game dev
+  - svelte
+  - phaser
 ---
 
 I've been doing game dev stuff, working on a project I'm calling **Majesty**. So

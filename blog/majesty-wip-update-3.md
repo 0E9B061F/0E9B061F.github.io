@@ -5,6 +5,9 @@ tags:
   - update
   - project update
   - majesty
+  - game dev
+  - svelte
+  - phaser
 ---
 
 Since the last update I've refined the terrain generator a bit more,

@@ -5,6 +5,9 @@ tags:
   - update
   - project update
   - majesty
+  - game dev
+  - svelte
+  - phaser
 ---
 
 Work is continuing on **Majesty**. Changes since the last update:
