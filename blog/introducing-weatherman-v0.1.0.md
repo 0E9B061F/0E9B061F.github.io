@@ -1,6 +1,7 @@
 ---
 title: Introducing Weatherman (v0.2.2)
 desc: TUI widget to display current weather information for one or more locations.
+date: 2023-05-04T05:00:00.000-05:00
 tags:
   - update
   - project update

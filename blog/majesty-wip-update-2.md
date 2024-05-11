@@ -1,6 +1,7 @@
 ---
 title: "Majesty WIP Update #2: Traversability & Color"
 desc: "Adventures with gradients and the Sobel filter."
+date: 2023-05-14T05:00:00.000-05:00
 tags:
   - update
   - project update

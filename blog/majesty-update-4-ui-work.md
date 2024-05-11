@@ -1,6 +1,7 @@
 ---
 title: "Majesty Update #4: UI Work"
 desc: "Building Phaser game UIs using Svelte components."
+date: 2023-05-29T05:00:00.000-05:00
 tags:
   - update
   - project update

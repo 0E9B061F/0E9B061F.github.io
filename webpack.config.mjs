@@ -5,7 +5,7 @@ import Site from "./hexmachine/site.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const MODE = process.env.NODE_ENV || "production"
-const OUTP = "../0E9B061F.github.io"
+const OUTP = "../0E9B061F.github.io/docs"
 
 
 class MyExampleWebpackPlugin {
@@ -57,12 +57,6 @@ export default {
   devServer: {
     static: {
       directory: path.resolve(OUTP),
-      watch: {
-        path: "./src/posts",
-        ignored: [
-          path.resolve(OUTP, './node_modules'),
-        ],
-      },
     },
   },
   plugins,

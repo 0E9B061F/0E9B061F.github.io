@@ -1,6 +1,7 @@
 ---
 title: "Majesty WIP: Update #1"
 desc: "Incidental abstract pieces from the pixel mines."
+date: 2023-05-12T05:00:00.000-05:00
 tags:
   - update
   - project update

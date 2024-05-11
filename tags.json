@@ -21,6 +21,9 @@
     "fantasma": {
       "desc": "Posts about fantasma.js"
     },
+    "desdichado": {
+      "desc": "Posts about Desdichado, a turn-based tactics game."
+    },
     "project docs": {
       "desc": "Documentation for my projects."
     },

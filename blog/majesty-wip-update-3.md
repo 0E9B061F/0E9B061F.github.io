@@ -1,6 +1,7 @@
 ---
 title: "Majesty WIP Update #3: (Intelligent) Agents"
 desc: "Not-so-intelligent agents navigating bitmaps on the road to roads."
+date: 2023-05-22T05:00:00.000-05:00
 tags:
   - update
   - project update
