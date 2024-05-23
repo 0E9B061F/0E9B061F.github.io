@@ -312,12 +312,7 @@ ol, ul {
   font-size: 1.5rem;  
 }
 
-.wide-list .lists .software-list:not(:first-child) dl {
-  margin-top: var(--dl-margin);
-}
-.wide-list .lists .software-list:not(:last-child) dl {
-  margin-bottom: var(--dl-margin);
-}
+
 
 .software-list {
   padding-left: 10px;
