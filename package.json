@@ -19,7 +19,8 @@
     "raw:serve": "cross-env NODE_ENV=development webpack serve",
     "build": "run-s clobber raw:build",
     "build:dev": "run-s clobber raw:build:dev",
-    "serve": "run-s clobber raw:serve"
+    "serve": "run-s clobber raw:serve",
+    "publish": "node bin/publish.mjs"
   },
   "repository": {
     "type": "git",
