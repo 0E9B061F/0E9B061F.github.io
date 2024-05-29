@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>lib/ghast.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="AST.html">AST</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="AST.html#ancestor">ancestor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="AST.html#climb">climb</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="AST.html#each">each</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="AST.html#first">first</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="AST.html#hasTag">hasTag</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="AST.html#match">match</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="AST.html#select">select</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="HTMLRenderer.html">HTMLRenderer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="HTMLRenderer.html#addText">addText</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="HTMLRenderer.html#closeNode">closeNode</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="HTMLRenderer.html#openNode">openNode</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="HTMLRenderer.html#span">span</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="HTMLRenderer.html#value">value</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="MultiRegex.html">MultiRegex</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="MultiRegex.html#exec">exec</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Response.html">Response</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="TokenTree.html">TokenTree</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="TokenTree.html#._collapse">_collapse</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="TokenTree.html#._walk">_walk</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="TokenTree.html#add">add</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="TokenTree.html#openNode">openNode</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="TokenTreeEmitter.html">TokenTreeEmitter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="TokenTreeEmitter.html#addKeyword">addKeyword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="TokenTreeEmitter.html#addSublanguage">addSublanguage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="TokenTreeEmitter.html#addText">addText</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#%2522on:begin%2522">"on:begin"</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#%2522on:end%2522">"on:end"</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#copy">copy</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#e">e</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getAccordionIdsFromLocalStorage">getAccordionIdsFromLocalStorage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#removeAccordionIdFromLocalStorage">removeAccordionIdFromLocalStorage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setAccordionIdToLocalStorage">setAccordionIdToLocalStorage</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">lib/ghast.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const { Selector, Visitor, Inquiry } = require('./traversal.js')
+
+
+function normalize(node, ...list) {
+  let res = []
+  let buf = ''
+  let ast = []
+  let reg = []
+  let last = null
+  let item
+  for (let i = 0; i &lt; list.length; i++) {
+    item = list[i]
+    if (!item) return
+    if (Array.isArray(item)) {
+      const norm = normalize(node, ...item)
+      if (last &amp;&amp; norm.nodes.length) {
+        norm.nodes[0].left = last
+        last.right = norm.nodes[0]
+      }
+      if (buf.length) {
+        if (typeof(norm.syntax[0]) == 'string') {
+          buf += norm.syntax.shift()
+          if (norm.syntax.length) {
+            res.push(buf)
+            buf = ''
+          }
+        } else {
+          res.push(buf)
+          buf = ''
+        }
+      }
+      if (typeof(norm.syntax[norm.syntax.length-1]) == 'string') {
+        buf += norm.syntax.pop()
+      }
+      res = res.concat(norm.syntax)
+      ast = ast.concat(norm.nodes)
+      if (ast.length) last = ast[ast.length-1]
+    }
+    else if (typeof(item) == 'string') buf += item
+    else if (item.constructor.name == 'AST') {
+      if (buf.length) {
+        res.push(buf)
+        buf = ''
+      }
+      item.parent = node
+      if (last) {
+        item.left = last
+        last.right = item
+      }
+      res.push(item)
+      ast.push(item)
+      last = item
+    } else {
+      throw new Error('Invalid object found in syntax.')
+    }
+  }
+  res.push(buf)
+  return {syntax: res, nodes: ast, regions: reg}
+}
+
+
+/** The ghast abstract syntax tree.
+ * @constructor
+ * @param {object} opt          - Configuration object
+ * @param {array}  opt.syntax   - syntax objects. may be strings, AST nodes or arrays of these
+ * @param {object} opt.attrs    - attributes of this node, if any
+ * @param {array}  opt.tags     - tags of this node, if any
+ * @param {object} opt.location - location data
+ */
+class AST {
+  constructor(opt) {
+    const conf = {syntax: [], attrs: {}, tags: [], location: null}
+    Object.assign(conf, opt)
+    this.id = conf.id
+    const norm = normalize(this, ...conf.syntax)
+    this.syntax = norm.syntax
+    this.attrs = conf.attrs
+    this.parent = false
+    this.left = false
+    this.right = false
+    this.nodes = norm.nodes
+    this.tags = []
+    this.tag(conf.tags)
+    this.location = conf.location
+    if (!this.id) throw new Error('Node must have an ID.')
+    if (typeof(this.id) != 'string') throw new Error('Node ID must be a string.')
+  }
+
+  get [Symbol.toStringTag]() {
+    const rm = this.isRoot ? '^' : ''
+    const lm = this.isLeaf ? '>' : ''
+    const sm = this.isStem ? '-' : ''
+    const am = this.hasAttributes ? '=' : ''
+    const as = Object.entries(this.attrs).map(p=> `${p[0]}:${p[1]}`).join(';')
+    return `${rm}${sm}${lm}${this.hasTags ? this.tags.join('.')+'.' : ''}${this.id}${am}${as}`
+  }
+
+  //// Identity functions
+  /** True if this node has no parent. */
+  get isRoot() { return (!this.parent) }
+  /** True if this node has no children. */
+  get isLeaf() { return (this.nodes.length &lt; 1) }
+  /** True if this node is not a leaf or root. */
+  get isStem() { return !this.isRoot &amp;&amp; !this.isLeaf }
+
+  /** True if this node has any tags. */
+  get hasTags() { return this.tags.length > 0 }
+  /** True if this node has any attributes. */
+  get hasAttributes() { return Object.entries(this.attrs).length > 0 }
+
+  /** Returns true if the node has all of the given tags.
+   *  @param {...string} tags - zero or more tags to check
+   *  @return {boolean}
+   */
+  hasTag(...tags) {
+    let has = true
+    for (let i = 0; i &lt; tags.length; i++) {
+      if (this.tags.indexOf(tags[i]) &lt; 0) has = false
+    }
+    return has
+  }
+
+  /** Return captured syntax as a string. */
+  get image() {
+    return this.syntax.map(s=> typeof(s) == 'string' ? s : s.image).join('')
+  }
+
+  //// Navigation
+
+  /** Return rightmost child node or null if this node has no children. */
+  get rightmostNode() { return this.nodes[this.nodes.length-1] || null }
+  /** Return leftmost child node or null if this node has no children. */
+  get leftmostNode() { return this.nodes[0] || null }
+
+  /** Return rightmost descendant node. If this node is a leaf it will return itself. */
+  get rightmostLeaf() {
+    if (this.isLeaf) return this
+    if (this.rightmostNode.isLeaf) {
+      return this.rightmostNode
+    } else {
+      return this.rightmostNode.rightmostLeaf
+    }
+  }
+  /** Return leftmost descendant node. If this node is a leaf it will return itself. */
+  get leftmostLeaf() {
+    if (this.isLeaf) return this
+    if (this.leftmostNode.isLeaf) {
+      return this.leftmostNode
+    } else {
+      return this.leftmostNode.leftmostLeaf
+    }
+  }
+
+  /** Return leftward sibling. If root, return self. */
+  get goLeft() {
+    if (this.isRoot) return this
+    if (this.left) return this.left
+    else return this.parent.goLeft.rightmostLeaf
+  }
+  /** Return rightward sibling. If root, return self. */
+  get goRight() {
+    if (this.isRoot) return this
+    if (this.right) return this.right
+    else return this.parent.goRight.leftmostLeaf
+  }
+  /** Return parent. If root, return self. */
+  get goUp() {
+    if (this.isRoot) return this
+    else return this.parent
+  }
+  /** Return first (leftmost) child. If this node is a leaf, return self. */
+  get goDown() {
+    if (this.isLeaf) return this
+    else return this.leftmostNode
+  }
+
+  /** Called with each returned node.
+   * @callback eachNode
+   * @param {AST} node
+   */
+
+  /** Perform selections on the tree from a sequence of traversals. Returns the
+   * selected nodes if no callback is given.
+   * @param {...object} [traverse] - Zero-or-more Traverse literals
+   * @param {eachNode} [callback] - A function to be called on each selected node
+   * @return {AST[]} An array of any AST nodes that were selected
+   * @example
+   * // similar to the css selector `A .foo > B`
+   * node.select('A', {tag: 'foo'}, {id: 'B', depth: 0})
+   */
+  select(...atoms) {
+    const selector = new Selector(...atoms)
+    let targets = [this]
+    let trv
+    let target
+    let result
+    for (let i = 0; i &lt; selector.length; i++) {
+      trv = selector[i]
+      result = []
+      for (let n = 0; n &lt; targets.length; n++) {
+        target = targets[n]
+        const r = target.each(trv)
+        if (r) result = [...new Set(result.concat(r))]
+      }
+      targets = result
+    }
+    if (selector.cb) {
+      for (let i = 0; i &lt; result.length; i++) {
+        selector.cb(result[i])
+      }
+    }
+    return result
+  }
+
+  /** Perform a single traversal of the tree.
+   * @param {object} [traverse] - A Traverse literal
+   * @param {eachNode} [callback] - A function to be called on each selected node
+   * @return {AST[]|AST|null} An array of selected nodes, or a single node if `first` or `last` are specified.
+   * Returns `null` if `first` or `last` are specified and nothing was selected. 
+   * @example
+   * node.each()                       // return all descendants of `node`
+   * node.each({self: true})           // return `node` and all of its descendants
+   * node.each('Section')              // return all descendants with id `Section`
+   */
+  each(...atoms) {
+    const inq = Inquiry.make(...atoms)
+    const trv = inq.traverse
+    let matched = []
+    let node
+    if (trv.self &amp;&amp; trv.top) {
+      if (trv.match(this)) matched.push(this)
+    }
+    if (!trv.first || !matched.length) {
+      if (trv.up) {
+        if (this.parent) {
+          if (trv.match(this.parent)) matched.push(this.parent)
+          if ((trv.depth &lt; 0 || trv.depth > 0) &amp;&amp; (!trv.first || !matched.length)) {
+            const sub = this.parent.each(trv.next())
+            if (sub?.length) matched = matched.concat(sub)
+          }
+        }
+      } else {
+        for (let i = 0; i &lt; this.nodes.length; i++) {
+          node = this.nodes[i]
+          if (trv.match(node)) matched.push(node)
+          if (trv.first &amp;&amp; matched.length) {
+            break
+          } else {
+            if (trv.depth &lt; 0 || trv.depth > 0) {
+              const submatch = node.each(trv.next())
+              if (submatch?.length) {
+                matched = matched.concat(submatch)
+                if (trv.first) break
+              }
+            }
+          }
+        }
+      }
+    }
+    if (inq.cb) {
+      for (let i = 0; i &lt; matched.length; i++) {
+        inq.cb(matched[i])
+      }
+    }
+    if (trv.top &amp;&amp; trv.first) return matched[0]
+    else if (trv.top &amp;&amp; trv.last) return matched[matched.length-1]
+    else return matched
+  }
+
+  /** Return the first descendant selected by the given traverse. Same as calling
+   * `each` with `first` specified.
+   * @param {object} [traverse] - A Traverse literal
+   * @param {eachNode} [callback] - A function to be called on the selected node, if any
+   * @return {AST|null} The selected node or `null` if nothing was selected
+   * @example
+   * // select first 'A' node
+   * node.first('A')
+   * // same as above
+   * node.each({id: 'A', first: true})
+   */
+  first(...atoms) {
+    const inq = Inquiry.make(...atoms)
+    inq.traverse.first = true
+    return this.each(inq)
+  }
+
+  /** Traverse this nodes ancestors. Same as calling `each` with `up` specified.
+   * @param {object} [traverse] - A Traverse literal
+   * @param {eachNode} [callback] - A function to be called on the selected node, if any
+   * @return {AST[]|AST|null} An array of selected nodes, or a single node if `first` or `last` are specified.
+   * Returns `null` if `first` or `last` are specified and nothing was selected. 
+   * @example
+   * // select any 'A' ancestors
+   * node.ancestor('A')
+   * // same as above
+   * node.each({id: 'A', up: true})
+   */
+  ancestor(...atoms) {
+    const inq = Inquiry.make(...atoms)
+    inq.traverse.up = true
+    return this.each(inq)
+  }
+
+  /** Return the nth parent node.
+   * @param {number} [n=0] - ancestor to select
+   * @param {eachNode} [callback] - A function to be called on the selected node, if any
+   * @return {AST|null} The selected node or `null` if nothing was selected
+   * @example
+   * // return third ancestor
+   * node.climb(2)
+   * // same as above
+   * node.each({up: true, last: true, depth: 2})
+   */
+  climb(n=0, cb) {
+    const inq = Inquiry.make({up: true, last: true, depth: n}, cb)
+    return this.each(inq)
+  }
+
+  /** Match this node against multiple queries
+   * @param {...object} query - one or more Query objects to match against
+   * @return {boolean} Returns true if any of the queries match
+   */
+  match(...query) {
+    let m = false
+    for (let i = 0; i &lt; query.length; i++) {
+      m = m || query[i].match(this)
+    }
+    return m
+  }
+
+  // Specify specific behavior for different nodes. The tree will be traversed
+  // and the given cases executed whenever a node is matched, with the matched
+  // node as the first argument to the case.
+  when(...visitors) {
+    visitors = visitors.map(v=> new Visitor(...v))
+    let visitor
+    this.each({self: true}, node=> {
+      for (let i = 0; i &lt; visitors.length; i++) {
+        if (node.match(...visitors[i])) visitors[i].cb(node)
+      }
+    })
+  }
+
+  // Replace a child node with node b
+  // If only one argument is given, this node will be replaced by the given node
+  replace(a, b) {
+    let parent
+    if (b) parent = this
+    else {
+      b = a
+      a = this
+      parent = this.parent
+    }
+    b.parent = a.parent
+    b.left = a.left
+    b.right = a.right
+    parent.syntax.splice(parent.syntax.indexOf(a), 1, b)
+    parent.nodes.splice(parent.nodes.indexOf(a), 1, b)
+    return b
+  }
+
+  // Replace this node in-place with a new node. The new node will have the
+  // properties given in opt. Any properties not specified will be left
+  // unchanged.
+  mutate(opt) {
+    const conf = {id: this.id, syntax: this.syntax, attrs: this.attrs, tags: this.tags}
+    Object.assign(conf, opt)
+    return this.replace(new AST(conf))
+  }
+
+  // Remove a child node n
+  // If n is not given, remove this node
+  remove(n) {
+    let parent
+    if (n) parent = this
+    else {
+      parent = this.parent
+      n = this
+    }
+    parent.syntax.splice(parent.syntax.indexOf(n), 1)
+    parent.nodes.splice(parent.nodes.indexOf(n), 1)
+    if (n.left) n.left.right = n.right
+    if (n.right) n.right.left = n.left
+  }
+
+  //// Composable methods
+
+  // Assign an attribute
+  attr(a, b) {
+    if (typeof(a) == 'string') this.attrs[a] = b
+    else Object.assign(this.attrs, a)
+    return this
+  }
+
+  // merge the attributes of this node with all of its child nodes,
+  // and return the value of `k`
+  read(k) {
+    return Object.assign(...this.each({self: true}).map(x=> x.attrs))[k]
+  }
+
+  // Assign one or more tags
+  tag(...tags) {
+    let tag
+    for (let i = 0; i &lt; tags.length; i += 1) {
+      tag = tags[i]
+      if (typeof(tag) == 'string') {
+        if (tag.match(/ /g)) this.tag(...tag.split(' '))
+        else if (!(tag in this.tags)) this.tags.push(tag)
+      }
+      else if (Array.isArray(tag)) this.tag(...tag)
+      else throw new Error(`Invalid tag: '${tag}'`)
+    }
+    return this
+  }
+
+  loc(data) {
+    this.location = data
+    return this
+  }
+}
+
+function classification(helper, ...tags) {
+  const c = (...args)=> helper(...args).tag(...tags)
+  c.classify = (...t)=> classification(c, ...t, ...tags)
+  return c
+}
+
+const ast =(id, ...syntax)=> {
+  return new AST({id, syntax})
+}
+ast.classify =(...tags)=> {
+  return classification(ast, ...tags)
+}
+ast.locate =(loc)=> {
+  const c = (...args)=> ast(...args).loc(loc())
+  c.classify = (...t)=> classification(c, ...t)
+  return c
+}
+
+
+
+module.exports = { AST, ast }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a> on Wed Oct 05 2022 19:05:41 GMT-0400 (Eastern Daylight Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

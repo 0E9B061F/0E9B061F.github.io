@@ -1,7 +1,7 @@
 {
-  "name": "0e9b061f-source",
-  "version": "2.1.0",
-  "description": "Source files for 0e9b061f.github.io",
+  "name": "downtranslated.com",
+  "version": "3.0.0",
+  "description": "The blog/portfolio blog of one 0E9B061F",
   "exports": "./index.js",
   "type": "module",
   "engines": {
@@ -13,16 +13,23 @@
   "scripts": {
     "test": "jasmine",
     "test:serve": "jasmine-browser-runner serve",
-    "build": "cross-env NODE_ENV=production webpack",
-    "build:dev": "cross-env NODE_ENV=development webpack",
-    "serve": "cross-env NODE_ENV=development webpack serve"
+    "clobber": "node bin/clobber.mjs",
+    "raw:build": "cross-env NODE_ENV=production webpack",
+    "raw:build:dev": "cross-env NODE_ENV=development webpack",
+    "raw:serve": "cross-env NODE_ENV=development webpack serve",
+    "build": "run-s clobber raw:build",
+    "build:dev": "run-s clobber raw:build:dev",
+    "serve": "run-s clobber raw:serve"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/0E9B061F/0E9B061F.github.io.git"
   },
   "keywords": [
-    "website"
+    "website",
+    "blog",
+    "portfolio",
+    "0E9B061F"
   ],
   "author": "0E9B061F",
   "license": "MIT",
@@ -49,6 +56,7 @@
     "mdast-util-to-string": "^3.1.1",
     "mdast-util-toc": "^6.1.1",
     "mini-css-extract-plugin": "^2.7.5",
+    "npm-run-all": "^4.1.5",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-sanitize": "^5.0.1",
     "rehype-slug": "^5.1.0",

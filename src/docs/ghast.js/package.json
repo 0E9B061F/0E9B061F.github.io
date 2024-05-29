@@ -1,0 +1,44 @@
+{
+  "name": "ghast.js",
+  "version": "0.6.7",
+  "series": "FLAY",
+  "description": "An abstract syntax tree designed for use with peg.js",
+  "license": "MIT",
+  "homepage": "https://github.com/0E9B061F/ghast.js",
+  "bugs": "https://github.com/0E9B061F/ghast.js/issues",
+  "repository": "github:0E9B061F/ghast.js",
+  "author": {
+    "name": "0E9B061F",
+    "email": "0E9B061F@protonmail.com",
+    "url": "https://github.com/0E9B061F"
+  },
+  "main": "lib/ghast.js",
+  "directories": {
+    "lib": "lib",
+    "test": "spec"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "jasmine",
+    "doc": "jsdoc -c jsdoc.json; cp package.json docs",
+    "doc:serve": "http-server docs"
+  },
+  "keywords": [
+    "ast",
+    "abstract",
+    "syntax",
+    "tree",
+    "peg",
+    "pegjs",
+    "peggy"
+  ],
+  "devDependencies": {
+    "docdash": "^2.0.2",
+    "http-server": "^14.1.1",
+    "jasmine": "^5.1.0",
+    "jsdoc": "^4.0.3",
+    "peggy": "^4.0.2"
+  }
+}

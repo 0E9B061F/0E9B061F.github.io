@@ -5,7 +5,9 @@ import Site from "./hexmachine/site.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const MODE = process.env.NODE_ENV || "production"
-const OUTP = "../0E9B061F.github.io/docs"
+const SRC = "./src"
+const OUTP = "./docs"
+const ENTRY = "./src/build.mjs"
 
 
 class MyExampleWebpackPlugin {
@@ -13,7 +15,7 @@ class MyExampleWebpackPlugin {
     compiler.hooks.beforeCompile.tapAsync('MyPlugin', (params, callback) => {
       console.log("PERFORMING STATIC COMPILATION")
       Site.make({
-        path: path.resolve(__dirname),
+        path: path.resolve(SRC),
         outPath: path.resolve(OUTP),
       }).then(site=> {
         site.compile().then(()=> {
@@ -43,7 +45,7 @@ const plugins = [
 console.log(`BUILDING ${MODE}`)
 
 export default {
-  entry: "./build.mjs",
+  entry: ENTRY,
   mode: MODE,
   devtool: "source-map",
   output: {
