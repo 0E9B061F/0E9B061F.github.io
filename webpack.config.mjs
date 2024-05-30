@@ -28,6 +28,7 @@ class MyExampleWebpackPlugin {
 
 const rules = [
   { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+  { test: /\.mjs$/, exclude: /node_modules/, loader: "babel-loader" },
   { test: /\.css$/i,
     use: [MiniCssExtractPlugin.loader, "css-loader"],
   },
@@ -54,7 +55,8 @@ export default {
   },
   module: { rules },
   resolve: {
-    extensions: ['*', '.js']
+    extensions: ['.*', '.js', '.mjs'],
+    fallback: { "url": false }
   },
   devServer: {
     static: {
