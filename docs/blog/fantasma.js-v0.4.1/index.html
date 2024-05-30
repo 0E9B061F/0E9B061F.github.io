@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <title>👻 fantasma.js updated to v0.4.1 - Work Log - 0E9B061F</title>
+
+  <meta name="author" content="0E9B061F" />
+  <meta name="description" content="Examples, documentation, and maintenance! Project updates and notes about programming, design, and other topics. The personal website of 0E9B061F. featuring open source projects, documentation and writings." />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/site/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/site/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/site/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/site/favicons/favicon-192x192.png">
+
+  <link href="/site/0E9B061F.css" rel="stylesheet" type="text/css" />
+  <script defer="defer" src="/site/0E9B061F.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Josefin+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9SRY5HDP0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M9SRY5HDP0');
+  </script>
+
+  <meta name="robots" content="all">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+  <div class="page">
+    <div class="frontis">
+      <div class="top">
+        <img class="bowler" src="/site/images/bowler3/bowler3-full.png" />
+        <p class="code">
+          @spec.get_opts.each do |name, opt|
+            options[name] = opt.value
+            counts[name]  = opt.count
+          end
+          @spec.get_args.each do |name, arg|
+            args &lt;&lt; arg.value
+            named[name] = arg.value
+          end
+          args.flatten!
+          args += trailing
+          @report = Report.new(args, named, trailing, options, counts)
+          if @report.opt(:help)
+            self.print_usage()
+          end
+          unless @spec.get_args.values.all? {|arg| arg.fulfilled? }
+            raise InterfaceError, "Required argument '#{name.upcase}' was not given."
+          end
+          if @spec.trailing_error &amp;&amp; !@report.trailing.empty?
+            raise InterfaceError, "Error: got trailing argument(s): #{trailing.join
+        </p>
+      </div>
+      <div class="bottom">
+        <h1 class="title heading">
+          <div class="title-row line1">
+            <span class="software">
+              Software
+            </span>
+          </div>
+          <div class="title-row line2">
+            <span class="byline">by</span>
+            <span class="name">
+                <a class="link active" href="/">
+                  0E9B061F
+                </a>
+            </span>
+          </div>
+        </h1>
+      </div>
+    </div>
+    <div class="content blog-content">
+      <div class="deco cat-bar-1">
+        <img src="/site/images/cat-bar-1/cat-bar-1-full.png" />
+      </div>
+      <div class="centered"><img class="rule" src="/site/images/dash-4/dash-4-full.png" /></div>
+      <div class="page-content">
+      <div class="page-header">
+        <div class="hextitle t1 c1 heading">
+            <a class="link active" href="/blog/">
+Work Log  </a>
+
+           &mdash; <span>👻 <strong>fantasma.js</strong> updated to <code>v0.4.1</code></span>
+        </div>
+          <div class="page-desc">Examples, documentation, and maintenance!</div>
+          <div class="postnav">
+            <div class="postnav-labels">
+              <div class="postnav-label postnav-prev" >PREV</div>
+              <div class="page-title heading">
+                <div class="post-info">
+                  <div class="post-date">5-14-2024</div>
+                  <div class="tag-list">
+                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                          <a class="link active" href="/tags/update/">
+                        update
+                      </a>
+                    <span class="tag-count">17</span>
+                      </span>
+                    </div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                          <a class="link active" href="/tags/project update/">
+                        project update
+                      </a>
+                    <span class="tag-count">14</span>
+                      </span>
+                    </div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                          <a class="link active" href="/tags/fantasma/">
+                        fantasma
+                      </a>
+                    <span class="tag-count">4</span>
+                      </span>
+                    </div>                  </div>
+                </div>
+              </div>
+              <div class="postnav-label postnav-next" >NEXT</div>
+            </div>
+            <div class="postnav-titles">
+              <div class="postnav-title postnav-prev">
+                <a class="link active button" href="/blog/desdichado-wip-update-1/">Desdichado WIP: Update #1</a>
+              </div>
+              <div class="postnav-title postnav-next">
+                <a class="link active button" href="/blog/scroll-v0.4.6/">Introducing the 📜 <strong>scroll</strong> backup system (<code>v0.4.6</code>)</a>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="post">
+  <p>Updated 👻 <a href="https://github.com/0E9B061F/fantasma.js">fantasma.js</a> to <code>v0.4.1</code>. This update completes a long-overdue rewrite and adds documentation, plus <a href="/gallery/fantasma-basic-example/">a new example</a>.</p>
+<p>For more information about <strong>fantasma.js</strong>, see <a href="https://github.com/0E9B061F/fantasma.js#readme">the README</a>.</p>
+<h1 id="changes"><a aria-hidden="true" tabindex="-1" href="#changes"><span>§</span></a>CHANGES</h1>
+<ul>
+<li>Updated dependencies</li>
+<li>Added README</li>
+<li>Added <a href="/gallery/fantasma-basic-example/">basic example</a></li>
+<li>Improved packaging</li>
+<li>Now available on <a href="https://www.npmjs.com/package/fantasma.js">npm</a></li>
+</ul>
+<h1 id="links"><a aria-hidden="true" tabindex="-1" href="#links"><span>§</span></a>LINKS</h1>
+<ul>
+<li><a href="https://www.npmjs.com/package/fantasma.js">npm: fantasma.js</a></li>
+</ul>
+</div>
+
+
+
+      </div>
+    </div>
+    <div class="home foot">
+    <img class="rule start-contact" src="/site/images/dash-4/dash-4-full.png" />
+
+    <div class="contact-heading">
+      <img class="phoneman" src="/site/images/contact/contact-full.png" />
+      <div class="aligner"><h2 class="contact-title">Directory</h2></div>
+    </div>
+
+    <div class="contact-area">
+      <img class="phoneman" src="/site/images/contact/contact-full.png" />
+      <dl class="directory">
+        <div class="pair">
+          <dt>Email</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="mailto:0E9B061F@protonmail.com">0E9B061F@protonmail.com</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Personal&nbsp;Site</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a href="https://0x2764.com">0x2764.com</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>GitHub</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://github.com/0E9B061F">github.com/0E9B061F</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>GitLab</dt>
+          <div class="spacer">
+            <div class="bar"></div>
+          </div>
+          <div class="aligner">
+            <dd><a class="link active" href="https://gitlab.com/0E9B061F">gitlab.com/0E9B061F</a></dd>
+          </div>
+        </div>
+        <div class="pair">
+          <dt>NPM&nbsp;Packages</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://npmjs.com/~0e9b061f">npmjs.com/~0e9b061f</a></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Keybase</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><a class="link active" href="https://keybase.io/0e9b061f">keybase.io/0e9b061f</a></dd></div>
+        </div>
+        <div class="multiline">
+          <div class="pair">
+            <dt>Mirrors</dt>
+            <div class="spacer"><div class="bar"></div></div>
+            <div class="aligner">
+              <dd><a class="link active autolink" href="https://downtranslated.com">downtranslated.com</a></dd>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="spacer">
+            </div>
+            <dd><a class="link active autolink" href="https://0E9B061F.github.io">0E9B061F.github.io</a></dd>
+          </div>
+          <div class="pair">
+            <div class="spacer">
+            </div>
+            <dd><a class="link active autolink" href="https://0E9B061F.gitlab.io">0E9B061F.gitlab.io</a></dd>
+          </div>
+        </div>
+      </dl>
+    </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="hexmenu">
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.png" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading">  <a class="link active" href="/blog/">
+        WORK LOG
+      </a>
+    </div>
+          <div class="hexitem-desc">Project updates and notes about programming, design, and other topics.</div>
+        </div>
+      </div>
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.png" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading">  <a class="link active" href="/gallery/">
+        GALLERY
+      </a>
+    </div>
+          <div class="hexitem-desc">Live samples of my work.</div>
+        </div>
+      </div>
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.png" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading">  <a class="link active" href="/docs/">
+        DOCS
+      </a>
+    </div>
+          <div class="hexitem-desc">Technical documentation for my projects.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toc">
+      <div class="hextitle t3 c2 hexblock">TABLE OF CONTENTS</div>
+      <div class="hextxt t4">
+        <ol>
+<li><a href="#changes">CHANGES</a></li>
+<li><a href="#links">LINKS</a></li>
+</ol>
+      </div>
+    </div>
+
+    <div class="hexportal">
+    
+      <div class="hexblock hexline heading">
+        <h2 class="hexline-item hextitle t3 c2">
+            <a class="link active" href="/index/">
+              INDEX
+            </a>
+        </h2>
+        <div class="sep hextitle t3">&middot;</div>
+        <h3 class="hexline-item hextitle t4 c2">
+            <a class="link active" href="/tags/">
+              TAGS
+            </a>
+        </h3>
+        <div class="sep hextitle t3 c3">&middot;</div>
+        <div class="tag-list">
+          <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/update/">
+              update
+            </a>
+          <span class="tag-count">17</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/project update/">
+              project update
+            </a>
+          <span class="tag-count">14</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/game dev/">
+              game dev
+            </a>
+          <span class="tag-count">6</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/svelte/">
+              svelte
+            </a>
+          <span class="tag-count">5</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/phaser/">
+              phaser
+            </a>
+          <span class="tag-count">5</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/work sample/">
+              work sample
+            </a>
+          <span class="tag-count">5</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/fantasma/">
+              fantasma
+            </a>
+          <span class="tag-count">4</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/majesty/">
+              majesty
+            </a>
+          <span class="tag-count">4</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/ghast/">
+              ghast
+            </a>
+          <span class="tag-count">3</span>
+            </span>
+          </div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+                <a class="link active" href="/tags/site update/">
+              site update
+            </a>
+          <span class="tag-count">3</span>
+            </span>
+          </div>    </div>
+      </div>
+    
+      <ul class="hexlisting blog-listing">
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/site-update-2024-05-29-welcome-to-downtranslated-com/">
+          <span class="date hextxt t6 c3">5-29-2024</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">🔔 Site Update: Welcome to <strong>downtranslated.com</strong></span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/heretag-v1.1.7/">
+          <span class="date hextxt t6 c3">5-28-2024</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Introducing <strong>heretag</strong> (<code>v1.1.7</code>)</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/waxwing.js-v0.3.4/">
+          <span class="date hextxt t6 c3">5-28-2024</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Introducing 🐦 <strong>waxwing.js</strong> (<code>v0.3.4</code>)</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/ghast.js-v0.6.7/">
+          <span class="date hextxt t6 c3">5-23-2024</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">🏰 <strong>ghast.js</strong> updated to <code>v0.6.7</code></span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/scroll-v0.4.6/">
+          <span class="date hextxt t6 c3">5-23-2024</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Introducing the 📜 <strong>scroll</strong> backup system (<code>v0.4.6</code>)</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <span class="plain link current">
+          <span class="date hextxt t6 c3">5-14-2024</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">👻 <strong>fantasma.js</strong> updated to <code>v0.4.1</code></span>
+      </span>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/gallery/fantasma-basic-example/">
+          <span class="date hextxt t6 c3">5-11-2024</span>
+          <span class="namespace hextxt t6">gallery</span>
+          <span class="title hextxt t4">fantasma.js Basic Example</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/desdichado-wip-update-1/">
+          <span class="date hextxt t6 c3">5-1-2024</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Desdichado WIP: Update #1</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/gallery/phaser-svelte-ui-example/">
+          <span class="date hextxt t6 c3">5-29-2023</span>
+          <span class="namespace hextxt t6">gallery</span>
+          <span class="title hextxt t4">Phaser Svelte UI Example</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/majesty-update-4-ui-work/">
+          <span class="date hextxt t6 c3">5-29-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Majesty Update #4: UI Work</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/gallery/majesty/">
+          <span class="date hextxt t6 c3">5-22-2023</span>
+          <span class="namespace hextxt t6">gallery</span>
+          <span class="title hextxt t4">Majesty WIP</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/majesty-wip-update-3/">
+          <span class="date hextxt t6 c3">5-22-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Majesty WIP Update #3: (Intelligent) Agents</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/majesty-wip-update-2/">
+          <span class="date hextxt t6 c3">5-14-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Majesty WIP Update #2: Traversability &#x26; Color</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/majesty-wip-update-1/">
+          <span class="date hextxt t6 c3">5-12-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Majesty WIP: Update #1</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/introducing-weatherman-v0.1.0/">
+          <span class="date hextxt t6 c3">5-4-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Introducing Weatherman (v0.2.2)</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/sketch-poem-1/">
+          <span class="date hextxt t6 c3">5-4-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Sketch: Poem #1</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/old-sf-mags-venture-and-fsf-upcoming-reviews/">
+          <span class="date hextxt t6 c3">3-26-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">Old Sci-Fi Magazines — <em>The Magazine of Fantasy &#x26; Science Fiction</em> and <em>Venture Science Fiction</em></span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/site-update-2023-03-25-improved-layout-and-future-ideas/">
+          <span class="date hextxt t6 c3">3-25-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">🥳 Site Update: Improved Layout, Plus Observations and Plans</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/ghast.js-v0.6.4/">
+          <span class="date hextxt t6 c3">3-24-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">ghast.js updated to <code>v0.6.4</code></span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/site-update-2023-03-24-created-blog/">
+          <span class="date hextxt t6 c3">3-24-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">📣 Site Update: Created Blog</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/docs/ghast.js/">
+          <span class="date hextxt t6 c3">3-23-2023</span>
+          <span class="namespace hextxt t6">docs</span>
+          <span class="title hextxt t4">ghast.js Documentation</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/gallery/fantasma-example/">
+          <span class="date hextxt t6 c3">3-23-2023</span>
+          <span class="namespace hextxt t6">gallery</span>
+          <span class="title hextxt t4">fantasma.js Example</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/gallery/value-meter/">
+          <span class="date hextxt t6 c3">3-23-2023</span>
+          <span class="namespace hextxt t6">gallery</span>
+          <span class="title hextxt t4">Value Meter</span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/ghast.js-v0.6.3/">
+          <span class="date hextxt t6 c3">3-20-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">ghast.js updated to <code>v0.6.3</code></span>
+      </a>
+      </li>
+      <li class="hexentry">
+      <a class="plain link active" href="/blog/fantasma.js-rewrite-mostly-complete/">
+          <span class="date hextxt t6 c3">3-20-2023</span>
+          <span class="namespace hextxt t6">blog</span>
+          <span class="title hextxt t4">fantasma.js Rewrite: Mostly Complete</span>
+      </a>
+      </li>
+    </ul>
+    
+    </div>
+    <div class="foot">
+      <div class="centered">
+        <img class="asterism" src="/site/images/frog-bicycle-4/frog-bicycle-4-full.png" />
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
