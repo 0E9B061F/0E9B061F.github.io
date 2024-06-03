@@ -5,10 +5,10 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>👻 fantasma.js updated to v0.4.1 - Work Log - 0E9B061F</title>
+  <title>📜 scroll backup system updated to v0.5.2 - Work Log - 0E9B061F</title>
 
   <meta name="author" content="0E9B061F" />
-  <meta name="description" content="Examples, documentation, and maintenance! Project updates and notes about programming, design, and other topics. The personal website of 0E9B061F. featuring open source projects, documentation and writings." />
+  <meta name="description" content="Windows fixed and updates, including robocopy support. Project updates and notes about programming, design, and other topics. The personal website of 0E9B061F. featuring open source projects, documentation and writings." />
 
   <link rel="icon" type="image/png" sizes="16x16" href="/site/favicons/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/site/favicons/favicon-32x32.png">
@@ -93,15 +93,15 @@
             <a class="link active" href="/blog/">
 Work Log  </a>
 
-           &mdash; <span>👻 <strong>fantasma.js</strong> updated to <code>v0.4.1</code></span>
+           &mdash; <span>📜 <strong>scroll</strong> backup system updated to <code>v0.5.2</code></span>
         </div>
-          <div class="page-desc">Examples, documentation, and maintenance!</div>
+          <div class="page-desc">Windows fixed and updates, including robocopy support.</div>
           <div class="postnav">
             <div class="postnav-labels">
               <div class="postnav-label postnav-prev" >PREV</div>
               <div class="page-title heading">
                 <div class="post-info">
-                  <div class="post-date">5-14-2024</div>
+                  <div class="post-date">6-2-2024</div>
                   <div class="tag-list">
                     <div class="tag tag-link">
                       <div class="tag-sep">&middot;</div>
@@ -122,40 +122,38 @@ Work Log  </a>
                     </div>                    <div class="tag tag-link">
                       <div class="tag-sep">&middot;</div>
                       <span class="tag-name">
-                          <a class="link active" href="/tags/fantasma/">
-                        fantasma
+                          <a class="link active" href="/tags/scroll/">
+                        scroll
                       </a>
-                    <span class="tag-count">5</span>
+                    <span class="tag-count">3</span>
                       </span>
                     </div>                  </div>
                 </div>
               </div>
-              <div class="postnav-label postnav-next" >NEXT</div>
+              <div class="postnav-label postnav-next" style="visibility:hidden" >NEXT</div>
             </div>
             <div class="postnav-titles">
               <div class="postnav-title postnav-prev">
-                <a class="link active button" href="/blog/desdichado-wip-update-1/">Desdichado WIP: Update #1</a>
+                <a class="link active button" href="/blog/mkv-v0.2.0-and-related-updates/">Introducing 🔨 <strong>mkv</strong> (<code>v0.2.0</code>)</a>
               </div>
               <div class="postnav-title postnav-next">
-                <a class="link active button" href="/blog/scroll-v0.4.6/">Introducing the 📜 <strong>scroll</strong> backup system (<code>v0.4.6</code>)</a>
               </div>
             </div>
           </div>
       </div>
       <div class="post">
-  <p>Updated 👻 <a href="https://github.com/0E9B061F/fantasma.js">fantasma.js</a> to <code>v0.4.1</code>. This update completes a long-overdue rewrite and adds documentation, plus <a href="/gallery/fantasma-basic-example/">a new example</a>.</p>
-<p>For more information about <strong>fantasma.js</strong>, see <a href="https://github.com/0E9B061F/fantasma.js#readme">the README</a>.</p>
+  <p>Updated 📜 <a href="https://github.com/0E9B061F/scroll">scroll</a> to <code>v0.5.2</code>. This is includes fixes and improvments for Windows. <code>sync</code> backends now work under windows, using <code>robocopy</code> behind the scenes to replace <code>rsync</code>. A bug related to handling Windows paths was also fixed. Finally, all backends were normalized such that they record and restore the absolute paths of backup targets.</p>
+<p>For more information about <strong>ghast.js</strong>, see <a href="https://github.com/0E9B061F/scroll#readme">the README</a>.</p>
 <h1 id="changes"><a aria-hidden="true" tabindex="-1" href="#changes"><span>§</span></a>CHANGES</h1>
 <ul>
-<li>Updated dependencies</li>
-<li>Added README</li>
-<li>Added <a href="/gallery/fantasma-basic-example/">basic example</a></li>
-<li>Improved packaging</li>
-<li>Now available on <a href="https://www.npmjs.com/package/fantasma.js">npm</a></li>
+<li><code>robocopy</code> support</li>
+<li><code>sync</code> backends for Windows</li>
+<li>Fixed Windows path handling</li>
+<li>Made path handling consistent accross all backends</li>
 </ul>
 <h1 id="links"><a aria-hidden="true" tabindex="-1" href="#links"><span>§</span></a>LINKS</h1>
 <ul>
-<li><a href="https://www.npmjs.com/package/fantasma.js">npm: fantasma.js</a></li>
+<li><a href="https://www.npmjs.com/package/scroll">npm: scroll</a></li>
 </ul>
 </div>
 
@@ -376,11 +374,11 @@ Work Log  </a>
     
       <ul class="hexlisting blog-listing">
       <li class="hexentry">
-      <a class="plain link active" href="/blog/scroll-v0.5.2/">
+      <span class="plain link current">
           <span class="date hextxt t6 c3">6-2-2024</span>
           <span class="namespace hextxt t6">blog</span>
           <span class="title hextxt t4">📜 <strong>scroll</strong> backup system updated to <code>v0.5.2</code></span>
-      </a>
+      </span>
       </li>
       <li class="hexentry">
       <a class="plain link active" href="/blog/mkv-v0.2.0-and-related-updates/">
@@ -425,11 +423,11 @@ Work Log  </a>
       </a>
       </li>
       <li class="hexentry">
-      <span class="plain link current">
+      <a class="plain link active" href="/blog/fantasma.js-v0.4.1/">
           <span class="date hextxt t6 c3">5-14-2024</span>
           <span class="namespace hextxt t6">blog</span>
           <span class="title hextxt t4">👻 <strong>fantasma.js</strong> updated to <code>v0.4.1</code></span>
-      </span>
+      </a>
       </li>
       <li class="hexentry">
       <a class="plain link active" href="/gallery/fantasma-basic-example/">
