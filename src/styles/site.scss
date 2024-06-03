@@ -443,6 +443,11 @@ ol, ul {
     --pm-width: 200px;
     --dl-margin: 0;
   }
+  #dt-sticker {
+    left: 5px;
+    font-size: 1.1rem;
+    top: 30px;
+  }
   .postnav .post-info {
     flex-direction: column;
     align-items: center;
@@ -498,6 +503,11 @@ ol, ul {
     --top-height: 155px;
     --code-size: 10px;
   }
+  #dt-sticker {
+    left: 10px;
+    font-size: 2rem;
+    top: 50px;
+  }
   .directory .pair dd {
     margin-left: 1rem;
   }
@@ -528,6 +538,11 @@ ol, ul {
     --bowler-width: var(--width);
     --top-height: 205px;
     --code-size: 13px;
+  }
+  #dt-sticker {
+    left: 20px;
+    font-size: 2.8rem;
+    top: 100px;
   }
   .directory .pair dd {
     margin-left: 0;
@@ -591,6 +606,10 @@ ol, ul {
       max-height: 128px;
       max-width: 128px;
     }
+  }
+  #dt-sticker {
+    font-size: 3rem;
+    left: 280px;
   }
 }
 

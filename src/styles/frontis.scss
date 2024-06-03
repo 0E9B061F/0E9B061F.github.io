@@ -1,4 +1,5 @@
 .frontis {
+  position: relative;
   .top {
     width: 100%;
     position: relative;
@@ -62,4 +63,17 @@
       }
     }
   }
+}
+
+#dt-sticker {
+  position: absolute;
+  background-color: #151515;
+  color: #efefef;
+  padding: 0.5rem 2rem;
+  font-weight: 900;
+  font-size: 3rem;
+  z-index: 5;
+  transform: rotate(15deg);
+  left: 280px;
+  top: 100px;
 }
