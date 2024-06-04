@@ -1,2 +1,2 @@
 (()=>{"use strict";const e=new URL(window.location.href);document.querySelectorAll(".autolink").forEach((t=>{const n=t.getAttribute("href");if(new URL(n).hostname==e.hostname){const e=document.createElement("span");e.innerText=t.innerText,e.classList.add("link","current"),t.parentNode.replaceChild(e,t)}}))})();
-//# sourceMappingURL=0E9B061F.js.map
+//# sourceMappingURL=hex.js.map
