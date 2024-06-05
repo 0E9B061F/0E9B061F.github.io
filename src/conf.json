@@ -1,5 +1,10 @@
 {
-  "title": "0E9B061F",
-  "desc": "The personal website of 0E9B061F. featuring open source projects, documentation and writings.",
-  "host": "https://0E9B061F.github.io"
+  "title": "down. translated.",
+  "desc": "The personal website of 0E9B061F, including open source projects, examples, and a blog.",
+  "host": [
+    "https://downtranslated.com",
+    "https://0E9B061F.github.io",
+    "https://0E9B061F.gitlab.io"
+  ],
+  "package": "../package.json"
 }

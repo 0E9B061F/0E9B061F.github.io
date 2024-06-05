@@ -1,0 +1,21 @@
+{
+  "title": "down. translated.",
+  "desc": "The personal website of 0E9B061F, including open source projects, examples, and a blog.",
+  "author": "0E9B061F",
+  "version": "3.1.2",
+  "license": "CC-BY-NC-SA-4.0",
+  "host": "https://downtranslated.com",
+  "mirrors": [
+    "https://0E9B061F.github.io",
+    "https://0E9B061F.gitlab.io"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0E9B061F/0E9B061F.github.io.git"
+  },
+  "generator": {
+    "name": "hexmachine",
+    "version": "4.1.0",
+    "homepage": "https://github.com/0E9B061F/hexmachine#readme"
+  }
+}
