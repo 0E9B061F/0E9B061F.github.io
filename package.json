@@ -1,6 +1,6 @@
 {
   "name": "downtranslated.com",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "The blog/portfolio blog of one 0E9B061F",
   "exports": "./index.js",
   "type": "module",

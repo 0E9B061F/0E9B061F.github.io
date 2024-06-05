@@ -1,15 +1,20 @@
-# **downtranslated.com** v3.1.0
+# **downtranslated.com** v3.1.1
 
 The blog/portfolio blog of one [0E9B061F][gh]. Mirrors:
 
-* [downtranslated.com](https://downtranslated.com)
-* [0E9B061F.github.io](https://0E9B061F.github.io)
-* [0E9B061F.gitlab.io](https://0E9B061F.gitlab.io)
+* [downtranslated.com][dt]
+* [0E9B061F.github.io][m1]
+* [0E9B061F.gitlab.io][m2]
 
 # License
 
-Copyright 2022-2024 **[0E9B061F][gh]**<br/>
-Available under the terms of the [CC-BY-NC-SA-4.0 license][license].
+[downtranslated.com][dt] copyright 2022-2024 by **[0E9B061F][gh]** is licensed
+under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International][deed]
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
 
 [gh]:https://github.com/0E9B061F
-[license]:https://github.com/0E9B061F/0E9B061F.github.com/blob/master/LICENSE
+[dt]:https://downtranslated.com
+[m1]:https://0E9B061F.github.io
+[m2]:https://0E9B061F.gitlab.io
+[deed]:https://creativecommons.org/licenses/by-nc-sa/4.0/
