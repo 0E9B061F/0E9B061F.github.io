@@ -16,10 +16,9 @@
     "clobber": "node bin/clobber.mjs",
     "raw:build": "cross-env NODE_ENV=production hexmachine -s ./src ./docs",
     "raw:build:dev": "cross-env NODE_ENV=development hexmachine -s ./src ./docs",
-    "raw:serve": "cross-env NODE_ENV=development webpack serve",
     "build": "run-s clobber raw:build",
     "build:dev": "run-s clobber raw:build:dev",
-    "serve": "run-s clobber raw:serve",
+    "serve": "http-server ./docs",
     "publish": "node bin/publish.mjs",
     "mkv": "mkv"
   },
@@ -42,7 +41,8 @@
   "devDependencies": {
     "@0e9b061f/mkv": "^0.2.0",
     "cross-env": "^7.0.3",
-    "hexmachine": "^4.0.0",
+    "hexmachine": "^4.0.3",
+    "http-server": "^14.1.1",
     "jasmine": "^5.1.0",
     "jasmine-browser-runner": "^2.4.0",
     "npm-run-all": "^4.1.5"
