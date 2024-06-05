@@ -1,4 +1,4 @@
-# **downtranslated.com** v3.1.1
+# **downtranslated.com** v3.1.2
 
 The blog/portfolio of one [0E9B061F][gh]. Mirrors:
 
