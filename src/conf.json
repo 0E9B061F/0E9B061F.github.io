@@ -6,5 +6,10 @@
     "https://0E9B061F.github.io",
     "https://0E9B061F.gitlab.io"
   ],
-  "package": "../package.json"
+  "package": "../package.json",
+  "nodes": {
+    "blog": "Blog",
+    "gallery": "Gallery",
+    "docs": "Gallery"
+  }
 }
