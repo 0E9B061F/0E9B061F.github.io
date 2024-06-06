@@ -16,6 +16,8 @@ if (!existsSync(rcfile)) {
   throw new Error("build is missing, nothing to publish")
 } else {
   const conf = JSON.parse(await readFile(rcfile))
-  const res = execSync(`rsync -av --delete -e "ssh -p ${conf.port}" docs/* "${conf.dest}"`, {encoding: "utf-8"})
+  const cmd = `rsync -av --delete -e "ssh -p ${conf.port}" dist/* "${conf.dest}"`
+  console.log(`>>> ${cmd}`)
+  const res = execSync(cmd, {encoding: "utf-8"})
   console.log(res)
 }

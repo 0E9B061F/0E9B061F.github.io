@@ -32,7 +32,11 @@
     gtag('config', 'G-M9SRY5HDP0');
   </script>
 
-  <meta name="robots" content="all">
+  {{#if site.mirror}}
+    <meta name="robots" content="noindex">
+  {{else}}
+    <meta name="robots" content="all">
+  {{/if}}
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
