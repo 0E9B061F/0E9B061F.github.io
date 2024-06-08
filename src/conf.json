@@ -7,7 +7,7 @@
     "https://0E9B061F.gitlab.io"
   ],
   "package": "../package.json",
-  "nodes": {
+  "mount": {
     "blog": "Blog",
     "gallery": "Gallery",
     "docs": "Gallery"

@@ -6,4 +6,4 @@ Disallow: /.gitignore
 Disallow: /*.json$
 Disallow: /webpack.config.js
 
-Sitemap: https://downtranslated.com/sitemap.xml/
+Sitemap: https://downtranslated.com/sitemap.xml
