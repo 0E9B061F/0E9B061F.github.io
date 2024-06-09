@@ -93,7 +93,7 @@
       <div class="page-content">
       <div class="page-header">
         <div class="hextitle t1 c1 heading">
-          {{#>link (mask current page.href page.title)}}{{{../page.titleHtml}}}{{/link}}
+          {{#>link (maskraw current page.href page.title)}}{{{../page.titleHtml}}}{{/link}}
           {{#if post}} &mdash; <span>{{{post.titleHtml}}}</span>{{/if}}
         </div>
         {{#if post}}
@@ -146,7 +146,7 @@
 
     <div class="contact-heading">
       <img class="phoneman" src="{{image "contact"}}" />
-      <div class="aligner"><h2 class="contact-title">Directory</h2></div>
+      <div class="aligner"><h2 id="directory" class="contact-title">Directory</h2></div>
     </div>
 
     <div class="contact-area">

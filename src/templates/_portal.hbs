@@ -2,18 +2,32 @@
 
   <div class="hexblock hexline heading">
     <h2 class="hexline-item hextitle t3 c2">
-      {{>link (mask current site.go.siteindex.href "INDEX")}}
+      {{>link (mask current "/index" "INDEX")}}
     </h2>
-    <div class="sep hextitle t3">&middot;</div>
+    <div class="sep hextitle t3 c2">&middot;</div>
     <h3 class="hexline-item hextitle t4 c2">
-      {{>link (mask current site.go.tags.href "TAGS")}}
+      {{>link (mask current "/tags" "TAGS")}}
     </h3>
-    <div class="sep hextitle t3 c3">&middot;</div>
+    <div class="sep hextitle t3 c2">&middot;</div>
     <div class="tag-list">
       {{#each mainTags}}
       {{>tagLink this current=../current}}
       {{/each}}
     </div>
+  </div>
+
+  <div class="hexblock hexline heading">
+    <h3 class="hexline-item hextitle t6 c2">
+      {{>link (mask current "/info/about" "ABOUT")}}
+    </h3>
+    <div class="sep hextitle t5 c1">&middot;</div>
+    <h3 class="hexline-item hextitle t6 c2">
+      {{>link (mask current "/info/author" "AUTHOR")}}
+    </h3>
+    <div class="sep hextitle t5 c1">&middot;</div>
+    <h3 class="hexline-item hextitle t6 c2">
+      {{>link (maskraw current "#directory" "DIRECTORY")}}
+    </h3>
   </div>
 
   {{{listing}}}

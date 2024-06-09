@@ -9,6 +9,7 @@
   "package": "../package.json",
   "mount": {
     "blog": "Blog",
+    "info": "Documents",
     "gallery": "Gallery",
     "docs": "Gallery"
   }

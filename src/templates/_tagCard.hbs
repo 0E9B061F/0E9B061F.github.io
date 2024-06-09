@@ -1,9 +1,7 @@
 <div class="tag tag-card">
-  <span class="tag-name">
-    {{>link (mask current href tag)}}<span class="tag-count">{{count}}</span>
-  </span>
-  {{#if desc}}
-  <span class="tag-desc">{{desc}}</span>
+  {{>tagName}}
+  {{#if descr}}
+  <span class="tag-desc">{{descr}}</span>
   {{else}}
   <span class="tag-desc unavailable">N/A</span>
   {{/if}}

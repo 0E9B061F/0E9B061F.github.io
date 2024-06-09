@@ -3,7 +3,7 @@
 {{else}}
 <div class="index tag-index">
 {{#each current.tags}}
-  {{>tagCard this current=../current}}
+  {{>tagCard descr=this.desc current=../current}}
 {{/each}}
 </div>
 {{/if}}
