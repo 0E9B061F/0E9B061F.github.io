@@ -8,14 +8,16 @@ tags:
   - heretag
 ---
 
-Say "hello" to **[heretag][repo]**, a heredoc implementation for JS using template literals. I wrote **heretag** a few years ago but had't updated it in awhile, so it's my first time writing about it here.
+Say "hello" to **:gh[|0E9B061F/heretag]**, a heredoc implementation for JS using
+template literals. I wrote **heretag** a few years ago but hadn't updated it in
+awhile, so it's my first time writing about it here.
 
-For more information see [the README][readme].
+For more information see :gh[the README|0E9B061F/heretag#readme].
 
 # UPDATE
 
-Updated [heretag][repo] to `v1.1.7`. This update is mostly maintenance work, but
-brings other changes and improvements.
+Updated :gh[|0E9B061F/heretag] to `v1.1.7`. This update is mostly maintenance
+work, but brings other changes and improvements.
 
 ## CHANGES
 
@@ -26,8 +28,4 @@ brings other changes and improvements.
 
 # LINKS
 
-* [npm: heretag][npm]
-
-[repo]:https://github.com/0E9B061F/heretag
-[readme]:https://github.com/0E9B061F/heretag#readme
-[npm]:https://www.npmjs.com/package/heretag
+* :e[npm: heretag|https://www.npmjs.com/package/heretag]

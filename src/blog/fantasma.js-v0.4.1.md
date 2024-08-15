@@ -8,21 +8,23 @@ tags:
   - fantasma
 ---
 
-Updated :ghost: [fantasma.js][repo] to `v0.4.1`. This update completes a long-overdue rewrite and adds documentation, plus [a new example][example].
+Updated :ghost: :gh[|0E9B061F/fantasma.js] to `v0.4.1`. This update completes a
+long-overdue rewrite and adds documentation, plus :i[a new
+example|gallery>fantasma-basic-example].
 
-For more information about **fantasma.js**, see [the README][readme].
+For more information about **fantasma.js**, see :e[the README|https://github.com/0E9B061F/fantasma.js#readme].
 
 # CHANGES
 
 * Updated dependencies
 * Added README
-* Added [basic example][example]
+* Added :i[basic example|gallery>fantasma-basic-example]
 * Improved packaging
-* Now available on [npm][npm]
+* Now available on :e[npm|https://www.npmjs.com/package/fantasma.js]
 
 # LINKS
 
-* [npm: fantasma.js][npm]
+* :e[npm: fantasma.js|https://www.npmjs.com/package/fantasma.js]
 
 [repo]:https://github.com/0E9B061F/fantasma.js
 [readme]:https://github.com/0E9B061F/fantasma.js#readme

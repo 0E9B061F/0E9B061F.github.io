@@ -1,0 +1,68 @@
+.hexlink {
+  &:after, & > .hl-super {
+    @include c3;
+    @include s3;
+    vertical-align: super;
+    font-family: 'Courgette', cursive;
+    color: var(--gray400)
+  }
+  &:after {
+    @include s5;
+    padding-left: 0.1em;
+    text-decoration: underline;
+  }
+  & > .hl-after {
+    display: inline-block;
+  }
+  &.hl-external {
+    &.hl-decorated {
+      &.hl-generic:after {
+        content: "ex";
+      }
+      &.hl-wiki:after {
+        content: "w";
+      }
+      &.hl-isfdb:after {
+        content: "sf";
+      }
+      &.hl-github:after {
+        content: "gh";
+      }
+      &.hl-mail:after {
+        content: "m";
+      }
+    }
+  }
+  & > a {
+    text-decoration: none;
+    color: var(--black);
+  }
+  &:not(.hl-current) {
+    & > .hl-inner > .hl-title {
+      text-decoration: underline;
+      text-decoration-color: var(--white);
+      text-decoration-thickness: 1px;
+      transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
+      color: var(--blue);
+    }
+    &:hover > .hl-inner > .hl-title {
+      text-decoration-color: var(--blue-lite);
+      color: var(--blue-lite);
+    }
+  }
+  .hexchrome & > .hl-inner > .hl-title,
+  &.hl-current > .hl-inner > .hl-title {
+    text-decoration: none;
+  }
+  &.hl-current & > .hl-inner > .hl-title {
+    @include c1;
+    color: var(--black);
+  }
+  &:not(.hl-expanded) > .hl-inner > .hl-window {
+    float: left;
+    padding-right: 0.6em;
+  }
+  &:hover > .hl-inner > .hl-window {
+    filter: brightness(1.2);
+  }
+}

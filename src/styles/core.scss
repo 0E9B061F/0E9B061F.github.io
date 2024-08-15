@@ -1,32 +1,46 @@
+@mixin s1 { font-size: 0.9em; }
+@mixin s2 { font-size: 0.8em; }
+@mixin s3 { font-size: 0.7em; }
+@mixin s4 { font-size: 0.6em; }
+@mixin s5 { font-size: 0.5em; }
+@mixin s6 { font-size: 0.4em; }
+
+@mixin t1 { font-size: 2.5em; }
+@mixin t2 { font-size: 2em; }
+@mixin t3 { font-size: 1.5em; }
+@mixin t4 { font-size: 1.2em; }
+@mixin t5 { font-size: 1.1em; }
+@mixin t6 { font-size: 1em; }
+
+@mixin c1 { font-weight: 700; }
+@mixin c2 { font-weight: 600; }
+@mixin c3 { font-weight: 500; }
+
+@mixin heading { @include c2; }
+@mixin heading-chrome {
+  font-family: var(--josefin);
+}
+@mixin heading-body {
+  font-family: var(--alegreya);
+}
+// remove this
+@mixin headtxt {
+  @include heading-chrome;
+}
+
 .hextitle, .hextxt {
   margin: 0;
-  &.t1 {
-    font-size: 2.5em;
-  }
-  &.t2 {
-    font-size: 2em;
-  }
-  &.t3 {
-    font-size: 1.5em;
-  }
-  &, &.t4 {
-    font-size: 1.2em;
-  }
-  &.t5 {
-    font-size: 1.1em;
-  }
-  &.t6 {
-    font-size: 1em;
-  }
-  &.c1 {
-    font-weight: 700;
-  }
-  &.c2 {
-    font-weight: 600;
-  }
-  &.c3 {
-    font-weight: 500;
-  }
+
+  &.t1 { @include t1; }
+  &.t2 { @include t2; }
+  &.t3 { @include t3; }
+  &.t4 { @include t4; }
+  &.t5 { @include t5; }
+  &.t6 { @include t6; }
+
+  &.c1 { @include c1; }
+  &.c2 { @include c2; }
+  &.c3 { @include c3; }
 }
 .hextitle {
   font-family: var(--josefin);

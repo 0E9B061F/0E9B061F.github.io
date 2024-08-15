@@ -10,15 +10,15 @@ tags:
 
 I have a monitor hooked up to a ~headless~ server to passively display some
 information on the console. I decided I wanted to add weather information to it,
-so I created **[weatherman](https://github.com/0E9B061F/weatherman)**.
+so I created **:gh[|0E9B061F/weatherman]**.
 
 ::fig{#weatherman pos=center}
 
 **weatherman** is a simple console widget implemented in node.js with the
-[blessed](https://github.com/chjj/blessed) TUI library. It displays the current
-weather for one or more configurable locations.
+:gh[|chjj/blessed] TUI library. It displays the current weather for one or more
+configurable locations.
 
-Currently I'm using [wttr.in](https://wttr.in) as a backend, which I'd like to
+Currently I'm using :e[|https://wttr.in] as a backend, which I'd like to
 move away from; the service experiences outages and the weather information
 itself seems to be unreliable. The **blessed**&nbsp;:angel: library is great, on
 the other hand --- building the interface was completely painless and I'll

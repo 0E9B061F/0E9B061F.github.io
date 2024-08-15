@@ -8,13 +8,16 @@ tags:
   - waxwing
 ---
 
-Introducing :bird: **[waxwing.js][repo]**, a simple HTML construction library with an elegant syntax. **waxwing** allows you to easily create entire hierarchies of HTML elements, returning references to selected *anchor elements*.
+Introducing :bird: **:gh[|0E9B061F/waxwing.js]**, a simple HTML construction library
+with an elegant syntax. **waxwing** allows you to easily create entire
+hierarchies of HTML elements, returning references to selected *anchor
+elements*.
 
-For more information see [the README][readme].
+For more information see :gh[the README|0E9B061F/waxwing.js#readme].
 
 # UPDATE
 
-Updated [waxwing.js][repo] to `v0.3.4`. This update is mostly maintenance work,
+Updated :gh[|0E9B061F/waxwing.js] to `v0.3.4`. This update is mostly maintenance work,
 but brings other changes and improvements.
 
 ## CHANGES
@@ -22,12 +25,8 @@ but brings other changes and improvements.
 * Added README
 * Added a simpler syntax for text nodes (`c.text("foo")` -> `c("foo")`)
 * Added tests
-* Now available on [npm][npm]
+* Now available on :e[npm|https://www.npmjs.com/package/waxwing.js]
 
 # LINKS
 
-* [npm: waxwing.js][npm]
-
-[repo]:https://github.com/0E9B061F/waxwing.js
-[readme]:https://github.com/0E9B061F/waxwing.js#readme
-[npm]:https://www.npmjs.com/package/waxwing.js
+* :e[npm: waxwing.js|https://www.npmjs.com/package/waxwing.js]

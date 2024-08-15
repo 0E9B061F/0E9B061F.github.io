@@ -1,0 +1,11 @@
+.toc {
+  li {
+    @include c2;
+    p {
+      margin: 0;
+    }
+  }
+  li::marker {
+    @include c3;
+  }
+}

@@ -6,19 +6,28 @@
   flex-direction: column;
   gap: 0.5em;
   .hexentry {
-    text-indent: -1em;
-    padding-left: 1em;
+    &:not(.he-thumb) {
+      text-indent: -1em;
+      padding-left: 1em;
+    }
+    .hl-date {
+      @include t6;
+    }
+    .hl-namespace {
+      @include t6;
+      @include c3;
+      font-family: var(--josefin);
+      color: #808080;
+    }
+    .hl-title {
+      @include t4;
+      @include c3;
+    }
   }
 }
 
 .blog-listing {
   .page & {
     margin: 0 1em 0 1em;
-  }
-  .link.active .title {
-    @include linkmain;
-  }
-  .link.active:hover .title {
-    @include linkover;
   }
 }

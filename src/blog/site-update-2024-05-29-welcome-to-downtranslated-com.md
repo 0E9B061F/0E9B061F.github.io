@@ -9,18 +9,15 @@ tags:
 
 It's the first site update of 2024 :confetti_ball:
 
-The site has a new name and a new domain: **[downtranslated.com][dt]**. Unfortunately I haven't had a chance to rebrand the site itself, but expect that in a future update.
+The site has a new name and a new domain: **:e[|https://downtranslated.com]**.
+Unfortunately I haven't had a chance to rebrand the site itself, but expect that
+in a future update.
 
 Changes:
 
-* I'm now hosting the site myself at [downtranslated.com][dt]
-* [0E9B061F.github.io][m1] continues to exist as a mirror
-* Added a mirror at [0E9B061F.gitlab.io][m2]
+* I'm now hosting the site myself at :e[|https://downtranslated.com]
+* :e[|https://0E9B061F.github.io] continues to exist as a mirror
+* Added a mirror at :e[|https://0E9B061F.gitlab.io]
 * Consolidated site into a single repo
 * Updated frontpage software listings
-* Added a [Gallery item][example]
-
-[dt]:https://downtranslated.com
-[m1]:https://0E9B061F.github.io
-[m2]:https://0E9B061F.gitlab.io
-[example]:/gallery/fantasma-basic-example/
+* Added a :i[Gallery item|gallery>fantasma-basic-example]

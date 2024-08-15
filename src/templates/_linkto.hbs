@@ -1,0 +1,33 @@
+<span class="hexlink hl-depth{{depthnum}}
+  {{#if colorclass}} {{colorclass}}{{/if}}
+  {{#if plain}} hl-plain{{/if}}
+  {{#if (current href current.href anchor)}} hl-current{{/if}}
+  {{#if anchor}} hl-anchor{{/if}}
+  {{#if external}} hl-external{{/if}}
+  {{#if thumb}} hl-thumb{{/if}}
+  {{#if expanded}} hl-expanded{{/if}}
+"><{{#if (notcurrent href current.href anchor)}}a{{else}}span{{/if}} class="hl-inner" href="{{href}}{{#if anchor}}#{{anchor}}{{/if}}">
+    {{~#> @partial-block ~}}
+    {{~#if (thumbable thumb image)~}}
+      <div class="hl-window">
+        <img src="{{image image size=(def size 64)}}" />
+      </div>
+    {{~/if~}}
+    {{~#if showbdate~}}
+      <span class="hl-date">{{bdate}} </span>
+    {{~/if~}}
+    {{~#if showns~}}
+      <span class="hl-namespace">{{namespace}} </span>
+    {{~/if~}}
+    <span class="hl-title">
+      {{~#if text~}}
+      {{~text~}}
+      {{~else if titleHtml~}}
+      {{{titleHtml}}}
+      {{~else~}}
+      {{~title~}}
+      {{~/if~}}
+    </span>
+    {{~/ @partial-block ~}}
+</{{#if (notcurrent href current.href anchor)}}a{{else}}span{{/if}}>{{#if superdata}}<span class="hl-super">{{superdata}}</span>{{/if~}}
+</span>

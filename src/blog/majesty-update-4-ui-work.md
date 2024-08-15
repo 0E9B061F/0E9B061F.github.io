@@ -15,7 +15,7 @@ I've decided to build Majesty's user interface using Svelte components, and
 spent some time integrating Phaser and Svelte and building a small example
 project.
 
-**The example project [can be seen here](/gallery/phaser-svelte-ui-example).**
+**The example project :i[can be seen here|gallery>phaser-svelte-ui-example].**
 
 ::fig[Phaser Svelte UI Example screenshot]{#phaser-svelte-ui-example pos=center}
 

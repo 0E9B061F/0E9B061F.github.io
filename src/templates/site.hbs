@@ -10,19 +10,20 @@
   <meta name="author" content="0E9B061F" />
   <meta name="description" content="{{#if post}}{{#if post.desc}}{{post.desc}} {{/if}}{{/if}}{{#if page}}{{#if page.desc}}{{page.desc}} {{/if}}{{/if}}{{site.desc}}" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Courgette&family=Courier+Prime:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Emoji:wght@300..700&display=swap"
+    rel="stylesheet">
+  
+  <link href="/site/hex.css" rel="stylesheet" type="text/css" />
+  <link href="/site/tags.css" rel="stylesheet" type="text/css" />
+  <script defer="defer" src="/site/hex.js"></script>
+
   <link rel="icon" type="image/png" sizes="16x16" href="/site/favicons/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/site/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/site/favicons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/site/favicons/favicon-192x192.png">
-
-  <link href="/site/hex.css" rel="stylesheet" type="text/css" />
-  <script defer="defer" src="/site/hex.js"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Josefin+Sans:wght@400;600;700&display=swap"
-    rel="stylesheet">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9SRY5HDP0"></script>
   <script>
@@ -42,7 +43,7 @@
 
 <body>
   <div class="page">
-    <div class="frontis">
+    <div class="frontis hexchrome">
       <div id="dt-sticker">down. translated.</div>
       <div class="top">
         <img class="bowler" src="{{image "bowler3"}}" />
@@ -78,7 +79,7 @@
           <div class="title-row line2">
             <span class="byline">by</span>
             <span class="name">
-              {{>link (mask current "/" "0E9B061F")}}
+              {{>linkto (go "/") current=current text="0E9B061F" }}
             </span>
           </div>
         </h1>
@@ -91,9 +92,9 @@
       </div>
       <div class="centered"><img class="rule" src="{{image "dash-4"}}" /></div>
       <div class="page-content">
-      <div class="page-header">
+      <div class="page-header hexchrome">
         <div class="hextitle t1 c1 heading">
-          {{#>link (maskraw current page.href page.title)}}{{{../page.titleHtml}}}{{/link}}
+          {{>linkto page current=current}}
           {{#if post}} &mdash; <span>{{{post.titleHtml}}}</span>{{/if}}
         </div>
         {{#if post}}
@@ -117,12 +118,12 @@
             <div class="postnav-titles">
               <div class="postnav-title postnav-prev">
                 {{#if post.prev}}
-                <a class="link active button" href="{{post.prev.href}}">{{{post.prev.titleHtml}}}</a>
+                {{>linkto post.prev current=current}}
                 {{/if}}
               </div>
               <div class="postnav-title postnav-next">
                 {{#if post.next}}
-                <a class="link active button" href="{{post.next.href}}">{{{post.next.titleHtml}}}</a>
+                {{>linkto post.next current=current}}
                 {{/if}}
               </div>
             </div>
@@ -136,12 +137,12 @@
       </div>
     </div>
     {{else}}
-    <div class="home">
+    <div class="home hexchrome">
       <img class="rule" src="{{image "dash-4"}}" />
       {{{home}}}
     </div>
     {{/if}}
-    <div class="home foot">
+    <div class="home foot hexchrome">
     <img class="rule start-contact" src="{{image "dash-4"}}" />
 
     <div class="contact-heading">
@@ -155,17 +156,17 @@
         <div class="pair">
           <dt>Email</dt>
           <div class="spacer"><div class="bar"></div></div>
-          <div class="aligner"><dd><a class="link active" href="mailto:0E9B061F@protonmail.com">0E9B061F@protonmail.com</a></dd></div>
+          <div class="aligner"><dd>{{>linkext "mailoto:0E9B061F@protonmail.com"}}</dd></div>
         </div>
         <div class="pair">
           <dt>Personal&nbsp;Site</dt>
           <div class="spacer"><div class="bar"></div></div>
-          <div class="aligner"><dd><a href="https://0x2764.com">0x2764.com</a></dd></div>
+          <div class="aligner"><dd>{{>linkext "https://0x2764.com"}}</dd></div>
         </div>
         <div class="pair">
           <dt>GitHub</dt>
           <div class="spacer"><div class="bar"></div></div>
-          <div class="aligner"><dd><a class="link active" href="https://github.com/0E9B061F">github.com/0E9B061F</a></dd></div>
+          <div class="aligner"><dd>{{>linkext "https://github.com/0E9B061F"}}</dd></div>
         </div>
         <div class="pair">
           <dt>GitLab</dt>
@@ -173,56 +174,60 @@
             <div class="bar"></div>
           </div>
           <div class="aligner">
-            <dd><a class="link active" href="https://gitlab.com/0E9B061F">gitlab.com/0E9B061F</a></dd>
+            <dd>{{>linkext "https://gitlab.com/0E9B061F"}}</dd>
           </div>
         </div>
         <div class="pair">
           <dt>NPM&nbsp;Packages</dt>
           <div class="spacer"><div class="bar"></div></div>
-          <div class="aligner"><dd><a class="link active" href="https://npmjs.com/~0e9b061f">npmjs.com/~0e9b061f</a></dd></div>
+          <div class="aligner"><dd>{{>linkext "https://npmjs.com/~0e9b061f"}}</dd></div>
         </div>
         <div class="pair">
           <dt>Keybase</dt>
           <div class="spacer"><div class="bar"></div></div>
-          <div class="aligner"><dd><a class="link active" href="https://keybase.io/0e9b061f">keybase.io/0e9b061f</a></dd></div>
+          <div class="aligner"><dd>{{>linkext "https://keybase.io/0e9b061f"}}</dd></div>
         </div>
         <div class="multiline">
           <div class="pair">
             <dt>Mirrors</dt>
             <div class="spacer"><div class="bar"></div></div>
             <div class="aligner">
-              <dd><a class="link active autolink" href="https://downtranslated.com">downtranslated.com</a></dd>
+              <dd>{{>linkext "https://downtranslated.com"}}</dd>
             </div>
           </div>
           <div class="pair">
             <div class="spacer">
             </div>
-            <dd><a class="link active autolink" href="https://0E9B061F.github.io">0E9B061F.github.io</a></dd>
+            <dd>{{>linkext "https://0E9B061F.github.io"}}</dd>
           </div>
           <div class="pair">
             <div class="spacer">
             </div>
-            <dd><a class="link active autolink" href="https://0E9B061F.gitlab.io">0E9B061F.gitlab.io</a></dd>
+            <dd>{{>linkext "https://0E9B061F.gitlab.io"}}</dd>
           </div>
         </div>
       </dl>
     </div>
     </div>
   </div>
-  <div class="sidebar">
+  <div class="sidebar hexchrome">
     {{>menu}}
+
+    {{#unless hideSideIndex}}
+    {{>portal}}
+    {{/unless}}
 
     {{#if toc}}
     <div class="toc">
       <div class="hextitle t3 c2 hexblock">TABLE OF CONTENTS</div>
-      <div class="hextxt t4">
+      <div class="hextxt t4 c3">
         {{{toc}}}
       </div>
     </div>
     {{/if}}
 
     {{#unless hideSideIndex}}
-    {{>portal listing=long}}
+    {{{long}}}
     {{/unless}}
 
     <div class="foot">

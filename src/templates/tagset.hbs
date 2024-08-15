@@ -2,8 +2,21 @@
 {{{content}}}
 {{else}}
 <div class="index tag-index">
-{{#each current.tags}}
-  {{>tagCard descr=this.desc current=../current}}
-{{/each}}
+  {{#if site.groups.ungrouped.tags.length}}
+  <div class="tag-grouping ungrouped-tags">
+  <h2 class="hextitle t3 c2">Ungrouped</h2>
+  {{#each site.groups.ungrouped.tags}}
+    {{>tagCard descr=this.desc current=../current}}
+  {{/each}}
+  </div>
+  {{/if}}
+  {{#each site.groups.groups}}
+  <div class="tag-grouping grouped-tags group-{{this.name}}">
+  <h2 class="hextitle t3 c2"><span class="grouped-{{this.name}}"><span class="colorize">&#x2B24;</span></span> {{>linkto current=../current}}</h2>
+  {{#each this.tags}}
+    {{>tagCard descr=this.desc current=../../current}}
+  {{/each}}
+  </div>
+  {{/each}}
 </div>
 {{/if}}

@@ -1,12 +1,8 @@
 {{#if list}}
 <ul class="hexlisting blog-listing">
 {{#each list}}
-  <li class="hexentry">
-    {{#>plain (maskraw ../current this.href this.title)}}
-      <span class="date hextxt t6 c3">{{../bdate}}</span>
-      <span class="namespace hextxt t6">{{../namespace}}</span>
-      <span class="title hextxt t4">{{{../titleHtml}}}</span>
-    {{/plain}}
+  <li class="hexentry{{#if image}} he-thumb{{/if}}">
+    {{>linkto this current=../current showbdate=true showns=../showns thumb=true}}
   </li>
 {{/each}}
 </ul>

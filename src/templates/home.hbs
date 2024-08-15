@@ -1,4 +1,4 @@
-<div class="home-navigation">
+<div class="home-navigation hexchrome">
   <div class="hexblock b1">
   {{>menu}}
   </div>
@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="software-lists">
+<div class="software-lists hexchrome">
 
   <!-- Node.js -->
   <div class="wide-list">
@@ -18,25 +18,25 @@
       <div class="software-list">
         <dl>
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/scroll">scroll</a>
-            <span class="docs-link">[<a class="link active" href="https://www.npmjs.com/package/scroll-backup">npm</a>]</span>
+            {{>linkto (egh "0E9B061F/scroll")}}
+            <span class="docs-link">[{{>linkto (enpm "scroll-backup" "npm")}}]</span>
           </dt>
           <dd>Configurable backup system using restic and rsync</dd>
 
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/cpb">Commonplace Book</a>
-            <span class="docs-link">[<a class="link active" href="https://0x2764.com">example</a>]</span>
+            {{>linkto (egh "0E9B061F/cpb" "Commonplace Book")}}
+            <span class="docs-link">[{{>linkto (ext "https://0x2764.com" "example")}}]</span>
           </dt>
           <dd>Multi-user wiki implemented as a singple-page application</dd>
       
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/heretag">heretag</a>
-            <span class="docs-link">[<a class="link active" href="https://www.npmjs.com/package/heretag">npm</a>]</span>
+            {{>linkto (egh "0E9B061F/heretag")}}
+            <span class="docs-link">[{{>linkto (enpm "heretag" "npm")}}]</span>
           </dt>
           <dd>Heredoc implementation using template literals</dd>
 
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/panopticon.js">panopticon.js</a>
+            {{>linkto (egh "0E9B061F/panopticon.js")}}
           </dt>
           <dd>Recursive state management library</dd>
           
@@ -45,28 +45,28 @@
       <div class="software-list">
         <dl>
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/ghast.js">ghast.js</a>
-            <span class="docs-link">[<a class="link active" href="/docs/ghast.js">docs</a>]</span>
-            <span class="docs-link">[<a class="link active" href="https://www.npmjs.com/package/ghast.js">npm</a>]</span>
+            {{>linkto (egh "0E9B061F/ghast.js")}}
+            <span class="docs-link">[{{>linkto (go "/docs/ghast.js") text="docs"}}]</span>
+            <span class="docs-link">[{{>linkto (enpm "ghast.js" "npm")}}]</span>
           </dt>
           <dd>Abstract syntax tree for Peggy/PEG.js</dd>
       
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/lexdoc">lexdoc</a>
-            <span class="docs-link">[<a class="link active" href="https://www.npmjs.com/package/lexdoc">npm</a>]</span>
+            {{>linkto (egh "0E9B061F/lexdoc")}}
+            <span class="docs-link">[{{>linkto (enpm "lexdoc" "npm")}}]</span>
           </dt>
           <dd>Simplified lexer creation library for Chevrotain</dd>
 
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/fantasma.js">fantasma.js</a>
-            <span class="docs-link">[<a class="link active" href="/gallery/fantasma-example">example</a>]</span>
-            <span class="docs-link">[<a class="link active" href="https://www.npmjs.com/package/fantasma.js">npm</a>]</span>
+            {{>linkto (egh "0E9B061F/fantasma.js")}}
+            <span class="docs-link">[{{>linkto (go "/gallery/fantasma-example") text="example"}}]</span>
+            <span class="docs-link">[{{>linkto (enpm "fantasma.js" "npm")}}]</span>
           </dt>
           <dd>Sophisticated animation library for the web</dd>
 
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/waxwing.js">waxwing.js</a>
-            <span class="docs-link">[<a class="link active" href="https://www.npmjs.com/package/waxwing.js">npm</a>]</span>
+            {{>linkto (egh "0E9B061F/waxwing.js")}}
+            <span class="docs-link">[{{>linkto (enpm "waxwing.js" "npm")}}]</span>
           </dt>
           <dd>Create HTML in JS using a simple and elegant DSL</dd>
         </dl>
@@ -79,7 +79,7 @@
     <h2 class="list-heading">Arch Linux</h2>
     <dl>
       <dt>
-        <a class="link active" href="https://github.com/0E9B061F/addmag">addmag</a>
+        {{>linkto (egh "0E9B061F/addmag")}}
       </dt>
       <dd>Open magnet links with a remote Transmission daemon</dd>
     </dl>
@@ -90,7 +90,7 @@
     <h2 class="list-heading">Contributions</h2>
     <dl>
       <dt>
-        <a class="link active" href="https://github.com/pablo-abc/svelte-markdown">svelte-markdown</a>
+        {{>linkto (egh "pablo-abc/svelte-markdown")}}
       </dt>
       <dd>Implemented support for pre-processed tokens</dd>
     </dl>
@@ -105,17 +105,17 @@
       <div class="software-list">
         <dl>
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/imgfilter">imgfilter</a>
+            {{>linkto (egh "0E9B061F/imgfilter")}}
           </dt>
           <dd>Filterable image file selection dialogue</dd>
           
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/hashbeam">hashbeam</a>
+            {{>linkto (egh "0E9B061F/hashbeam")}}
           </dt>
           <dd>Get a public link for a local image, uploading only as necessary</dd>
 
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/pig">pig</a>
+            {{>linkto (egh "0E9B061F/pig")}}
           </dt>
           <dd>A simple image scraper</dd>
         </dl>
@@ -124,12 +124,12 @@
       <div class="software-list">
         <dl>
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/invisibleink">invisibleink</a>
+            {{>linkto (egh "0E9B061F/invisibleink")}}
           </dt>
           <dd>Script for working with GPG-encrypted text</dd>
           
           <dt>
-            <a class="link active" href="https://github.com/0E9B061F/xthemes">xthemes</a>
+            {{>linkto (egh "0E9B061F/xthemes")}}
           </dt>
           <dd>Manage color themes for X</dd>
         </dl>
@@ -143,19 +143,17 @@
     <h2 class="list-heading">Ruby Gems</h2>
     <dl>
       <dt>
-        <a class="link active" href="https://github.com/0E9B061F/arkweb">ARKWEB</a>
+        {{>linkto (egh "0E9B061F/arkweb" "ARKWEB")}}
       </dt>
       <dd>A flat website compiler</dd>
   
       <dt>
-        <a class="link active" href="https://github.com/0E9B061F/ark-cli">ark-cli</a>
-        <span class="docs-link">[<a class="link active" href="/docs/ark-cli">docs</a>]</span>
+        {{>linkto (egh "0E9B061F/ark-cli")}}
       </dt>
       <dd>Full-featured command line interface library for Ruby</dd>
   
       <dt>
-        <a class="link active" href="https://github.com/0E9B061F/ark-util">ark-util</a>
-        <span class="docs-link">[<a class="link active" href="/docs/ark-util">docs</a>]</span>
+        {{>linkto (egh "0E9B061F/ark-util")}}
       </dt>
       <dd>Utility library in Ruby used by other ark* gems</dd>
     </dl>
@@ -165,7 +163,7 @@
     <h2 class="list-heading">GUI Applications</h2>
     <dl>
       <dt>
-        <a class="link active" href="https://github.com/0E9B061F/batchrename">batchrename</a>
+        {{>linkto (egh "0E9B061F/batchrename")}}
       </dt>
       <dd>Batch file renamer for Windows</dd>
     </dl>

@@ -137,12 +137,8 @@
     <lastmod>2024-05-24</lastmod>
   </url>  
   <url>
-    <loc>https://downtranslated.com/index/</loc>
-    <lastmod>2024-06-07</lastmod>
-  </url>  
-  <url>
-    <loc>https://downtranslated.com/metadata.json</loc>
-    <lastmod>2024-06-08</lastmod>
+    <loc>https://downtranslated.com/site/tags.css</loc>
+    <lastmod>2024-06-11</lastmod>
   </url>  
   <url>
     <loc>https://downtranslated.com/tags/</loc>
@@ -259,5 +255,37 @@
   <url>
     <loc>https://downtranslated.com/tags/project_docs/</loc>
     <lastmod>2024-05-24</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/groups/</loc>
+    <lastmod>2024-06-11</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/groups/ungrouped/</loc>
+    <lastmod>2024-06-11</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/groups/website/</loc>
+    <lastmod>2024-06-11</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/groups/programming/</loc>
+    <lastmod>2024-06-11</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/groups/projects/</loc>
+    <lastmod>2024-06-11</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/groups/personal/</loc>
+    <lastmod>2024-06-11</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/index/</loc>
+    <lastmod>2024-06-07</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/metadata.json</loc>
+    <lastmod>2024-06-11</lastmod>
   </url>  
 </urlset>

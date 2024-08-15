@@ -1,34 +1,121 @@
 {
   "title": "Tags",
-  "desc": "An index of tags used to categorize content on the site.",
+  "desc": "An index of tags used to organize content on the site.",
   "tags": {
     "update": {
-      "color": "#6e7fd2",
+      "group": "website",
       "desc": "All updates to anything."
     },
-    "project update": {
-      "desc": "Updates to my personal projects."
-    },
     "site update": {
+      "group": "website",
       "desc": "Updates to this site."
     },
-    "work sample": {
-      "desc": "Live samples of my work."
+    "media": {
+      "group": "website",
+      "desc": "Any post with embedded media."
     },
+    "information": {
+      "group": "website",
+      "desc": "General information"
+    },
+    "metadata": {
+      "group": "website",
+      "desc": "Posts with information about the site itself"
+    },
+    "wip": {
+      "group": "website",
+      "desc": "Posts about anything under development"
+    },
+
     "ghast": {
+      "group": "projects",
       "desc": "Posts about ghast.js"
     },
     "fantasma": {
+      "group": "projects",
       "desc": "Posts about fantasma.js"
     },
     "desdichado": {
+      "group": "projects",
       "desc": "Posts about Desdichado, a turn-based tactics game."
     },
+    "majesty": {
+      "group": "projects",
+      "desc": "Posts related to Majesty, an experimental game project"
+    },
+    "scroll": {
+      "group": "projects",
+      "desc": "A configurable cross-platform backup system with multiple backends"
+    },
+    "heretag": {
+      "group": "projects",
+      "desc": "A heredoc implementation for JS user template literals"
+    },
+    "waxwing": {
+      "group": "projects",
+      "desc": "A library for constructing HTML in JS, with an elegant syntax"
+    },
+    "weatherman": {
+      "group": "projects",
+      "desc": "A simple CLI tool to display the weather for one or more locations"
+    },
+    "mkv": {
+      "group": "projects",
+      "desc": "A small versioning tool I use in my projects"
+    },
+
+    "project update": {
+      "group": "programming",
+      "desc": "Updates to my personal projects."
+    },
+    "work sample": {
+      "group": "programming",
+      "desc": "Live samples of my work."
+    },
     "project docs": {
+      "group": "programming",
       "desc": "Documentation for my projects."
     },
-    "media": {
-      "desc": "Any post with embedded media."
+    "phaser": {
+      "group": "programming",
+      "desc": "Anything related to the Phaser game library"
+    },
+    "svelte": {
+      "group": "programming",
+      "desc": "Anything related to the Svelte frontend framework"
+    },
+    "game dev": {
+      "group": "programming",
+      "desc": "All posts related to game development and my game projects"
+    },
+    "example": {
+      "group": "programming",
+      "desc": "Examples of my work"
+    },
+
+    "books": {
+      "group": "personal",
+      "desc": "Posts about physical books"
+    },
+    "sci-fi": {
+      "group": "personal",
+      "desc": "Anything science fiction. Books, art, etc."
+    },
+    "retro": {
+      "group": "personal",
+      "desc": "Old pop culture stuff"
+    },
+    "art": {
+      "group": "personal",
+      "desc": "Posts containing my own art"
+    },
+    "poem": {
+      "group": "personal",
+      "desc": "Posts about a character named Poem"
+    },
+    "majestic": {
+      "group": "personal",
+      "desc": "Posts about the Majestic setting"
     }
   }
 }

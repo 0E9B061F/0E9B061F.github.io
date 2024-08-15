@@ -2,11 +2,11 @@
 
   <div class="hexblock hexline heading">
     <h2 class="hexline-item hextitle t3 c2">
-      {{>link (mask current "/index" "INDEX")}}
+      {{>linkto (go "/index") current=current text="INDEX"}}
     </h2>
     <div class="sep hextitle t3 c2">&middot;</div>
     <h3 class="hexline-item hextitle t4 c2">
-      {{>link (mask current "/tags" "TAGS")}}
+      {{>linkto (go "/tags") current=current text="TAGS"}}
     </h3>
     <div class="sep hextitle t3 c2">&middot;</div>
     <div class="tag-list">
@@ -18,17 +18,16 @@
 
   <div class="hexblock hexline heading">
     <h3 class="hexline-item hextitle t6 c2">
-      {{>link (mask current "/info/about" "ABOUT")}}
+      {{>linkto (go "/info/about") current=current text="ABOUT"}}
     </h3>
     <div class="sep hextitle t5 c1">&middot;</div>
     <h3 class="hexline-item hextitle t6 c2">
-      {{>link (mask current "/info/author" "AUTHOR")}}
+      {{>linkto (go "/info/author") current=current text="AUTHOR"}}
     </h3>
     <div class="sep hextitle t5 c1">&middot;</div>
     <h3 class="hexline-item hextitle t6 c2">
-      {{>link (maskraw current "#directory" "DIRECTORY")}}
+      {{>linkto current current=current anchor="directory" text="DIRECTORY"}}
     </h3>
   </div>
 
-  {{{listing}}}
 </div>

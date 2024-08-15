@@ -1,6 +1,6 @@
 {{#if list}}
 <div class="gallery">
-  {{#each list}}{{>item this}}{{/each}}
+  {{#each list}}{{>linkto this current=current thumb=true size=280 expanded=true}}{{/each}}
 </div>
 {{else}}
 {{{content}}}

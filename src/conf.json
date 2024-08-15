@@ -12,5 +12,15 @@
     "info": "Documents",
     "gallery": "Gallery",
     "docs": "Gallery"
-  }
+  },
+  "colors": {
+    "depth": [
+      "#52796F",
+      "#84A98C",
+      "#6E7FD2"
+    ],
+    "external": "#E5625E",
+    "anchor": "#F37748"
+  },
+  "defaultns": "info"
 }

@@ -7,24 +7,19 @@ tags:
   - metadata
 ---
 
-Welcome! **down. translated.** is the blog and portfolio of one [0E9B061F][author]. It
-mainly contains updates about my open source projects, as well as live examples
-and some documentation. Occasionally I post about old sci-fi magazines and other
-topics of personal interest.
+Welcome! **down. translated.** is the blog and portfolio of one
+:i[0E9B061F|author]. It mainly contains updates about my open source
+projects, as well as live examples and some documentation. Occasionally I post
+about old sci-fi magazines and other topics of personal interest.
 
 # Legal
 
-**down. translated.** ([downtranslated.com][dt]) copyright 2022-2024 by **[0E9B061F][author]** is licensed
-under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-International][deed]
+**:e[down. translated.|https://downtranslated.com]** copyright 2022-2024 by
+**:i[0E9B061F|author]** is licensed under :e[CC BY-NC-SA 4.0|https://creativecommons.org/licenses/by-nc-sa/4.0/]
 
-I may share material here belonging to others or available under different licensing terms, to which the above does not apply.
+I may share material here belonging to others or available under different
+licensing terms, to which the above does not apply.
 
 # Finally
 
-Remember to **RELAXEN UND WATSCHEN DER [BLINKENLICHTEN][lights]**
-
-[dt]:https://downtranslated.com
-[author]:/info/author/
-[lights]:https://en.wikipedia.org/wiki/Blinkenlights
-[deed]:https://creativecommons.org/licenses/by-nc-sa/4.0/
+Remember to **RELAXEN UND WATSCHEN DER :w[BLINKENLICHTEN|Blinkenlights]**

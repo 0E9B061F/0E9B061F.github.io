@@ -1,13 +1,71 @@
 .post-info {
-    display: flex;
-    gap: 0.75em;
-    align-items: baseline;
-    justify-content: center;
-    .post-date {
-      font-size: 1.2em;
-      font-weight: 500;
-    }
+  display: flex;
+  gap: 0.75em;
+  align-items: baseline;
+  justify-content: center;
+  .post-date {
+    font-size: 1.2em;
+    font-weight: 500;
   }
+}
+
+@mixin pt1 { font-size: 1.7em; }
+@mixin pt2 { font-size: 1.55em; }
+@mixin pt3 { font-size: 1.5em; }
+@mixin pt4 { font-size: 1.45em; }
+@mixin pt5 { font-size: 1.4em; }
+@mixin pt6 { font-size: 1.4em; }
+
+@mixin ph {
+  @include heading-body;
+  clear: both;
+  margin-top: 3em;
+}
+
+@mixin ph-top {
+  @include ph;
+}
+@mixin ph-mid {
+  @include ph;
+}
+@mixin ph-low {
+  @include ph;
+}
+
+@mixin ph1 {
+  @include ph-top;
+  @include pt1;
+  @include c2;
+  margin-top: 1em;
+}
+@mixin ph2 {
+  @include ph-top;
+  @include pt2;
+  @include c2;
+  margin-top: 0.8em;
+}
+@mixin ph3 {
+  @include ph-top;
+  @include pt3;
+  @include c3;
+  margin-top: 0.6em;
+}
+@mixin ph4 {
+  @include ph-top;
+  @include pt4;
+  @include c3;
+  margin-top: 0.4em;
+}
+@mixin ph5 {
+  @include ph-top;
+  @include pt5;
+  margin-top: 0.2em;
+}
+@mixin ph6 {
+  @include ph-top;
+  @include pt6;
+  margin-top: 0.1em;
+}
 
 .post {
   font-size: 1.2em;
@@ -21,29 +79,12 @@
     margin: 1.5em 0 0 0;
     font-weight: 700;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @include headtxt;
-    clear: both;
-    margin-top: 3em;
-  }
-  h1 {
-    font-size: 1.6em;
-  }
-  h2 {
-    font-size: 1.55em;
-  }
-  h3 {
-    font-size: 1.5em;
-  }
-  h4 {
-    font-size: 1.45em;
-  }
-  h5 {
-    font-size: 1.4em;
-  }
-  h6 {
-    font-size: 1.4em;
-  }
+  h1 { @include ph1; }
+  h2 { @include ph2; }
+  h3 { @include ph3; }
+  h4 { @include ph4; }
+  h5 { @include ph5; }
+  h6 { @include ph6; }
   code {
     font-family: var(--cprime);
     background-color: var(--gray900);
@@ -108,20 +149,6 @@
     p {
       display: none;
     }
-  }
-  .link-wiki:after,
-  .link-isfdb:after {
-    vertical-align: super;
-    font-size: 0.9em;
-    font-family: 'Courgette', cursive;
-    font-weight: 500;
-    padding-left: 0.1em;
-  }
-  .link-wiki:after {
-    content: "w";
-  }
-  .link-isfdb:after {
-    content: "sf";
   }
 }
 

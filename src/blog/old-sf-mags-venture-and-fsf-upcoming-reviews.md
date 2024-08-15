@@ -11,9 +11,9 @@ tags:
 
 ::fig[*Hour of the Horde* illustration, detail]{#vsf-001-005}
 
-I recently picked up a couple of old sci-fi magazines --- :w[*The Magazine of
-Fantasy & Science Fiction*] :sfp[(March 1969)]{#61261} and :w[*Venture Science
-Fiction*] :sfp[(May 1969)]{#104291}, chosen mostly based on their covers. I'll
+I recently picked up a couple of old sci-fi magazines --- *:w[The Magazine of
+Fantasy & Science Fiction]* :sfp[(March 1969)|61261] and *:w[Venture Science
+Fiction]* :sfp[(May 1969)|104291], chosen mostly based on their covers. I'll
 be doing mini-reviews when I get around to reading them. In the mean time, I'll
 share some pictures and information about each.
 
@@ -24,7 +24,7 @@ share some pictures and information about each.
 
 Founded in 1949, the venerable *F&SF* is still being published today. This issue
 features two *novelets*, five short stories, a cartoon, and :w[Isaac
-Asimov's]{q="Isaac Asimov"} long-running popular science column. Asimov's
+Asimov's|] long-running popular science column. Asimov's
 column, coincidentally, began in the other magazine featured in this post
 (*Venture Science Fiction*) --- it was a companion to *F&SF*, and the column
 moved to there with the end of *VSF*.
@@ -41,11 +41,12 @@ moved to there with the end of *VSF*.
 ::fig[*Venture Science Fiction* cover, May 1969]{#vsf-001-001}
 
 The horror-ish aesthetic of the cover made this one stand out and I was rewarded
-with some excellent illustrations by :sfa[Bert Tanner]{#25140}. This issue is
-from *VSF*'s second run, neither of which lasted long. The magazine did have
-some impact though: the first publication of :w[Sturgeon's Law] was in *VSF*,
-and Asimov's popsci column began here, as mentioned above. It also published
-:w[Vonda N. McIntyre]'s first story, and an early story by :w[James Tiptree Jr.]
+with some excellent illustrations by :sfa[Bert Tanner|25140]. This issue is from
+*VSF*'s second run, neither of which lasted long. The magazine did have some
+impact though: the first publication of :w[Sturgeon's Law] was in *VSF*, and
+Asimov's popsci column began here, as mentioned above. It also published
+:w[Vonda N. McIntyre's|] first story, and an early story by :w[James Tiptree
+Jr.]
 
 :::gal
 ::fig[*VSF* contents]{#vsf-001-003}

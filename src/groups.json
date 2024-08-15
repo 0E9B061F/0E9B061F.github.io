@@ -1,0 +1,18 @@
+{
+  "title": "Groups",
+  "desc": "An index of groups used to organize tags on the site.",
+  "groups": {
+    "website": {
+      "color": "#55538D"
+    },
+    "programming": {
+      "color": "#CD9D51"
+    },
+    "projects": {
+      "color": "#D7263D"
+    },
+    "personal": {
+      "color": "#5B8E7D"
+    }
+  }
+}

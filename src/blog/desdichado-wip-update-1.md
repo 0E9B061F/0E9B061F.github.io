@@ -10,11 +10,15 @@ tags:
   - media
 ---
 
-Long time without an update. Since the last one I've learned some CAD and I've done some work on an old game project called Desdichado.
+Long time without an update. Since the last one I've learned some CAD and I've
+done some work on an old game project called Desdichado.
 
 # Desdichado
 
-Desdichado is a turn-based tactics game project I began a couple years ago. Since returning to it I've primarily been working on art, specifically the model for a character named Ril, and I've also made modifications to my custom cel shader. Here's what Ril looks like:
+Desdichado is a turn-based tactics game project I began a couple years ago.
+Since returning to it I've primarily been working on art, specifically the model
+for a character named Ril, and I've also made modifications to my custom cel
+shader. Here's what Ril looks like:
 
 :::gal
 ::fig{#dwip-001}
@@ -28,7 +32,11 @@ Desdichado is a turn-based tactics game project I began a couple years ago. Sinc
 
 # CAD
 
-I've also taught myself a bit of CAD, using CadQuery. I had a lot of fun with this and enjoyed creating models with code instead of the 3D modeling experience I'm used to. In particular it allowed me to adjust the entire model on the fly quickly - a single common measure can be changed at once instead of editing the mesh of every part using that measure.
+I've also taught myself a bit of CAD, using CadQuery. I had a lot of fun with
+this and enjoyed creating models with code instead of the 3D modeling experience
+I'm used to. In particular it allowed me to adjust the entire model on the fly
+quickly - a single common measure can be changed at once instead of editing the
+mesh of every part using that measure.
 
 I designed a few things, including this small LED lamp:
 

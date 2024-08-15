@@ -7,13 +7,12 @@ tags:
   - site update
 ---
 
-:tada: [0E9B061F.github.io](https://0E9B061F.github.io) has been updated. This
+:tada: :e[|https://0E9B061F.github.io] has been updated. This
 update adds minor visual improvements. Support for inline markdown in titles was
 added. Support for emojis in markdown was added :grin:. Emojis are displayed
-using the monochrome
-[Noto Emoji](https://fonts.google.com/noto/specimen/Noto+Emoji) for better
-consistency with the design. Minor tweaks and improvements to the layout were
-also made. 
+using the monochrome :e[Noto
+Emoji|https://fonts.google.com/noto/specimen/Noto+Emoji] for better consistency
+with the design. Minor tweaks and improvements to the layout were also made. 
 
 # Observations
 
