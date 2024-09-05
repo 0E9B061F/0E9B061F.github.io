@@ -85,10 +85,18 @@
   h4 { @include ph4; }
   h5 { @include ph5; }
   h6 { @include ph6; }
-  code {
+  pre, code {
     font-family: var(--cprime);
     background-color: var(--gray900);
+  }
+  code {
     padding: 0 0.35em 0 0.35em;
+  }
+  pre {
+    padding: 0.35em;
+    & > code {
+      padding: 0;
+    }
   }
   figure {
     clear: both;
@@ -101,10 +109,10 @@
       width: min-content;
       min-width: 100%;
       @media (min-width: 425px) {
-        font-size: 0.85em;
+        font-size: 0.8em;
       }
       @media (min-width: 768px) {
-        font-size: 0.95em;
+        font-size: 0.85em;
       }
     }
     &.fig-right,
@@ -150,6 +158,25 @@
       display: none;
     }
   }
+  .deco-notice {
+    font-style: italic;
+    margin: 1em;
+  }
+  .deco-small {
+    font-size: 0.9em;
+  }
+  .deco-right {
+    text-align: right;
+  }
+  .deco-quote {
+    margin: 1em 4em 1em 4em;
+    p {
+      margin: 0;
+    }
+    .deco-right {
+      margin-top: 0.5em;
+    }
+  }
 }
 
 .post .nav {
@@ -168,3 +195,4 @@
     text-align: right;
   }
 }
+

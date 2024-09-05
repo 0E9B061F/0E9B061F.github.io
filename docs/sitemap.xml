@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://downtranslated.com/</loc>
-    <lastmod>2024-06-07</lastmod>
+    <lastmod>2024-09-05</lastmod>
   </url>  
   <url>
     <loc>https://downtranslated.com/blog/</loc>
@@ -94,7 +94,7 @@
   </url>  
   <url>
     <loc>https://downtranslated.com/info/</loc>
-    <lastmod>2024-06-07</lastmod>
+    <lastmod>2024-09-05</lastmod>
   </url>  
   <url>
     <loc>https://downtranslated.com/info/about/</loc>
@@ -103,6 +103,10 @@
   <url>
     <loc>https://downtranslated.com/info/author/</loc>
     <lastmod>2024-06-07</lastmod>
+  </url>  
+  <url>
+    <loc>https://downtranslated.com/info/quotes/</loc>
+    <lastmod>2024-09-05</lastmod>
   </url>  
   <url>
     <loc>https://downtranslated.com/gallery/</loc>
@@ -282,7 +286,7 @@
   </url>  
   <url>
     <loc>https://downtranslated.com/index/</loc>
-    <lastmod>2024-06-07</lastmod>
+    <lastmod>2024-09-05</lastmod>
   </url>  
   <url>
     <loc>https://downtranslated.com/metadata.json</loc>
