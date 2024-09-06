@@ -1,2 +1,2 @@
-(()=>{"use strict";const e=new URL(window.location.href);document.querySelectorAll(".autolink").forEach((t=>{const n=t.getAttribute("href");if(new URL(n).hostname==e.hostname){const e=document.createElement("span");e.innerText=t.innerText,e.classList.add("link","current"),t.parentNode.replaceChild(e,t)}}))})();
+(()=>{"use strict";const e=new URL(window.location.href);let n;document.querySelectorAll(".autolink").forEach((o=>{const t=o.getAttribute("href");if(new URL(t).hostname==e.hostname){const t=document.createElement("span");t.innerText=o.innerText,t.classList.add("link","current"),o.parentNode.replaceChild(t,o),n=e.hostname}})),n?console.log(`On known mirror: ${n}`):console.log("Not on any known mirror.")})();
 //# sourceMappingURL=hex.js.map
