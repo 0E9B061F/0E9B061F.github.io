@@ -6,20 +6,12 @@ edited: 2024-09-05T22:42:03.814602316-04:00
 tags:
   - personal
   - notes
-  - philosophy
-  - christianity
-  - literature
 ---
 
-A collection of quotes, scraps and miscellany, collected according to no
-particular criteria except my fancy.
+Quotes, scraps and miscellany, collected according to no particular criteria
+except my fancy.
 
 # General
-
-:::dec{#quote}
-For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.
-::dec[--- :w[Richard Feynman], :e[Personal Observations on Reliability of Shuttle|https://www.nasa.gov/history/rogersrep/v2appf.htm]]{#right}
-:::
 
 :::dec{#quote}
 The totality of true thoughts is a picture of the world
@@ -42,41 +34,54 @@ I am the Cat who walks by himself, and all places are alike to me.
 :::
 
 :::dec{#quote}
-Nothing is concealed from the wise and sensible, while the unbelieving and unworthy cannot learn the secrets.
-::dec[--- :w[Cornelius Agrippa]]{#right}
-:::
-
-:::dec{#quote}
 All things which are similar and therefore connected are drawn to each other's power.
 ::dec[--- :w[Cornelius Agrippa]]{#right}
 :::
 
 :::dec{#quote}
-Listen to many, speak to a few.
-::dec[--- :w[Shakespeare]]{#right}
-:::
-
-:::dec{#quote}
-When words are scarce they are seldom spent in vain
-::dec[--- :w[Shakespeare]]{#right}
-:::
-
-:::dec{#quote}
 Concord is a mighty rampart.
-::dec[--- :w[Erasmus]]{#right}
-:::
-
-:::dec{#quote}
-A person often meets his destiny on the road he took to avoid it.
-::dec[--- :w[Jean de la Fontaine]]{#right}
+::dec[--- :w[Erasmus], in a letter to :w[Philip Melanchthon]]{#right}
 :::
 
 :::dec{#quote}
 But of such great assistance is good fortune in all situations alike that it actually bestows understanding upon the ignorant.
-::dec[--- :w[Cassius Dio], Roman History LXXIX.38]{#right}
+::dec[--- :w[Cassius Dio], :e[Roman History LXXIX.38|https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/79*.html]]{#right}
 :::
 
-# Bible Passages
+:::dec{#quote}
+For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.
+::dec[--- :w[Richard Feynman], :e[Personal Observations on Reliability of Shuttle|https://www.nasa.gov/history/rogersrep/v2appf.htm]]{#right}
+:::
+
+:::dec{#quote}
+We laugh at honour and are shocked to find traitors in our midst.
+::dec[--- :w[C. S. Lewis], :w[The Abolition of Man]]{#right}
+:::
+
+# Poetry
+
+
+:::dec{#poem}
+Families when a child is born
+Hope it will turn out intelligent.
+I, through intelligence
+Having wrecked my whole life,
+Only hope that the baby will prove
+Ignorant and stupid.
+Then he'll be happy all his days
+And grow into a cabinet minister.
+::dec[--- :w[Su Shi], :e[On the Birth of a Son|https://www.poetryfoundation.org/poetrymagazine/poems/13952/on-the-birth-of-a-son]]{#right}
+:::
+
+:::dec{#poem}
+For ten long years, a sword I whetted,
+Its frosty blade, as yet, untried.
+Today, I hold it unsheathed before you;
+Of you, to whom was justice denied?
+::dec[--- :w[Jia Dao], :e[The Swordsman|https://chinesepoemsinenglish.blogspot.com/2015/06/jis-dao-swordsman.html]]{#right}
+:::
+
+# Bible
 
 :::dec{#quote}
 He revealeth the deep and secret things: he knoweth what is in the darkness, and the light dwelleth with him.

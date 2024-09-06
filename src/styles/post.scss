@@ -168,8 +168,8 @@
   .deco-right {
     text-align: right;
   }
-  .deco-quote {
-    margin: 1em 6em 1em 2em;
+  .deco-quote, .deco-poem {
+    margin: 1em 3em 1em 3em;
     p {
       margin: 0;
     }
@@ -178,6 +178,11 @@
       max-width: 70%;
       margin-left: auto;
       font-size: 0.9em;
+    }
+  }
+  .deco-poem {
+    & p:not(:last-child) {
+      white-space: pre;
     }
   }
 }
