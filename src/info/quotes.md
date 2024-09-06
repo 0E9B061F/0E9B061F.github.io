@@ -1,15 +1,29 @@
-A collection of quotes and other short snippets that I like.
+---
+title: "Quotes & Scraps"
+desc: "A collection of quotes and other scraps."
+date: 2024-09-05T17:48:03.814602316-04:00
+edited: 2024-09-05T22:42:03.814602316-04:00
+tags:
+  - personal
+  - notes
+  - philosophy
+  - christianity
+  - literature
+---
+
+A collection of quotes, scraps and miscellany, collected according to no
+particular criteria except my fancy.
 
 # General
 
 :::dec{#quote}
 For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.
-::dec[--- :w[Richard Feynman]]{#right}
+::dec[--- :w[Richard Feynman], :e[Personal Observations on Reliability of Shuttle|https://www.nasa.gov/history/rogersrep/v2appf.htm]]{#right}
 :::
 
 :::dec{#quote}
 The totality of true thoughts is a picture of the world
-::dec[--- :w[TLP 3.01|Tractatus Logico-Philosophicus]]{#right}
+::dec[--- :w[Ludwig Wittgenstein], :w[TLP 3.01|Tractatus Logico-Philosophicus]]{#right}
 :::
 
 :::dec{#quote}
@@ -19,12 +33,12 @@ The service of God does not require good words and good desires, but efficient w
 
 :::dec{#quote}
 They also serve who only stand and wait
-::dec[--- :w[John Milton]]{#right}
+::dec[--- :w[John Milton], :e[Sonnet 19|https://www.poetryfoundation.org/poems/44750/sonnet-19-when-i-consider-how-my-light-is-spent]]{#right}
 :::
 
 :::dec{#quote}
 I am the Cat who walks by himself, and all places are alike to me.
-::dec[--- :w[Rudyard Kipling]]{#right}
+::dec[--- :w[Rudyard Kipling], :w[Just So Stories]: :e[The Cat that Walked by Himself|https://en.wikisource.org/wiki/Just_So_Stories/The_Cat_that_Walked_by_Himself]]{#right}
 :::
 
 :::dec{#quote}
