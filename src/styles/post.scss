@@ -100,10 +100,7 @@
   }
   figure {
     clear: both;
-    margin: 0 0 0.5em 0.5em;
-    @media (min-width: 768px) {
-      margin: 0 0 2em 1em;
-    }
+    margin: 0;
     figcaption {
       font-size: 0.75em;
       width: min-content;
@@ -128,9 +125,21 @@
     }
     &.fig-right {
       float: right;
+      @media (min-width: 0px) {
+        margin: 0 0 0.25em 0.25em;
+      }
+      @media (min-width: 768px) {
+        margin: 0 0 1em 1em;
+      }
     }
     &.fig-left {
       float: left;
+      @media (min-width: 0px) {
+        margin: 0 0.25em 0.25em 0;
+      }
+      @media (min-width: 768px) {
+        margin: 0 1em 1em 0;
+      }
     }
     &.fig-center {
       margin: 0 auto;
@@ -168,6 +177,23 @@
   .deco-right {
     text-align: right;
   }
+  .deco-inset {
+    margin: 1em 3em 1em 3em;
+    .deco-inset-body {
+      width: fit-content;
+      .deco-valediction {
+        float: right;
+        margin: 0;
+        max-width: 90%;
+      }
+    }
+  }
+  .deco-valediction {
+    font-size: 0.9em;
+  }
+  .deco-poetry {
+    white-space: pre;
+  }
   .deco-quote, .deco-poem {
     margin: 1em 3em 1em 3em;
     p {
@@ -184,6 +210,9 @@
     & p:not(:last-child) {
       white-space: pre;
     }
+  }
+  .clear {
+    clear: both;
   }
 }
 

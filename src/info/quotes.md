@@ -13,6 +13,8 @@ except my fancy.
 
 # General
 
+::fig{#ancient-fragments pos=center}
+
 :::dec{#quote}
 The totality of true thoughts is a picture of the world
 ::dec[--- :w[Ludwig Wittgenstein], :w[TLP 3.01|Tractatus Logico-Philosophicus]]{#right}
@@ -60,8 +62,12 @@ We laugh at honour and are shocked to find traitors in our midst.
 
 # Poetry
 
+::fig{#su-shi-rock-and-tree pos=center}
 
-:::dec{#poem}
+:::::dec{#inset}
+::fig{#su-shi pos=right}
+::::dec{#inset-body}
+:::dec{#poetry}
 Families when a child is born
 Hope it will turn out intelligent.
 I, through intelligence
@@ -70,18 +76,28 @@ Only hope that the baby will prove
 Ignorant and stupid.
 Then he'll be happy all his days
 And grow into a cabinet minister.
-::dec[--- :w[Su Shi], :e[On the Birth of a Son|https://www.poetryfoundation.org/poetrymagazine/poems/13952/on-the-birth-of-a-son]]{#right}
 :::
+::dec[--- :w[Su Shi], :e[On the Birth of a Son|https://www.poetryfoundation.org/poetrymagazine/poems/13952/on-the-birth-of-a-son]]{names="right,valediction"}
+::::
+:::::
 
-:::dec{#poem}
+::clear
+
+:::::dec{#inset}
+::::dec{#inset-body}
+:::dec{#poetry}
 For ten long years, a sword I whetted,
 Its frosty blade, as yet, untried.
 Today, I hold it unsheathed before you;
 Of you, to whom was justice denied?
-::dec[--- :w[Jia Dao], :e[The Swordsman|https://chinesepoemsinenglish.blogspot.com/2015/06/jis-dao-swordsman.html]]{#right}
 :::
+::dec[--- :w[Jia Dao], :e[The Swordsman|https://chinesepoemsinenglish.blogspot.com/2015/06/jis-dao-swordsman.html]]{names="right,valediction"}
+::::
+:::::
 
 # Bible
+
+::fig{#last-angel pos=center}
 
 :::dec{#quote}
 He revealeth the deep and secret things: he knoweth what is in the darkness, and the light dwelleth with him.
