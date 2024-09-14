@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Installing Void Linux on a Raspberry Pi 1 - Work Log - down. translated.</title>
+
+  <meta name="author" content="0E9B061F" />
+  <meta name="description" content="A complete guide to Void Linux installation on ARMv6 hardware. Project updates and notes about programming, design, and other topics. The personal website of 0E9B061F, including open source projects, examples, and a blog." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Courgette&family=Courier+Prime:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Emoji:wght@300..700&display=swap"
+    rel="stylesheet">
+  
+  <link href="/site/hex.css" rel="stylesheet" type="text/css" />
+  <link href="/site/tags.css" rel="stylesheet" type="text/css" />
+  <script defer="defer" src="/site/hex.js"></script>
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/site/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/site/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/site/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/site/favicons/favicon-192x192.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9SRY5HDP0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M9SRY5HDP0');
+  </script>
+
+    <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+  <div class="page">
+    <div class="frontis hexchrome">
+      <div id="dt-sticker">down. translated.</div>
+      <div class="top">
+        <img class="bowler" src="/site/images/bowler3/bowler3-full.webp" />
+        <p class="code">
+          @spec.get_opts.each do |name, opt|
+            options[name] = opt.value
+            counts[name]  = opt.count
+          end
+          @spec.get_args.each do |name, arg|
+            args &lt;&lt; arg.value
+            named[name] = arg.value
+          end
+          args.flatten!
+          args += trailing
+          @report = Report.new(args, named, trailing, options, counts)
+          if @report.opt(:help)
+            self.print_usage()
+          end
+          unless @spec.get_args.values.all? {|arg| arg.fulfilled? }
+            raise InterfaceError, "Required argument '#{name.upcase}' was not given."
+          end
+          if @spec.trailing_error &amp;&amp; !@report.trailing.empty?
+            raise InterfaceError, "Error: got trailing argument(s): #{trailing.join
+        </p>
+      </div>
+      <div class="bottom">
+        <h1 class="title heading">
+          <div class="title-row line1">
+            <span class="software">
+              Software
+            </span>
+          </div>
+          <div class="title-row line2">
+            <span class="byline">by</span>
+            <span class="name">
+              <span class="hexlink hl-depth0
+                
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/"><span class="hl-title">0E9B061F</span></a></span>            </span>
+          </div>
+        </h1>
+      </div>
+    </div>
+    <div class="content blog-content">
+      <div class="deco cat-bar-1">
+        <img src="/site/images/cat-bar-1/cat-bar-1-full.webp" />
+      </div>
+      <div class="centered"><img class="rule" src="/site/images/dash-4/dash-4-full.webp" /></div>
+      <div class="page-content">
+      <div class="page-header hexchrome">
+        <div class="hextitle t1 c1 heading">
+          <span class="hexlink hl-depth1
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/blog/"><span class="hl-title">Work Log</span></a></span>           &mdash; <span>Installing Void Linux on a Raspberry Pi 1</span>
+        </div>
+          <div class="page-desc">A complete guide to Void Linux installation on ARMv6 hardware.</div>
+          <div class="postnav">
+            <div class="postnav-labels">
+              <div class="postnav-label postnav-prev" >PREV</div>
+              <div class="page-title heading">
+                <div class="post-info">
+                  <div class="post-date">9-13-2024</div>
+                  <div class="tag-list">
+                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-ungrouped tagged-linux
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/linux/"><span class="hl-title">linux</span></a><span class="hl-super">2</span></span></span></div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-ungrouped tagged-void_linux
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/void_linux/"><span class="hl-title">void linux</span></a><span class="hl-super">2</span></span></span></div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-ungrouped tagged-raspberry_pi
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/raspberry_pi/"><span class="hl-title">raspberry pi</span></a><span class="hl-super">1</span></span></span></div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-ungrouped tagged-guides
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/guides/"><span class="hl-title">guides</span></a><span class="hl-super">2</span></span></span></div>                  </div>
+                </div>
+              </div>
+              <div class="postnav-label postnav-next" style="visibility:hidden" >NEXT</div>
+            </div>
+            <div class="postnav-titles">
+              <div class="postnav-title postnav-prev">
+                <span class="hexlink hl-depth2
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                "><a class="hl-inner" href="/blog/scroll-v0.5.2/"><span class="hl-title">📜 <strong>scroll</strong> backup system updated to <code>v0.5.2</code></span></a></span>              </div>
+              <div class="postnav-title postnav-next">
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="post">
+  <figure class="fig-center"><a href="/site/images/large-scale-structure/large-scale-structure-full.webp"><img src="/site/images/large-scale-structure/large-scale-structure-450.webp" baseimg="large-scale-structure" class="heximage"></a><figcaption></figcaption></figure>
+<p>I recently dug out an old Raspberry Pi and was surprised to find it still working. I couldn't remember exactly what model it it so I ran <code>lshw</code> on it and discovered that I have a <strong>Raspberry Pi 1 Model B Rev 2</strong>, a single-core <strong>ARMv6</strong> device. I christened it <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/The_Book_of_the_Long_Sun" class="hl-inner"><span class="hl-title">"Mucor"</span></a></span> and decided to install <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://voidlinux.org/" class="hl-inner"><span class="hl-title">Void Linux</span></a></span> on it, since Void is lightweight and has <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://voidlinux.org/download/#arm%20platforms" class="hl-inner"><span class="hl-title">ARMv6 Raspberry Pi builds available</span></a></span>.</p>
+<h1 id="requirements" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#requirements"><span class="hl-title">§</span><span class="hl-after">Requirements</span></a></h1>
+<p>This guide requires a ARMv6 Raspberry Pi 1 and an SD card with at least 2GB of storage.</p>
+<h1 id="preparing-the-media" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#preparing-the-media"><span class="hl-title">§</span><span class="hl-after">Preparing the Media</span></a></h1>
+<p>Void offers two different approaches to installation — live images and ROOTFS tarballs. This guide will cover the live image approach. I'll be using the ARMv6 build, and for simplicity glibc — musl is more lightweight but I have enough space for either.</p>
+<p>Insert the SD card you want to use. The next steps depend on what platform you're on.</p>
+<h2 id="flashing-the-image" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#flashing-the-image"><span class="hl-title">§</span><span class="hl-after">Flashing the Image</span></a></h2>
+<h3 id="linux" class="hexlink hl-anchor hl-title hl3" hexignore><a class="hl-inner" href="#linux"><span class="hl-title">§</span><span class="hl-after">Linux</span></a></h3>
+<p>Determine the device name of your SD card. In this guide mine is at <code>/dev/sdh</code>. <strong>Be sure to change this in the following commands.</strong></p>
+<pre><code class="language-sh"># Download the image
+curl https://repo-default.voidlinux.org/live/current/void-rpi-armv6l-20240314.img.xz -o void-rpi-armv6l-20240314.img.xz
+
+# Extract the image
+unxz void-rpi-armv6l-20240314.img.xz
+
+# Flash the image to your SD card
+dd if=void-rpi-armv6l-20240314.img of=/dev/sdh bs=1M status=progress
+</code></pre>
+<p>Jump to <span class="hexlink hl-shortcut"><a href="#free-space" class="hl-inner"><span class="hl-title">Free space</span></a></span> below to continue.</p>
+<h3 id="windows" class="hexlink hl-anchor hl-title hl3" hexignore><a class="hl-inner" href="#windows"><span class="hl-title">§</span><span class="hl-after">Windows</span></a></h3>
+<p>First, <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://repo-default.voidlinux.org/live/current/void-rpi-armv6l-20240314.img.xz" class="hl-inner"><span class="hl-title">download the live image</span></a></span>.</p>
+<p>Under Windows you can use multiple tools to flash the image to your SD card, such as <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://rufus.ie/en/" class="hl-inner"><span class="hl-title">Rufus</span></a></span>, <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://www.osforensics.com/tools/write-usb-images.html" class="hl-inner"><span class="hl-title">imageUSB</span></a></span> and <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://www.raspberrypi.com/software/" class="hl-inner"><span class="hl-title">Raspberry Pi Imager</span></a></span>. Raspberry Pi Imager can use xz-compressed images directly, so we'll use that. Download and install Raspberry Pi Imager, then open it:</p>
+<figure class="fig-center"><a href="/site/images/rpi-void-01/rpi-void-01-full.webp"><img src="/site/images/rpi-void-01/rpi-void-01-450.webp" baseimg="rpi-void-01" class="heximage"></a><figcaption></figcaption></figure>
+<p>Ignore the "Choose Device" button. Click "Choose OS", then scroll to the bottom of the list and select "Use Custom":</p>
+<figure class="fig-center"><a href="/site/images/rpi-void-02/rpi-void-02-full.webp"><img src="/site/images/rpi-void-02/rpi-void-02-450.webp" baseimg="rpi-void-02" class="heximage"></a><figcaption></figcaption></figure>
+<p>From here, select the image file you downloaded earlier, named <code>void-rpi-armv6l-20240314.img.xz</code>. After this you'll be returned to the main inteface. Click "Choose Storage". You'll be presented with a list of removable drives you can flash:</p>
+<figure class="fig-center"><a href="/site/images/rpi-void-03/rpi-void-03-full.webp"><img src="/site/images/rpi-void-03/rpi-void-03-450.webp" baseimg="rpi-void-03" class="heximage"></a><figcaption></figcaption></figure>
+<p>Pick the SD card you want to use. You'll be returned to the main interface again. From here, hit "Next". You'll be prompted to apply OS settings:</p>
+<figure class="fig-center"><a href="/site/images/rpi-void-04/rpi-void-04-full.webp"><img src="/site/images/rpi-void-04/rpi-void-04-450.webp" baseimg="rpi-void-04" class="heximage"></a><figcaption></figcaption></figure>
+<p>Hit "No" here. You'll then be warned that all data on the SD card will be erased. Hit "Yes" to continue. The writing process will begin, then the card will be verified. If all goes well you'll see the following notice:</p>
+<figure class="fig-center"><a href="/site/images/rpi-void-05/rpi-void-05-full.webp"><img src="/site/images/rpi-void-05/rpi-void-05-450.webp" baseimg="rpi-void-05" class="heximage"></a><figcaption></figcaption></figure>
+<p>Click continue. Raspberry Pi Imager automatically ejects the SD card, but we aren't done with it. Remove and re-insert the SD card.</p>
+<h2 id="free-space" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#free-space"><span class="hl-title">§</span><span class="hl-after">Free Space</span></a></h2>
+<p>When using the live image method, you'll have unallocated free space left on your SD card if it's larger than 2GB. If your card is only 2GB, skip to <span class="hexlink hl-shortcut"><a href="#working-with-the-system" class="hl-inner"><span class="hl-title">Working With the System</span></a></span>. We could expand the existing root partition but I prefer to just create a new partition to fill the space. It's simpler and less fiddly, and we can use bind mounts to preserve space on the root partition.</p>
+<h3 id="linux-1" class="hexlink hl-anchor hl-title hl3" hexignore><a class="hl-inner" href="#linux-1"><span class="hl-title">§</span><span class="hl-after">Linux</span></a></h3>
+<p>Run <code>cfdisk /dev/sdh</code>:</p>
+<figure class="fig-center"><a href="/site/images/void-cfd-01/void-cfd-01-full.webp"><img src="/site/images/void-cfd-01/void-cfd-01-450.webp" baseimg="void-cfd-01" class="heximage"></a><figcaption></figcaption></figure>
+<p>Highlight "Free space" and hit Enter to create a new partition:</p>
+<figure class="fig-center"><a href="/site/images/void-cfd-02/void-cfd-02-full.webp"><img src="/site/images/void-cfd-02/void-cfd-02-450.webp" baseimg="void-cfd-02" class="heximage"></a><figcaption></figcaption></figure>
+<p>You'll be asked for the size of the new partition, and then whether it should be primary or extended. The defaults should be fine, so just hit Enter for both questions. Afterwords you'll be returned to the main interface. Use the right arrow key to highlight "Write" at the bottom of the interface:</p>
+<figure class="fig-center"><a href="/site/images/void-cfd-03/void-cfd-03-full.webp"><img src="/site/images/void-cfd-03/void-cfd-03-450.webp" baseimg="void-cfd-03" class="heximage"></a><figcaption></figcaption></figure>
+<p>Hit Enter to write the partition table. You'll be asked to confirm this. Type "yes" then hit Enter to commit your changes to disk. If all goes well you'll see this:</p>
+<figure class="fig-center"><a href="/site/images/void-cfd-04/void-cfd-04-full.webp"><img src="/site/images/void-cfd-04/void-cfd-04-450.webp" baseimg="void-cfd-04" class="heximage"></a><figcaption></figcaption></figure>
+<p>Highlight "Quit" and press Enter or just press "q" on your keyboard to exit <code>cfdisk</code>. Run <code>sync</code> then remove the SD card and insert it back into the Raspberry Pi.</p>
+<p>Now the partition is ready. Later we'll create a filesystem on it and configure it to mount at boot.</p>
+<p>Continue to <span class="hexlink hl-shortcut"><a href="#first-boot" class="hl-inner"><span class="hl-title">First Boot</span></a></span>.</p>
+<h3 id="windows-1" class="hexlink hl-anchor hl-title hl3" hexignore><a class="hl-inner" href="#windows-1"><span class="hl-title">§</span><span class="hl-after">Windows</span></a></h3>
+<p>Under Windows we'll use <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://learn.microsoft.com/en-us/windows-server/storage/disk-management/overview-of-disk-management" class="hl-inner"><span class="hl-title">Disk Management</span></a></span> to create a new partition. Hit Windows key + R and type <code>Diskmgmt.msc</code> to launch it:</p>
+<figure class="fig-center"><a href="/site/images/void-wdm-01/void-wdm-01-full.webp"><img src="/site/images/void-wdm-01/void-wdm-01-450.webp" baseimg="void-wdm-01" class="heximage"></a><figcaption></figcaption></figure>
+<p>In my case my SD card is Disk 2, with 5.32GB of unallocated space. Find your card and right click the "Unallocated" space at the end of it:</p>
+<figure class="fig-center"><a href="/site/images/void-wdm-02/void-wdm-02-full.webp"><img src="/site/images/void-wdm-02/void-wdm-02-450.webp" baseimg="void-wdm-02" class="heximage"></a><figcaption></figcaption></figure>
+<p>Click "New Simple Volume". Click Next three times until you get to the "Format Partition" screen. Select "Do not format this volume":</p>
+<figure class="fig-center"><a href="/site/images/void-wdm-03/void-wdm-03-full.webp"><img src="/site/images/void-wdm-03/void-wdm-03-450.webp" baseimg="void-wdm-03" class="heximage"></a><figcaption></figcaption></figure>
+<p>Click Next and then Finish. After a moment you should see something like this:</p>
+<figure class="fig-center"><a href="/site/images/void-wdm-04/void-wdm-04-full.webp"><img src="/site/images/void-wdm-04/void-wdm-04-450.webp" baseimg="void-wdm-04" class="heximage"></a><figcaption></figcaption></figure>
+<p>Eject the disk and remove the SD card, then insert it back into the Raspberry Pi.</p>
+<p>Now the partition is ready. Later we'll create a filesystem on it and configure it to mount at boot.</p>
+<h2 id="first-boot" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#first-boot"><span class="hl-title">§</span><span class="hl-after">First Boot</span></a></h2>
+<p>Now insert the SD card into your Raspberry Pi and boot it. If it succeeds, congratulations. You've installed Void Linux. The live system is your installation. Continue below to configure it.</p>
+<h1 id="working-with-the-system" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#working-with-the-system"><span class="hl-title">§</span><span class="hl-after">Working With the System</span></a></h1>
+<figure class="fig-center"><a href="/site/images/m51-miri/m51-miri-full.webp"><img src="/site/images/m51-miri/m51-miri-450.webp" baseimg="m51-miri" class="heximage"></a><figcaption></figcaption></figure>
+<p>To work with the new Void Linux system, you can either connect a monitor and keyboard to the Raspberry Pi, or connect to it via SSH. I prefer to use SSH, but the Raspberry Pi will need an ethernet connection and you'll need to know its IP address (you may need to find this through your router's web interface). For the sake of this guide, that IP address will be <code>192.168.1.23</code>.</p>
+<p>To login, use <code>root</code> with the password <code>voidlinux</code>. If you're using SSH, that will look like <code>ssh root@192.168.1.23</code>.</p>
+<h1 id="configuration" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#configuration"><span class="hl-title">§</span><span class="hl-after">Configuration</span></a></h1>
+<h2 id="basics" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#basics"><span class="hl-title">§</span><span class="hl-after">Basics</span></a></h2>
+<p>Perform a system update with <code>xbps-install -Su</code>. Be sure to run this occasionally to keep the system up to date.</p>
+<p>Note that Void comes with <code>vi</code> as its text editor. If you would prefer to use something else, install it now. For example, to install nano: <code>xbps-install nano</code></p>
+<p>Edit <code>/etc/hostname</code> with your hostname of choice (I'll be using <code>Mucor</code>; be sure to change that where you see it)</p>
+<p>Now edit <code>/etc/rc.local</code>, and set the hostname here too:</p>
+<pre><code>HOSTNAME="Mucor"
+</code></pre>
+<p>We also need to set our keymap here. You can find available keymaps under <code>/usr/share/kbd/keymaps</code>. For many qwerty keyboard users, <code>us</code> will be sufficient:</p>
+<pre><code>KEYMAP="us"
+</code></pre>
+<p>Now we'll set our timezone. You can find available timezones in <code>/usr/share/zoneinfo</code>. Find yours and adjust the following command:</p>
+<pre><code class="language-sh">ln -sf /usr/share/zoneinfo/EST /etc/localtime
+</code></pre>
+<p>You can configure your locale in <code>/etc/locale.conf</code>. The default settings are sufficient for me:</p>
+<pre><code>LANG=en_US.UTF-8
+LC_COLLATE=C
+</code></pre>
+<p>Run <code>locale -a</code> to see available locales. However, these are a bit limited by default. If you need something else, edit <code>/etc/default/libc-locales</code> and uncomment any locales you need, then run <code>xbps-reconfigure -f glibc-locales</code>.</p>
+<p>You should find and take note of the block device representing the SD card. It will probably be <code>/dev/mmcblk0</code>, but run <code>lsblk</code> to double check. This guide will use <code>/dev/mmcblk0</code>, be sure to change it if necessary.</p>
+<h2 id="storage-partition" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#storage-partition"><span class="hl-title">§</span><span class="hl-after">Storage Partition</span></a></h2>
+<p>Now we'll finish preparing the storage partition we created earlier. We'll start by creating an <code>ext4</code> filesystem on it:</p>
+<pre><code class="language-sh">mkfs.ext4 -L "Mucor-Storage" /dev/mmcblk0p3
+</code></pre>
+<p>We'll mount this at <code>/mnt/storage</code>:</p>
+<pre><code class="language-sh">mkdir /mnt/storage
+mount /dev/mmcblk0p3 /mnt/storage
+chmod 777 /mnt/storage
+</code></pre>
+<p>Now we need to add the partition to our <code>fstab</code> so it will mount on boot. We'll need to know its UUID for that, so we'll use <code>lsblk</code> to find it:</p>
+<pre><code class="language-sh">lsblk -o PATH,UUID
+
+> PATH           UUID
+> /dev/loop0     f3cd6557-f95a-46b8-91fd-9c9d8b9cd979
+> /dev/mmcblk0
+> /dev/mmcblk0p1 8862-3825
+> /dev/mmcblk0p2 fbc92ace-8415-45b0-9a8d-92463bf670b1
+> /dev/mmcblk0p3 f3cd6557-f95a-46b8-91fd-9c9d8b9cd979
+</code></pre>
+<p>Here we see that the (filesystem) UUID of <code>/dev/mmcblk0p3</code> is <code>f3cd6557-f95a-46b8-91fd-9c9d8b9cd979</code>.</p>
+<p>Now edit <code>/etc/fstab</code> and add the storage drive with a line like this (<em>use your own UUID!</em>):</p>
+<pre><code>UUID=f3cd6557-f95a-46b8-91fd-9c9d8b9cd979 /mnt/storage ext4 defaults 0 2
+</code></pre>
+<p>We'll also add a bind mount from <code>/mnt/storage/home-data</code> to <code>/home</code>. This way any data stored in your home directory will be located on the storage partition, preserving space on the root partition. You can do the same with any other directories that might be taking up too much space. Enter a line like this:</p>
+<pre><code>/mnt/storage/home-data /home none bind 0 0
+</code></pre>
+<p>Now your <code>fstab</code> should look something like this:</p>
+<pre><code>#
+# See fstab(5).
+#
+# &#x3C;file system> &#x3C;dir>   &#x3C;type>  &#x3C;options>               &#x3C;dump>  &#x3C;pass>
+tmpfs           /tmp    tmpfs   defaults,nosuid,nodev   0       0
+UUID=fbc92ace-8415-45b0-9a8d-92463bf670b1 / ext4 defaults 0 1
+UUID=8862-3825 /boot vfat defaults 0 2
+
+# Storage partition
+UUID=f3cd6557-f95a-46b8-91fd-9c9d8b9cd979 /mnt/storage ext4 defaults 0 2
+
+# Bind mounts
+/mnt/storage/home-data /home none bind 0 0
+</code></pre>
+<p>Run <code>mount -a</code> to ensure everything is mounted. The storage partition is now ready!</p>
+<h2 id="user-configuration" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#user-configuration"><span class="hl-title">§</span><span class="hl-after">User Configuration</span></a></h2>
+<p>Now we'll configure our users. We need to give <code>root</code> a better password and create an admin user that we'll login as in the future.</p>
+<p>Since we're already logged in as <code>root</code>, run <code>passwd</code> and follow the prompts to change the root password.</p>
+<p>You may also want to give <code>root</code> a better login shell. Run <code>chsh -l</code> to see available shells. Run <code>chsh -s /bin/bash</code> to use bash, for example.</p>
+<p>Next we'll create our admin account. The following command will create a user named <code>nn</code> with <code>zsh</code> as its login shell. Adjust it accordingly (and run <code>xbps-install zsh</code> if you do want to use zsh):</p>
+<pre><code class="language-sh">useradd -m -G wheel -s /bin/zsh nn
+</code></pre>
+<p>Now run <code>passwd nn</code> and follow the prompts to set a password for the account.</p>
+<p>Run visudo and uncomment the following line, near the bottom of the file:</p>
+<pre><code># %wheel ALL=(ALL:ALL) ALL
+</code></pre>
+<p>This will allow users in group <code>wheel</code> (such as <code>nn</code>) to run any command via sudo, after providing their password.</p>
+<h2 id="ssh-configuration" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#ssh-configuration"><span class="hl-title">§</span><span class="hl-after">SSH Configuration</span></a></h2>
+<p>In this section we'll secure our SSH configuration and authorize ourselves to login to our admin account via SSH. If you don't plan on using SSH, just run <code>sv down sshd</code> to disable the server.</p>
+<p>We'll be disabling password logins completely and instead rely on SSH keys for greater security. First we'll authorize ourselves to login to the admin account. Do the following:</p>
+<pre><code class="language-sh">su nn
+cd
+mkdir .ssh
+</code></pre>
+<p>Now edit <code>.ssh/authorized_keys</code> and paste in the public key you'd like to login with. Now we need to correct permissions:</p>
+<pre><code class="language-sh">chmod 600 .ssh/authorized_keys
+</code></pre>
+<p>Now run <code>exit</code> to return to the <code>root</code> user.</p>
+<p>Now we need to secure our SSH server a bit. Edit <code>/etc/ssh/sshd_config</code>. Change the following lines:</p>
+<pre><code># Change the port to something less obvious
+Port 22022
+# We don't need to login as root, our admin can use sudo      
+PermitRootLogin no
+# Password authentication is insecure; disable it
+PasswordAuthentication no
+</code></pre>
+<p>Now we need to restart the <code>sshd</code> server for these changes to take effect. Run <code>sv restart sshd</code>. My ssh connection survived the restart, but now is as good a time as any to log out of <code>root</code> and re-connect as <code>nn</code> with our public key.</p>
+<p>Type <code>exit</code> to return to your host machine. Now type <code>ssh -p22022 nn@192.168.1.23</code>. If this works then you're done configuring users and can login as your admin user from now on.</p>
+<h2 id="security" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#security"><span class="hl-title">§</span><span class="hl-after">Security</span></a></h2>
+<p>Security is somewhat beyond the scope of this guide, but we will set up a basic firewall with UFW. Install UFW:</p>
+<pre><code class="language-sh">xbps-install ufw
+</code></pre>
+<p>We'll allow connections from inside our LAN only. You'll need to know where your router assigns addresses; this guide will use <code>192.168.1.0/24</code>. Do the following:</p>
+<pre><code class="language-sh">ufw default deny
+ufw allow from 192.168.1.0/24
+ufw enable
+ln -s /etc/sv/ufw /var/service/
+</code></pre>
+<p>If you want to login to the system with SSH from outside the network, run:</p>
+<pre><code class="language-sh">ufw limit 22022
+</code></pre>
+<p>This will rate limit (external) SSH connection attempts for additonal security.</p>
+<h1 id="finishing-up" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#finishing-up"><span class="hl-title">§</span><span class="hl-after">Finishing Up</span></a></h1>
+<p>You should now have a minimal, functional Void install on your Raspberry Pi, ready for you to build on. I plan to write more guides around Void Linux in the future, including one on ROOTFS installs.</p>
+<p>For now, see my <span class="hexlink hl-shortcut"><a href="/info/void-cheatsheet" class="hl-inner"><span class="hl-title">Void Cheatsheet</span></a></span> for useful commands and packages to install. Good luck! 🍀</p>
+</div>
+
+
+
+      </div>
+    </div>
+    <div class="home foot hexchrome">
+    <img class="rule start-contact" src="/site/images/dash-4/dash-4-full.webp" />
+
+    <div class="contact-heading">
+      <img class="phoneman" src="/site/images/contact/contact-full.webp" />
+      <div class="aligner"><h2 id="directory" class="contact-title">Directory</h2></div>
+    </div>
+
+    <div class="contact-area">
+      <img class="phoneman" src="/site/images/contact/contact-full.webp" />
+      <dl class="directory">
+        <div class="pair">
+          <dt>Email</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="mailoto:0E9B061F@protonmail.com">
+    <span class="hl-title">
+      0E9B061F@protonmail.com
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Personal&nbsp;Site</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://0x2764.com">
+    <span class="hl-title">
+      0x2764.com
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="pair">
+          <dt>GitHub</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://github.com/0E9B061F">
+    <span class="hl-title">
+      github.com/0E9B061F
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="pair">
+          <dt>GitLab</dt>
+          <div class="spacer">
+            <div class="bar"></div>
+          </div>
+          <div class="aligner">
+            <dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://gitlab.com/0E9B061F">
+    <span class="hl-title">
+      gitlab.com/0E9B061F
+    </span>
+  </a>
+</span></dd>
+          </div>
+        </div>
+        <div class="pair">
+          <dt>NPM&nbsp;Packages</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://npmjs.com/~0e9b061f">
+    <span class="hl-title">
+      npmjs.com/~0e9b061f
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Keybase</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://keybase.io/0e9b061f">
+    <span class="hl-title">
+      keybase.io/0e9b061f
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="multiline">
+          <div class="pair">
+            <dt>Mirrors</dt>
+            <div class="spacer"><div class="bar"></div></div>
+            <div class="aligner">
+              <dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner autolink" href="https://downtranslated.com">
+    <span class="hl-title">
+      downtranslated.com
+    </span>
+  </a>
+</span></dd>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="spacer">
+            </div>
+            <dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner autolink" href="https://0E9B061F.github.io">
+    <span class="hl-title">
+      0E9B061F.github.io
+    </span>
+  </a>
+</span></dd>
+          </div>
+          <div class="pair">
+            <div class="spacer">
+            </div>
+            <dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner autolink" href="https://0E9B061F.gitlab.io">
+    <span class="hl-title">
+      0E9B061F.gitlab.io
+    </span>
+  </a>
+</span></dd>
+          </div>
+        </div>
+      </dl>
+    </div>
+    </div>
+  </div>
+  <div class="sidebar hexchrome">
+    <div class="hexmenu">
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.webp" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading"><span class="hexlink hl-depth1
+      
+      
+      
+      
+      
+      
+      
+    "><a class="hl-inner" href="/blog/"><span class="hl-title">WORK LOG</span></a></span></div>
+          <div class="hexitem-desc">Project updates and notes about programming, design, and other topics.</div>
+        </div>
+      </div>
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.webp" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading"><span class="hexlink hl-depth1
+      
+      
+      
+      
+      
+      
+      
+    "><a class="hl-inner" href="/gallery/"><span class="hl-title">GALLERY</span></a></span></div>
+          <div class="hexitem-desc">Live samples of my work.</div>
+        </div>
+      </div>
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.webp" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading"><span class="hexlink hl-depth1
+      
+      
+      
+      
+      
+      
+      
+    "><a class="hl-inner" href="/docs/"><span class="hl-title">DOCS</span></a></span></div>
+          <div class="hexitem-desc">Technical documentation for my projects.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hexportal">
+    
+      <div class="hexblock hexline heading">
+        <h2 class="hexline-item hextitle t3 c2">
+          <span class="hexlink hl-depth1
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/index/"><span class="hl-title">INDEX</span></a></span>    </h2>
+        <div class="sep hextitle t3 c2">&middot;</div>
+        <h3 class="hexline-item hextitle t4 c2">
+          <span class="hexlink hl-depth1
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/tags/"><span class="hl-title">TAGS</span></a></span>    </h3>
+        <div class="sep hextitle t3 c2">&middot;</div>
+        <div class="tag-list">
+          <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-website tagged-update
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/update/"><span class="hl-title">update</span></a><span class="hl-super">19</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-project_update
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/project_update/"><span class="hl-title">project update</span></a><span class="hl-super">16</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-game_dev
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/game_dev/"><span class="hl-title">game dev</span></a><span class="hl-super">6</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-projects tagged-fantasma
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/fantasma/"><span class="hl-title">fantasma</span></a><span class="hl-super">5</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-svelte
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/svelte/"><span class="hl-title">svelte</span></a><span class="hl-super">5</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-phaser
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/phaser/"><span class="hl-title">phaser</span></a><span class="hl-super">5</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-work_sample
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/work_sample/"><span class="hl-title">work sample</span></a><span class="hl-super">5</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-projects tagged-ghast
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/ghast/"><span class="hl-title">ghast</span></a><span class="hl-super">4</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-projects tagged-majesty
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/majesty/"><span class="hl-title">majesty</span></a><span class="hl-super">4</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-projects tagged-scroll
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/scroll/"><span class="hl-title">scroll</span></a><span class="hl-super">3</span></span></span></div>    </div>
+      </div>
+    
+      <div class="hexblock hexline heading">
+        <h3 class="hexline-item hextitle t6 c2">
+          <span class="hexlink hl-depth2
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/info/about/"><span class="hl-title">ABOUT</span></a></span>    </h3>
+        <div class="sep hextitle t5 c1">&middot;</div>
+        <h3 class="hexline-item hextitle t6 c2">
+          <span class="hexlink hl-depth2
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/info/author/"><span class="hl-title">AUTHOR</span></a></span>    </h3>
+        <div class="sep hextitle t5 c1">&middot;</div>
+        <h3 class="hexline-item hextitle t6 c2">
+          <span class="hexlink hl-depth2
+            
+            
+            
+             hl-anchor
+            
+            
+            
+          "><a class="hl-inner" href="/blog/installing-void-linux-on-raspberry-pi-1/#directory"><span class="hl-title">DIRECTORY</span></a></span>    </h3>
+      </div>
+    
+    </div>
+
+    <div class="toc">
+      <div class="hextitle t3 c2 hexblock">TABLE OF CONTENTS</div>
+      <div class="hextxt t4 c3">
+        <ol>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#requirements" hexignore><span class="hl-title">Requirements</span></a></span></p>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#preparing-the-media" hexignore><span class="hl-title">Preparing the Media</span></a></span></p>
+<ol>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#flashing-the-image" hexignore><span class="hl-title">Flashing the Image</span></a></span></p>
+<ol>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#linux" hexignore><span class="hl-title">Linux</span></a></span></li>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#windows" hexignore><span class="hl-title">Windows</span></a></span></li>
+</ol>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#free-space" hexignore><span class="hl-title">Free Space</span></a></span></p>
+<ol>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#linux-1" hexignore><span class="hl-title">Linux</span></a></span></li>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#windows-1" hexignore><span class="hl-title">Windows</span></a></span></li>
+</ol>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#first-boot" hexignore><span class="hl-title">First Boot</span></a></span></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#working-with-the-system" hexignore><span class="hl-title">Working With the System</span></a></span></p>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#configuration" hexignore><span class="hl-title">Configuration</span></a></span></p>
+<ol>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#basics" hexignore><span class="hl-title">Basics</span></a></span></li>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#storage-partition" hexignore><span class="hl-title">Storage Partition</span></a></span></li>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#user-configuration" hexignore><span class="hl-title">User Configuration</span></a></span></li>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#ssh-configuration" hexignore><span class="hl-title">SSH Configuration</span></a></span></li>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#security" hexignore><span class="hl-title">Security</span></a></span></li>
+</ol>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#finishing-up" hexignore><span class="hl-title">Finishing Up</span></a></span></p>
+</li>
+</ol>
+      </div>
+    </div>
+
+    <ul class="hexlisting blog-listing">
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/info/void-cheatsheet/"><div class="hl-window">
+            <img src="/site/images/galactic-filament/galactic-filament-64.webp" />
+          </div><span class="hl-date">9-13-2024 </span><span class="hl-namespace">info </span><span class="hl-title">Void Linux Cheatsheet 📝</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+       hl-current
+      
+      
+       hl-thumb
+      
+    "><span class="hl-inner" href="/blog/installing-void-linux-on-raspberry-pi-1/"><div class="hl-window">
+            <img src="/site/images/large-scale-structure/large-scale-structure-64.webp" />
+          </div><span class="hl-date">9-13-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Installing Void Linux on a Raspberry Pi 1</span></span></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/info/quotes/"><div class="hl-window">
+            <img src="/site/images/ancient-fragments/ancient-fragments-64.webp" />
+          </div><span class="hl-date">9-5-2024 </span><span class="hl-namespace">info </span><span class="hl-title">Quotes &#x26; Scraps</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/info/about/"><span class="hl-date">6-7-2024 </span><span class="hl-namespace">info </span><span class="hl-title">About <em><strong>down. translated.</strong></em></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/info/author/"><span class="hl-date">6-7-2024 </span><span class="hl-namespace">info </span><span class="hl-title">About the Author</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/scroll-v0.5.2/"><span class="hl-date">6-2-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">📜 <strong>scroll</strong> backup system updated to <code>v0.5.2</code></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/mkv-v0.2.0-and-related-updates/"><span class="hl-date">5-30-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing 🔨 <strong>mkv</strong> (<code>v0.2.0</code>)</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/site-update-2024-05-29-welcome-to-downtranslated-com/"><span class="hl-date">5-29-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">🔔 Site Update: Welcome to <strong>downtranslated.com</strong></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/heretag-v1.1.7/"><span class="hl-date">5-28-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing <strong>heretag</strong> (<code>v1.1.7</code>)</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/waxwing.js-v0.3.4/"><span class="hl-date">5-28-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing 🐦 <strong>waxwing.js</strong> (<code>v0.3.4</code>)</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/ghast.js-v0.6.7/"><span class="hl-date">5-23-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">🏰 <strong>ghast.js</strong> updated to <code>v0.6.7</code></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/scroll-v0.4.6/"><span class="hl-date">5-23-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing the 📜 <strong>scroll</strong> backup system (<code>v0.4.6</code>)</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/fantasma.js-v0.4.1/"><span class="hl-date">5-14-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">👻 <strong>fantasma.js</strong> updated to <code>v0.4.1</code></span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/gallery/fantasma-basic-example/"><div class="hl-window">
+            <img src="/site/images/fantasma-basic-screenshot/fantasma-basic-screenshot-64.webp" />
+          </div><span class="hl-date">5-11-2024 </span><span class="hl-namespace">gallery </span><span class="hl-title">fantasma.js Basic Example</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/desdichado-wip-update-1/"><div class="hl-window">
+            <img src="/site/images/dwip-001/dwip-001-64.webp" />
+          </div><span class="hl-date">5-1-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Desdichado WIP: Update #1</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/gallery/phaser-svelte-ui-example/"><div class="hl-window">
+            <img src="/site/images/phaser-svelte-ui-example/phaser-svelte-ui-example-64.webp" />
+          </div><span class="hl-date">5-29-2023 </span><span class="hl-namespace">gallery </span><span class="hl-title">Phaser Svelte UI Example</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/majesty-update-4-ui-work/"><div class="hl-window">
+            <img src="/site/images/phaser-svelte-ui-example/phaser-svelte-ui-example-64.webp" />
+          </div><span class="hl-date">5-29-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Majesty Update #4: UI Work</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/gallery/majesty/"><div class="hl-window">
+            <img src="/site/images/majesty-mystery/majesty-mystery-64.webp" />
+          </div><span class="hl-date">5-22-2023 </span><span class="hl-namespace">gallery </span><span class="hl-title">Majesty WIP</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/majesty-wip-update-3/"><div class="hl-window">
+            <img src="/site/images/mj-03-001/mj-03-001-64.webp" />
+          </div><span class="hl-date">5-22-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Majesty WIP Update #3: (Intelligent) Agents</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/majesty-wip-update-2/"><div class="hl-window">
+            <img src="/site/images/mj-dev-015/mj-dev-015-64.webp" />
+          </div><span class="hl-date">5-14-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Majesty WIP Update #2: Traversability &#x26; Color</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/majesty-wip-update-1/"><div class="hl-window">
+            <img src="/site/images/mj-dev-001/mj-dev-001-64.webp" />
+          </div><span class="hl-date">5-12-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Majesty WIP: Update #1</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/introducing-weatherman-v0.1.0/"><div class="hl-window">
+            <img src="/site/images/weatherman/weatherman-64.webp" />
+          </div><span class="hl-date">5-4-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing Weatherman (v0.2.2)</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/sketch-poem-1/"><div class="hl-window">
+            <img src="/site/images/hadal-2/hadal-2-64.webp" />
+          </div><span class="hl-date">5-4-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Sketch: Poem #1</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/old-sf-mags-venture-and-fsf-upcoming-reviews/"><div class="hl-window">
+            <img src="/site/images/vsf-001-005/vsf-001-005-64.webp" />
+          </div><span class="hl-date">3-26-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Old Sci-Fi Magazines — <em>The Magazine of Fantasy &#x26; Science Fiction</em> and <em>Venture Science Fiction</em></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/site-update-2023-03-25-improved-layout-and-future-ideas/"><span class="hl-date">3-25-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">🥳 Site Update: Improved Layout, Plus Observations and Plans</span></a></span>  </li>
+</ul>
+
+
+    <div class="foot">
+      <div class="centered">
+        <img class="asterism" src="/site/images/frog-bicycle-4/frog-bicycle-4-full.webp" />
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
