@@ -73,6 +73,7 @@ $break-wide: calc($desk-min + $pagegap + $side-max);
 @import "toc";
 @import "links";
 @import "gallery";
+@import "code-theme";
 
 body {
   font-family: var(--alegreya);

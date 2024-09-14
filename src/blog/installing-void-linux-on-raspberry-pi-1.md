@@ -2,6 +2,7 @@
 title: "Installing Void Linux on a Raspberry Pi 1"
 desc: "A complete guide to Void Linux installation on ARMv6 hardware."
 date: 2024-09-13T12:05:13.397225724-04:00
+edited: 2024-09-14T01:56:47-04:00
 url:
   void: "https://voidlinux.org/"
   voidrp: "https://voidlinux.org/download/#arm%20platforms"
@@ -40,6 +41,7 @@ Insert the SD card you want to use. The next steps depend on what platform you'r
 ## Flashing the Image
 
 ### Linux
+:::section{collapse=""}
 
 Determine the device name of your SD card. In this guide mine is at `/dev/sdh`. **Be sure to change this in the following commands.**
 
@@ -47,7 +49,7 @@ Determine the device name of your SD card. In this guide mine is at `/dev/sdh`. 
 # Download the image
 curl {{url.voidlive}} -o {{env.livefn}}
 
-# Extract the image
+# Decompress the image
 unxz {{env.livefn}}
 
 # Flash the image to your SD card
@@ -56,7 +58,10 @@ dd if={{env.liveimgfn}} of=/dev/sdh bs=1M status=progress
 
 Jump to :a[Free space] below to continue.
 
+:::
+
 ### Windows
+:::section{collapse=true}
 
 First, :e[download the live image|{{url.voidlive}}].
 
@@ -82,11 +87,14 @@ Hit "No" here. You'll then be warned that all data on the SD card will be erased
 
 Click continue. Raspberry Pi Imager automatically ejects the SD card, but we aren't done with it. Remove and re-insert the SD card.
 
+:::
+
 ## Free Space
 
 When using the live image method, you'll have unallocated free space left on your SD card if it's larger than 2GB. If your card is only 2GB, skip to :a[Working With the System]. We could expand the existing root partition but I prefer to just create a new partition to fill the space. It's simpler and less fiddly, and we can use bind mounts to preserve space on the root partition.
 
 ### Linux
+:::section{collapse=true}
 
 Run `cfdisk /dev/sdh`:
 
@@ -110,7 +118,10 @@ Now the partition is ready. Later we'll create a filesystem on it and configure 
 
 Continue to :a[First Boot].
 
+:::
+
 ### Windows
+:::section{collapse=true}
 
 Under Windows we'll use :e[Disk Management|{{url.diskmgmt}}] to create a new partition. Hit Windows key + R and type `Diskmgmt.msc` to launch it:
 
@@ -131,6 +142,8 @@ Click Next and then Finish. After a moment you should see something like this:
 Eject the disk and remove the SD card, then insert it back into the Raspberry Pi.
 
 Now the partition is ready. Later we'll create a filesystem on it and configure it to mount at boot.
+
+:::
 
 ## First Boot
 
@@ -156,13 +169,13 @@ Edit `/etc/hostname` with your hostname of choice (I'll be using `{{env.hostname
 
 Now edit `/etc/rc.local`, and set the hostname here too:
 
-```
+```sh
 HOSTNAME="Mucor"
 ```
 
 We also need to set our keymap here. You can find available keymaps under `/usr/share/kbd/keymaps`. For many qwerty keyboard users, `us` will be sufficient:
 
-```
+```sh
 KEYMAP="us"
 ```
 
@@ -174,7 +187,7 @@ ln -sf /usr/share/zoneinfo/EST /etc/localtime
 
 You can configure your locale in `/etc/locale.conf`. The default settings are sufficient for me:
 
-```
+```sh
 LANG=en_US.UTF-8
 LC_COLLATE=C
 ```
@@ -196,20 +209,18 @@ We'll mount this at `/mnt/storage`:
 ```sh
 mkdir /mnt/storage
 mount {{env.rspdev}} /mnt/storage
-chmod 777 /mnt/storage
 ```
 
 Now we need to add the partition to our `fstab` so it will mount on boot. We'll need to know its UUID for that, so we'll use `lsblk` to find it:
 
 ```sh
 lsblk -o PATH,UUID
-
-> PATH           UUID
-> /dev/loop0     f3cd6557-f95a-46b8-91fd-9c9d8b9cd979
-> /dev/mmcblk0
-> /dev/mmcblk0p1 8862-3825
-> /dev/mmcblk0p2 fbc92ace-8415-45b0-9a8d-92463bf670b1
-> /dev/mmcblk0p3 f3cd6557-f95a-46b8-91fd-9c9d8b9cd979
+# PATH           UUID
+# /dev/loop0     f3cd6547-f95a-46b8-91fd-9c9d819cd979
+# /dev/mmcblk0
+# /dev/mmcblk0p1 8382-5862
+# /dev/mmcblk0p2 6557fbc9-8415-45b0-9a8d-92463bf670b1
+# /dev/mmcblk0p3 2acef3cd-f95a-46b8-91fd-9c9d8b9cd979
 ```
 
 Here we see that the (filesystem) UUID of `{{env.rspdev}}` is `f3cd6557-f95a-46b8-91fd-9c9d8b9cd979`.
@@ -228,12 +239,7 @@ We'll also add a bind mount from `/mnt/storage/home-data` to `/home`. This way a
 
 Now your `fstab` should look something like this:
 
-```
-#
-# See fstab(5).
-#
-# <file system> <dir>   <type>  <options>               <dump>  <pass>
-tmpfs           /tmp    tmpfs   defaults,nosuid,nodev   0       0
+```sh
 UUID=fbc92ace-8415-45b0-9a8d-92463bf670b1 / ext4 defaults 0 1
 UUID=8862-3825 /boot vfat defaults 0 2
 
@@ -264,7 +270,7 @@ Now run `passwd {{env.username}}` and follow the prompts to set a password for t
 
 Run visudo and uncomment the following line, near the bottom of the file:
 
-```
+```etc
 # %wheel ALL=(ALL:ALL) ALL
 ```
 
@@ -277,6 +283,7 @@ In this section we'll secure our SSH configuration and authorize ourselves to lo
 We'll be disabling password logins completely and instead rely on SSH keys for greater security. First we'll authorize ourselves to login to the admin account. Do the following:
 
 ```sh
+# Switch to our admin user and create a .ssh directory in the admin's home directory
 su nn
 cd
 mkdir .ssh
@@ -292,7 +299,7 @@ Now run `exit` to return to the `root` user.
 
 Now we need to secure our SSH server a bit. Edit `/etc/ssh/sshd_config`. Change the following lines:
 
-```
+```ssh-config
 # Change the port to something less obvious
 Port {{env.sshport}}
 # We don't need to login as root, our admin can use sudo      
@@ -316,8 +323,11 @@ xbps-install ufw
 We'll allow connections from inside our LAN only. You'll need to know where your router assigns addresses; this guide will use `192.168.1.0/24`. Do the following:
 
 ```sh
+# Deny all incoming connections
 ufw default deny
+# Except from inside our LAN
 ufw allow from 192.168.1.0/24
+# Start our firewall and set it to start at boot
 ufw enable
 ln -s /etc/sv/ufw /var/service/
 ```
@@ -334,4 +344,6 @@ This will rate limit (external) SSH connection attempts for additonal security.
 
 You should now have a minimal, functional Void install on your Raspberry Pi, ready for you to build on. I plan to write more guides around Void Linux in the future, including one on ROOTFS installs.
 
-For now, see my :i[Void Cheatsheet|info>void-cheatsheet] for useful commands and packages to install. Good luck! 🍀
+For now, see my :i[Void Cheatsheet|info>void-cheatsheet] for useful commands and packages to install.
+
+Good luck!&nbsp;🚀

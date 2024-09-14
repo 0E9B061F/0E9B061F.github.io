@@ -187,13 +187,15 @@
 <p>Services are managed with the <code>sv</code> command. Usage examples:</p>
 <ul>
 <li><code>sv up SERVICES</code> — start a service and re-start it as needed</li>
+<li><code>ln -s /etc/sv/SERVICE /var/service/</code> — configure a service to start at boot</li>
 <li><code>sv down SERVICES</code> — stop a service and do not restart it</li>
+<li><code>rm /var/service/SERVICE</code> — stop a service from starting at boot</li>
 <li><code>sv restart SERVICES</code></li>
 <li><code>sv status SERVICES</code></li>
 <li><code>ls /var/service</code> — contains symlinks for all running services</li>
 <li><code>sv s /var/service/*</code> — show status of all running services</li>
 </ul>
-<p>Install <code>:gh[rubyists/sv-helper]</code> for some additional tools:</p>
+<p>Install <span class="hexlink hl-shortcut hl-external hl-github hl-decorated"><a href="https://github.com/rubyists/sv-helper" class="hl-inner"><span class="hl-title">rubyists/sv-helper</span></a></span> for some additional tools:</p>
 <ul>
 <li><code>sv-list</code> — list all available services</li>
 <li><code>svls SERVICE</code> — like <code>sv-list</code> but you can limit output to a single SERVICE</li>

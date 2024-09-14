@@ -189,55 +189,23 @@
 <p>Insert the SD card you want to use. The next steps depend on what platform you're on.</p>
 <h2 id="flashing-the-image" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#flashing-the-image"><span class="hl-title">§</span><span class="hl-after">Flashing the Image</span></a></h2>
 <h3 id="linux" class="hexlink hl-anchor hl-title hl3" hexignore><a class="hl-inner" href="#linux"><span class="hl-title">§</span><span class="hl-after">Linux</span></a></h3>
-<p>Determine the device name of your SD card. In this guide mine is at <code>/dev/sdh</code>. <strong>Be sure to change this in the following commands.</strong></p>
-<pre><code class="language-sh"># Download the image
+<div class="hex-section hs-open"><p>Determine the device name of your SD card. In this guide mine is at <code>/dev/sdh</code>. <strong>Be sure to change this in the following commands.</strong></p><pre><code class="language-sh"><span class="pl-c"># Download the image</span>
 curl https://repo-default.voidlinux.org/live/current/void-rpi-armv6l-20240314.img.xz -o void-rpi-armv6l-20240314.img.xz
 
-# Extract the image
+<span class="pl-c"># Decompress the image</span>
 unxz void-rpi-armv6l-20240314.img.xz
 
-# Flash the image to your SD card
+<span class="pl-c"># Flash the image to your SD card</span>
 dd if=void-rpi-armv6l-20240314.img of=/dev/sdh bs=1M status=progress
-</code></pre>
-<p>Jump to <span class="hexlink hl-shortcut"><a href="#free-space" class="hl-inner"><span class="hl-title">Free space</span></a></span> below to continue.</p>
+</code></pre><p>Jump to <span class="hexlink hl-shortcut hl-anchor"><a href="#free-space" class="hl-inner"><span class="hl-title">Free space</span></a></span> below to continue.</p></div>
 <h3 id="windows" class="hexlink hl-anchor hl-title hl3" hexignore><a class="hl-inner" href="#windows"><span class="hl-title">§</span><span class="hl-after">Windows</span></a></h3>
-<p>First, <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://repo-default.voidlinux.org/live/current/void-rpi-armv6l-20240314.img.xz" class="hl-inner"><span class="hl-title">download the live image</span></a></span>.</p>
-<p>Under Windows you can use multiple tools to flash the image to your SD card, such as <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://rufus.ie/en/" class="hl-inner"><span class="hl-title">Rufus</span></a></span>, <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://www.osforensics.com/tools/write-usb-images.html" class="hl-inner"><span class="hl-title">imageUSB</span></a></span> and <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://www.raspberrypi.com/software/" class="hl-inner"><span class="hl-title">Raspberry Pi Imager</span></a></span>. Raspberry Pi Imager can use xz-compressed images directly, so we'll use that. Download and install Raspberry Pi Imager, then open it:</p>
-<figure class="fig-center"><a href="/site/images/rpi-void-01/rpi-void-01-full.webp"><img src="/site/images/rpi-void-01/rpi-void-01-450.webp" baseimg="rpi-void-01" class="heximage"></a><figcaption></figcaption></figure>
-<p>Ignore the "Choose Device" button. Click "Choose OS", then scroll to the bottom of the list and select "Use Custom":</p>
-<figure class="fig-center"><a href="/site/images/rpi-void-02/rpi-void-02-full.webp"><img src="/site/images/rpi-void-02/rpi-void-02-450.webp" baseimg="rpi-void-02" class="heximage"></a><figcaption></figcaption></figure>
-<p>From here, select the image file you downloaded earlier, named <code>void-rpi-armv6l-20240314.img.xz</code>. After this you'll be returned to the main inteface. Click "Choose Storage". You'll be presented with a list of removable drives you can flash:</p>
-<figure class="fig-center"><a href="/site/images/rpi-void-03/rpi-void-03-full.webp"><img src="/site/images/rpi-void-03/rpi-void-03-450.webp" baseimg="rpi-void-03" class="heximage"></a><figcaption></figcaption></figure>
-<p>Pick the SD card you want to use. You'll be returned to the main interface again. From here, hit "Next". You'll be prompted to apply OS settings:</p>
-<figure class="fig-center"><a href="/site/images/rpi-void-04/rpi-void-04-full.webp"><img src="/site/images/rpi-void-04/rpi-void-04-450.webp" baseimg="rpi-void-04" class="heximage"></a><figcaption></figcaption></figure>
-<p>Hit "No" here. You'll then be warned that all data on the SD card will be erased. Hit "Yes" to continue. The writing process will begin, then the card will be verified. If all goes well you'll see the following notice:</p>
-<figure class="fig-center"><a href="/site/images/rpi-void-05/rpi-void-05-full.webp"><img src="/site/images/rpi-void-05/rpi-void-05-450.webp" baseimg="rpi-void-05" class="heximage"></a><figcaption></figcaption></figure>
-<p>Click continue. Raspberry Pi Imager automatically ejects the SD card, but we aren't done with it. Remove and re-insert the SD card.</p>
+<div class="hex-section hs-collapsed"><p>First, <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://repo-default.voidlinux.org/live/current/void-rpi-armv6l-20240314.img.xz" class="hl-inner"><span class="hl-title">download the live image</span></a></span>.</p><p>Under Windows you can use multiple tools to flash the image to your SD card, such as <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://rufus.ie/en/" class="hl-inner"><span class="hl-title">Rufus</span></a></span>, <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://www.osforensics.com/tools/write-usb-images.html" class="hl-inner"><span class="hl-title">imageUSB</span></a></span> and <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://www.raspberrypi.com/software/" class="hl-inner"><span class="hl-title">Raspberry Pi Imager</span></a></span>. Raspberry Pi Imager can use xz-compressed images directly, so we'll use that. Download and install Raspberry Pi Imager, then open it:</p><figure class="fig-center"><a href="/site/images/rpi-void-01/rpi-void-01-full.webp"><img src="/site/images/rpi-void-01/rpi-void-01-450.webp" baseimg="rpi-void-01" class="heximage"></a><figcaption></figcaption></figure><p>Ignore the "Choose Device" button. Click "Choose OS", then scroll to the bottom of the list and select "Use Custom":</p><figure class="fig-center"><a href="/site/images/rpi-void-02/rpi-void-02-full.webp"><img src="/site/images/rpi-void-02/rpi-void-02-450.webp" baseimg="rpi-void-02" class="heximage"></a><figcaption></figcaption></figure><p>From here, select the image file you downloaded earlier, named <code>void-rpi-armv6l-20240314.img.xz</code>. After this you'll be returned to the main inteface. Click "Choose Storage". You'll be presented with a list of removable drives you can flash:</p><figure class="fig-center"><a href="/site/images/rpi-void-03/rpi-void-03-full.webp"><img src="/site/images/rpi-void-03/rpi-void-03-450.webp" baseimg="rpi-void-03" class="heximage"></a><figcaption></figcaption></figure><p>Pick the SD card you want to use. You'll be returned to the main interface again. From here, hit "Next". You'll be prompted to apply OS settings:</p><figure class="fig-center"><a href="/site/images/rpi-void-04/rpi-void-04-full.webp"><img src="/site/images/rpi-void-04/rpi-void-04-450.webp" baseimg="rpi-void-04" class="heximage"></a><figcaption></figcaption></figure><p>Hit "No" here. You'll then be warned that all data on the SD card will be erased. Hit "Yes" to continue. The writing process will begin, then the card will be verified. If all goes well you'll see the following notice:</p><figure class="fig-center"><a href="/site/images/rpi-void-05/rpi-void-05-full.webp"><img src="/site/images/rpi-void-05/rpi-void-05-450.webp" baseimg="rpi-void-05" class="heximage"></a><figcaption></figcaption></figure><p>Click continue. Raspberry Pi Imager automatically ejects the SD card, but we aren't done with it. Remove and re-insert the SD card.</p></div>
 <h2 id="free-space" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#free-space"><span class="hl-title">§</span><span class="hl-after">Free Space</span></a></h2>
-<p>When using the live image method, you'll have unallocated free space left on your SD card if it's larger than 2GB. If your card is only 2GB, skip to <span class="hexlink hl-shortcut"><a href="#working-with-the-system" class="hl-inner"><span class="hl-title">Working With the System</span></a></span>. We could expand the existing root partition but I prefer to just create a new partition to fill the space. It's simpler and less fiddly, and we can use bind mounts to preserve space on the root partition.</p>
+<p>When using the live image method, you'll have unallocated free space left on your SD card if it's larger than 2GB. If your card is only 2GB, skip to <span class="hexlink hl-shortcut hl-anchor"><a href="#working-with-the-system" class="hl-inner"><span class="hl-title">Working With the System</span></a></span>. We could expand the existing root partition but I prefer to just create a new partition to fill the space. It's simpler and less fiddly, and we can use bind mounts to preserve space on the root partition.</p>
 <h3 id="linux-1" class="hexlink hl-anchor hl-title hl3" hexignore><a class="hl-inner" href="#linux-1"><span class="hl-title">§</span><span class="hl-after">Linux</span></a></h3>
-<p>Run <code>cfdisk /dev/sdh</code>:</p>
-<figure class="fig-center"><a href="/site/images/void-cfd-01/void-cfd-01-full.webp"><img src="/site/images/void-cfd-01/void-cfd-01-450.webp" baseimg="void-cfd-01" class="heximage"></a><figcaption></figcaption></figure>
-<p>Highlight "Free space" and hit Enter to create a new partition:</p>
-<figure class="fig-center"><a href="/site/images/void-cfd-02/void-cfd-02-full.webp"><img src="/site/images/void-cfd-02/void-cfd-02-450.webp" baseimg="void-cfd-02" class="heximage"></a><figcaption></figcaption></figure>
-<p>You'll be asked for the size of the new partition, and then whether it should be primary or extended. The defaults should be fine, so just hit Enter for both questions. Afterwords you'll be returned to the main interface. Use the right arrow key to highlight "Write" at the bottom of the interface:</p>
-<figure class="fig-center"><a href="/site/images/void-cfd-03/void-cfd-03-full.webp"><img src="/site/images/void-cfd-03/void-cfd-03-450.webp" baseimg="void-cfd-03" class="heximage"></a><figcaption></figcaption></figure>
-<p>Hit Enter to write the partition table. You'll be asked to confirm this. Type "yes" then hit Enter to commit your changes to disk. If all goes well you'll see this:</p>
-<figure class="fig-center"><a href="/site/images/void-cfd-04/void-cfd-04-full.webp"><img src="/site/images/void-cfd-04/void-cfd-04-450.webp" baseimg="void-cfd-04" class="heximage"></a><figcaption></figcaption></figure>
-<p>Highlight "Quit" and press Enter or just press "q" on your keyboard to exit <code>cfdisk</code>. Run <code>sync</code> then remove the SD card and insert it back into the Raspberry Pi.</p>
-<p>Now the partition is ready. Later we'll create a filesystem on it and configure it to mount at boot.</p>
-<p>Continue to <span class="hexlink hl-shortcut"><a href="#first-boot" class="hl-inner"><span class="hl-title">First Boot</span></a></span>.</p>
+<div class="hex-section hs-collapsed"><p>Run <code>cfdisk /dev/sdh</code>:</p><figure class="fig-center"><a href="/site/images/void-cfd-01/void-cfd-01-full.webp"><img src="/site/images/void-cfd-01/void-cfd-01-450.webp" baseimg="void-cfd-01" class="heximage"></a><figcaption></figcaption></figure><p>Highlight "Free space" and hit Enter to create a new partition:</p><figure class="fig-center"><a href="/site/images/void-cfd-02/void-cfd-02-full.webp"><img src="/site/images/void-cfd-02/void-cfd-02-450.webp" baseimg="void-cfd-02" class="heximage"></a><figcaption></figcaption></figure><p>You'll be asked for the size of the new partition, and then whether it should be primary or extended. The defaults should be fine, so just hit Enter for both questions. Afterwords you'll be returned to the main interface. Use the right arrow key to highlight "Write" at the bottom of the interface:</p><figure class="fig-center"><a href="/site/images/void-cfd-03/void-cfd-03-full.webp"><img src="/site/images/void-cfd-03/void-cfd-03-450.webp" baseimg="void-cfd-03" class="heximage"></a><figcaption></figcaption></figure><p>Hit Enter to write the partition table. You'll be asked to confirm this. Type "yes" then hit Enter to commit your changes to disk. If all goes well you'll see this:</p><figure class="fig-center"><a href="/site/images/void-cfd-04/void-cfd-04-full.webp"><img src="/site/images/void-cfd-04/void-cfd-04-450.webp" baseimg="void-cfd-04" class="heximage"></a><figcaption></figcaption></figure><p>Highlight "Quit" and press Enter or just press "q" on your keyboard to exit <code>cfdisk</code>. Run <code>sync</code> then remove the SD card and insert it back into the Raspberry Pi.</p><p>Now the partition is ready. Later we'll create a filesystem on it and configure it to mount at boot.</p><p>Continue to <span class="hexlink hl-shortcut hl-anchor"><a href="#first-boot" class="hl-inner"><span class="hl-title">First Boot</span></a></span>.</p></div>
 <h3 id="windows-1" class="hexlink hl-anchor hl-title hl3" hexignore><a class="hl-inner" href="#windows-1"><span class="hl-title">§</span><span class="hl-after">Windows</span></a></h3>
-<p>Under Windows we'll use <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://learn.microsoft.com/en-us/windows-server/storage/disk-management/overview-of-disk-management" class="hl-inner"><span class="hl-title">Disk Management</span></a></span> to create a new partition. Hit Windows key + R and type <code>Diskmgmt.msc</code> to launch it:</p>
-<figure class="fig-center"><a href="/site/images/void-wdm-01/void-wdm-01-full.webp"><img src="/site/images/void-wdm-01/void-wdm-01-450.webp" baseimg="void-wdm-01" class="heximage"></a><figcaption></figcaption></figure>
-<p>In my case my SD card is Disk 2, with 5.32GB of unallocated space. Find your card and right click the "Unallocated" space at the end of it:</p>
-<figure class="fig-center"><a href="/site/images/void-wdm-02/void-wdm-02-full.webp"><img src="/site/images/void-wdm-02/void-wdm-02-450.webp" baseimg="void-wdm-02" class="heximage"></a><figcaption></figcaption></figure>
-<p>Click "New Simple Volume". Click Next three times until you get to the "Format Partition" screen. Select "Do not format this volume":</p>
-<figure class="fig-center"><a href="/site/images/void-wdm-03/void-wdm-03-full.webp"><img src="/site/images/void-wdm-03/void-wdm-03-450.webp" baseimg="void-wdm-03" class="heximage"></a><figcaption></figcaption></figure>
-<p>Click Next and then Finish. After a moment you should see something like this:</p>
-<figure class="fig-center"><a href="/site/images/void-wdm-04/void-wdm-04-full.webp"><img src="/site/images/void-wdm-04/void-wdm-04-450.webp" baseimg="void-wdm-04" class="heximage"></a><figcaption></figcaption></figure>
-<p>Eject the disk and remove the SD card, then insert it back into the Raspberry Pi.</p>
-<p>Now the partition is ready. Later we'll create a filesystem on it and configure it to mount at boot.</p>
+<div class="hex-section hs-collapsed"><p>Under Windows we'll use <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://learn.microsoft.com/en-us/windows-server/storage/disk-management/overview-of-disk-management" class="hl-inner"><span class="hl-title">Disk Management</span></a></span> to create a new partition. Hit Windows key + R and type <code>Diskmgmt.msc</code> to launch it:</p><figure class="fig-center"><a href="/site/images/void-wdm-01/void-wdm-01-full.webp"><img src="/site/images/void-wdm-01/void-wdm-01-450.webp" baseimg="void-wdm-01" class="heximage"></a><figcaption></figcaption></figure><p>In my case my SD card is Disk 2, with 5.32GB of unallocated space. Find your card and right click the "Unallocated" space at the end of it:</p><figure class="fig-center"><a href="/site/images/void-wdm-02/void-wdm-02-full.webp"><img src="/site/images/void-wdm-02/void-wdm-02-450.webp" baseimg="void-wdm-02" class="heximage"></a><figcaption></figcaption></figure><p>Click "New Simple Volume". Click Next three times until you get to the "Format Partition" screen. Select "Do not format this volume":</p><figure class="fig-center"><a href="/site/images/void-wdm-03/void-wdm-03-full.webp"><img src="/site/images/void-wdm-03/void-wdm-03-450.webp" baseimg="void-wdm-03" class="heximage"></a><figcaption></figcaption></figure><p>Click Next and then Finish. After a moment you should see something like this:</p><figure class="fig-center"><a href="/site/images/void-wdm-04/void-wdm-04-full.webp"><img src="/site/images/void-wdm-04/void-wdm-04-450.webp" baseimg="void-wdm-04" class="heximage"></a><figcaption></figcaption></figure><p>Eject the disk and remove the SD card, then insert it back into the Raspberry Pi.</p><p>Now the partition is ready. Later we'll create a filesystem on it and configure it to mount at boot.</p></div>
 <h2 id="first-boot" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#first-boot"><span class="hl-title">§</span><span class="hl-after">First Boot</span></a></h2>
 <p>Now insert the SD card into your Raspberry Pi and boot it. If it succeeds, congratulations. You've installed Void Linux. The live system is your installation. Continue below to configure it.</p>
 <h1 id="working-with-the-system" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#working-with-the-system"><span class="hl-title">§</span><span class="hl-after">Working With the System</span></a></h1>
@@ -250,38 +218,36 @@ dd if=void-rpi-armv6l-20240314.img of=/dev/sdh bs=1M status=progress
 <p>Note that Void comes with <code>vi</code> as its text editor. If you would prefer to use something else, install it now. For example, to install nano: <code>xbps-install nano</code></p>
 <p>Edit <code>/etc/hostname</code> with your hostname of choice (I'll be using <code>Mucor</code>; be sure to change that where you see it)</p>
 <p>Now edit <code>/etc/rc.local</code>, and set the hostname here too:</p>
-<pre><code>HOSTNAME="Mucor"
+<pre><code class="language-sh">HOSTNAME=<span class="pl-s"><span class="pl-pds">"</span>Mucor<span class="pl-pds">"</span></span>
 </code></pre>
 <p>We also need to set our keymap here. You can find available keymaps under <code>/usr/share/kbd/keymaps</code>. For many qwerty keyboard users, <code>us</code> will be sufficient:</p>
-<pre><code>KEYMAP="us"
+<pre><code class="language-sh">KEYMAP=<span class="pl-s"><span class="pl-pds">"</span>us<span class="pl-pds">"</span></span>
 </code></pre>
 <p>Now we'll set our timezone. You can find available timezones in <code>/usr/share/zoneinfo</code>. Find yours and adjust the following command:</p>
 <pre><code class="language-sh">ln -sf /usr/share/zoneinfo/EST /etc/localtime
 </code></pre>
 <p>You can configure your locale in <code>/etc/locale.conf</code>. The default settings are sufficient for me:</p>
-<pre><code>LANG=en_US.UTF-8
+<pre><code class="language-sh">LANG=en_US.UTF-8
 LC_COLLATE=C
 </code></pre>
 <p>Run <code>locale -a</code> to see available locales. However, these are a bit limited by default. If you need something else, edit <code>/etc/default/libc-locales</code> and uncomment any locales you need, then run <code>xbps-reconfigure -f glibc-locales</code>.</p>
 <p>You should find and take note of the block device representing the SD card. It will probably be <code>/dev/mmcblk0</code>, but run <code>lsblk</code> to double check. This guide will use <code>/dev/mmcblk0</code>, be sure to change it if necessary.</p>
 <h2 id="storage-partition" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#storage-partition"><span class="hl-title">§</span><span class="hl-after">Storage Partition</span></a></h2>
 <p>Now we'll finish preparing the storage partition we created earlier. We'll start by creating an <code>ext4</code> filesystem on it:</p>
-<pre><code class="language-sh">mkfs.ext4 -L "Mucor-Storage" /dev/mmcblk0p3
+<pre><code class="language-sh">mkfs.ext4 -L <span class="pl-s"><span class="pl-pds">"</span>Mucor-Storage<span class="pl-pds">"</span></span> /dev/mmcblk0p3
 </code></pre>
 <p>We'll mount this at <code>/mnt/storage</code>:</p>
 <pre><code class="language-sh">mkdir /mnt/storage
 mount /dev/mmcblk0p3 /mnt/storage
-chmod 777 /mnt/storage
 </code></pre>
 <p>Now we need to add the partition to our <code>fstab</code> so it will mount on boot. We'll need to know its UUID for that, so we'll use <code>lsblk</code> to find it:</p>
 <pre><code class="language-sh">lsblk -o PATH,UUID
-
-> PATH           UUID
-> /dev/loop0     f3cd6557-f95a-46b8-91fd-9c9d8b9cd979
-> /dev/mmcblk0
-> /dev/mmcblk0p1 8862-3825
-> /dev/mmcblk0p2 fbc92ace-8415-45b0-9a8d-92463bf670b1
-> /dev/mmcblk0p3 f3cd6557-f95a-46b8-91fd-9c9d8b9cd979
+<span class="pl-c"># PATH           UUID</span>
+<span class="pl-c"># /dev/loop0     f3cd6547-f95a-46b8-91fd-9c9d819cd979</span>
+<span class="pl-c"># /dev/mmcblk0</span>
+<span class="pl-c"># /dev/mmcblk0p1 8382-5862</span>
+<span class="pl-c"># /dev/mmcblk0p2 6557fbc9-8415-45b0-9a8d-92463bf670b1</span>
+<span class="pl-c"># /dev/mmcblk0p3 2acef3cd-f95a-46b8-91fd-9c9d8b9cd979</span>
 </code></pre>
 <p>Here we see that the (filesystem) UUID of <code>/dev/mmcblk0p3</code> is <code>f3cd6557-f95a-46b8-91fd-9c9d8b9cd979</code>.</p>
 <p>Now edit <code>/etc/fstab</code> and add the storage drive with a line like this (<em>use your own UUID!</em>):</p>
@@ -291,19 +257,14 @@ chmod 777 /mnt/storage
 <pre><code>/mnt/storage/home-data /home none bind 0 0
 </code></pre>
 <p>Now your <code>fstab</code> should look something like this:</p>
-<pre><code>#
-# See fstab(5).
-#
-# &#x3C;file system> &#x3C;dir>   &#x3C;type>  &#x3C;options>               &#x3C;dump>  &#x3C;pass>
-tmpfs           /tmp    tmpfs   defaults,nosuid,nodev   0       0
-UUID=fbc92ace-8415-45b0-9a8d-92463bf670b1 / ext4 defaults 0 1
+<pre><code class="language-sh">UUID=fbc92ace-8415-45b0-9a8d-92463bf670b1 / ext4 defaults 0 1
 UUID=8862-3825 /boot vfat defaults 0 2
 
-# Storage partition
+<span class="pl-c"># Storage partition</span>
 UUID=f3cd6557-f95a-46b8-91fd-9c9d8b9cd979 /mnt/storage ext4 defaults 0 2
 
-# Bind mounts
-/mnt/storage/home-data /home none bind 0 0
+<span class="pl-c"># Bind mounts</span>
+/mnt/storage/home-data /home none <span class="pl-c1">bind</span> 0 0
 </code></pre>
 <p>Run <code>mount -a</code> to ensure everything is mounted. The storage partition is now ready!</p>
 <h2 id="user-configuration" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#user-configuration"><span class="hl-title">§</span><span class="hl-after">User Configuration</span></a></h2>
@@ -315,14 +276,15 @@ UUID=f3cd6557-f95a-46b8-91fd-9c9d8b9cd979 /mnt/storage ext4 defaults 0 2
 </code></pre>
 <p>Now run <code>passwd nn</code> and follow the prompts to set a password for the account.</p>
 <p>Run visudo and uncomment the following line, near the bottom of the file:</p>
-<pre><code># %wheel ALL=(ALL:ALL) ALL
+<pre><code class="language-etc"># %wheel ALL=(ALL:ALL) ALL
 </code></pre>
 <p>This will allow users in group <code>wheel</code> (such as <code>nn</code>) to run any command via sudo, after providing their password.</p>
 <h2 id="ssh-configuration" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#ssh-configuration"><span class="hl-title">§</span><span class="hl-after">SSH Configuration</span></a></h2>
 <p>In this section we'll secure our SSH configuration and authorize ourselves to login to our admin account via SSH. If you don't plan on using SSH, just run <code>sv down sshd</code> to disable the server.</p>
 <p>We'll be disabling password logins completely and instead rely on SSH keys for greater security. First we'll authorize ourselves to login to the admin account. Do the following:</p>
-<pre><code class="language-sh">su nn
-cd
+<pre><code class="language-sh"><span class="pl-c"># Switch to our admin user and create a .ssh directory in the admin's home directory</span>
+su nn
+<span class="pl-c1">cd</span>
 mkdir .ssh
 </code></pre>
 <p>Now edit <code>.ssh/authorized_keys</code> and paste in the public key you'd like to login with. Now we need to correct permissions:</p>
@@ -330,12 +292,12 @@ mkdir .ssh
 </code></pre>
 <p>Now run <code>exit</code> to return to the <code>root</code> user.</p>
 <p>Now we need to secure our SSH server a bit. Edit <code>/etc/ssh/sshd_config</code>. Change the following lines:</p>
-<pre><code># Change the port to something less obvious
-Port 22022
-# We don't need to login as root, our admin can use sudo      
-PermitRootLogin no
-# Password authentication is insecure; disable it
-PasswordAuthentication no
+<pre><code class="language-ssh-config"><span class="pl-c"># Change the port to something less obvious</span>
+<span class="pl-k">Port</span> <span class="pl-c1">22022</span>
+<span class="pl-c"># We don't need to login as root, our admin can use sudo      </span>
+<span class="pl-k">PermitRootLogin</span> <span class="pl-c1">no</span>
+<span class="pl-c"># Password authentication is insecure; disable it</span>
+<span class="pl-k">PasswordAuthentication</span> <span class="pl-c1">no</span>
 </code></pre>
 <p>Now we need to restart the <code>sshd</code> server for these changes to take effect. Run <code>sv restart sshd</code>. My ssh connection survived the restart, but now is as good a time as any to log out of <code>root</code> and re-connect as <code>nn</code> with our public key.</p>
 <p>Type <code>exit</code> to return to your host machine. Now type <code>ssh -p22022 nn@192.168.1.23</code>. If this works then you're done configuring users and can login as your admin user from now on.</p>
@@ -344,9 +306,12 @@ PasswordAuthentication no
 <pre><code class="language-sh">xbps-install ufw
 </code></pre>
 <p>We'll allow connections from inside our LAN only. You'll need to know where your router assigns addresses; this guide will use <code>192.168.1.0/24</code>. Do the following:</p>
-<pre><code class="language-sh">ufw default deny
+<pre><code class="language-sh"><span class="pl-c"># Deny all incoming connections</span>
+ufw default deny
+<span class="pl-c"># Except from inside our LAN</span>
 ufw allow from 192.168.1.0/24
-ufw enable
+<span class="pl-c"># Start our firewall and set it to start at boot</span>
+ufw <span class="pl-c1">enable</span>
 ln -s /etc/sv/ufw /var/service/
 </code></pre>
 <p>If you want to login to the system with SSH from outside the network, run:</p>
@@ -355,7 +320,8 @@ ln -s /etc/sv/ufw /var/service/
 <p>This will rate limit (external) SSH connection attempts for additonal security.</p>
 <h1 id="finishing-up" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#finishing-up"><span class="hl-title">§</span><span class="hl-after">Finishing Up</span></a></h1>
 <p>You should now have a minimal, functional Void install on your Raspberry Pi, ready for you to build on. I plan to write more guides around Void Linux in the future, including one on ROOTFS installs.</p>
-<p>For now, see my <span class="hexlink hl-shortcut"><a href="/info/void-cheatsheet" class="hl-inner"><span class="hl-title">Void Cheatsheet</span></a></span> for useful commands and packages to install. Good luck! 🍀</p>
+<p>For now, see my <span class="hexlink hl-shortcut"><a href="/info/void-cheatsheet" class="hl-inner"><span class="hl-title">Void Cheatsheet</span></a></span> for useful commands and packages to install.</p>
+<p>Good luck! 🚀</p>
 </div>
 
 

@@ -38,13 +38,15 @@ Install `xtools` for additional tools:
 Services are managed with the `sv` command. Usage examples:
 
 * `sv up SERVICES` --- start a service and re-start it as needed
+* `ln -s /etc/sv/SERVICE /var/service/` --- configure a service to start at boot
 * `sv down SERVICES` --- stop a service and do not restart it
+* `rm /var/service/SERVICE` --- stop a service from starting at boot
 * `sv restart SERVICES`
 * `sv status SERVICES`
 * `ls /var/service` --- contains symlinks for all running services
 * `sv s /var/service/*` --- show status of all running services
 
-Install `:gh[rubyists/sv-helper]` for some additional tools:
+Install <code>:gh[rubyists/sv-helper]</code> for some additional tools:
 
 * `sv-list` --- list all available services
 * `svls SERVICE` --- like `sv-list` but you can limit output to a single SERVICE
