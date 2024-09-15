@@ -2,7 +2,7 @@
 title: "Installing Void Linux on a Raspberry Pi 1"
 desc: "A complete guide to Void Linux installation on ARMv6 hardware."
 date: 2024-09-13T12:05:13.397225724-04:00
-edited: 2024-09-14T01:56:47-04:00
+edited: 2024-09-15T02:31:53-04:00
 url:
   void: "https://voidlinux.org/"
   voidrp: "https://voidlinux.org/download/#arm%20platforms"
@@ -26,15 +26,17 @@ tags:
 
 ::fig{#large-scale-structure pos=center}
 
-I recently dug out an old Raspberry Pi and was surprised to find it still working. I couldn't remember exactly what model it it so I ran `lshw` on it and discovered that I have a **Raspberry Pi 1 Model B Rev 2**, a single-core **ARMv6** device. I christened it :w["{{env.hostname}}"|The Book of the Long Sun]{#Minor_characters} and decided to install :e[Void Linux|{{url.void}}] on it, since Void is lightweight and has :e[ARMv6 Raspberry Pi builds available|{{url.voidrp}}].
+I recently dug out an old Raspberry Pi and was surprised to find it still working. I couldn't remember exactly what model it is so I ran `lshw` on it and discovered that I have a **Raspberry Pi 1 Model B Rev 2**, a single-core **ARMv6** device. I christened it :w["{{env.hostname}}"|The Book of the Long Sun]{#Minor_characters} and decided to install :e[Void Linux|{{url.void}}] on it, since Void is lightweight and has :e[ARMv6 Raspberry Pi builds available|{{url.voidrp}}].
+
+I wrote this guide based on the experience. It takes a simple approach, using pre-built live images, and is easy to follow from either Windows or Linux. It assumes some general familiarity with Linux and the command line, but I try not to assume too much. I'm also working on a :i[Void Linux Cheatsheet|info>void-cheatsheet] that may be helpful to look at.
 
 # Requirements
 
-This guide requires a ARMv6 Raspberry Pi 1 and an SD card with at least 2GB of storage.
+This guide requires an SD card with **at least 2GB of storage**. It's written for an ARMv6 Raspberry Pi 1, but I imagine the same basic approach would work for many similar platforms.
 
 # Preparing the Media
 
-Void offers two different approaches to installation --- live images and ROOTFS tarballs. This guide will cover the live image approach. I'll be using the ARMv6 build, and for simplicity glibc --- musl is more lightweight but I have enough space for either.
+Void offers two different approaches to installation --- live images and ROOTFS tarballs. This guide will cover the live image approach. I'll be using the ARMv6 build, and for simplicity glibc --- musl is more lightweight but we have enough space for either.
 
 Insert the SD card you want to use. The next steps depend on what platform you're on.
 
@@ -149,15 +151,13 @@ Now the partition is ready. Later we'll create a filesystem on it and configure 
 
 Now insert the SD card into your Raspberry Pi and boot it. If it succeeds, congratulations. You've installed Void Linux. The live system is your installation. Continue below to configure it.
 
-# Working With the System
+# Configuration
 
 ::fig{#m51-miri pos=center}
 
-To work with the new Void Linux system, you can either connect a monitor and keyboard to the Raspberry Pi, or connect to it via SSH. I prefer to use SSH, but the Raspberry Pi will need an ethernet connection and you'll need to know its IP address (you may need to find this through your router's web interface). For the sake of this guide, that IP address will be `{{env.mucorip}}`.
+## Working With the System
 
-To login, use `root` with the password `voidlinux`. If you're using SSH, that will look like `ssh root@{{env.mucorip}}`.
-
-# Configuration
+To work with the new Void Linux system, you can either connect a monitor and keyboard to the Raspberry Pi, or connect to it via SSH. Void runs an SSH server by default which accepts passwords. In either case you can login as `root` using the password `voidlinux`.
 
 ## Basics
 
@@ -223,7 +223,7 @@ lsblk -o PATH,UUID
 # /dev/mmcblk0p3 2acef3cd-f95a-46b8-91fd-9c9d8b9cd979
 ```
 
-Here we see that the (filesystem) UUID of `{{env.rspdev}}` is `f3cd6557-f95a-46b8-91fd-9c9d8b9cd979`.
+Here we see that the (filesystem) UUID of `{{env.rspdev}}` is `2acef3cd-f95a-46b8-91fd-9c9d8b9cd979`.
 
 Now edit `/etc/fstab` and add the storage drive with a line like this (*use your own UUID!*):
 
