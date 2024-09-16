@@ -2,7 +2,7 @@
 title: "Installing Void Linux on a Raspberry Pi 1"
 desc: "A complete guide to Void Linux installation on ARMv6 hardware."
 date: 2024-09-13T12:05:13.397225724-04:00
-edited: 2024-09-15T02:31:53-04:00
+edited: 2024-09-15T21:47:57-04:00
 url:
   void: "https://voidlinux.org/"
   voidrp: "https://voidlinux.org/download/#arm%20platforms"
@@ -167,19 +167,13 @@ Note that Void comes with `vi` as its text editor. If you would prefer to use so
 
 Edit `/etc/hostname` with your hostname of choice (I'll be using `{{env.hostname}}`; be sure to change that where you see it)
 
-Now edit `/etc/rc.local`, and set the hostname here too:
-
-```sh
-HOSTNAME="Mucor"
-```
-
-We also need to set our keymap here. You can find available keymaps under `/usr/share/kbd/keymaps`. For many qwerty keyboard users, `us` will be sufficient:
+Now edit `/etc/rc.conf`. We need to set our keymap here. You can find available keymaps under `/usr/share/kbd/keymaps`. For many qwerty keyboard users, `us` will be sufficient:
 
 ```sh
 KEYMAP="us"
 ```
 
-Now we'll set our timezone. You can find available timezones in `/usr/share/zoneinfo`. Find yours and adjust the following command:
+We also need to set our timezone in `/etc/rc.conf`. You can find available timezones in `/usr/share/zoneinfo`. Find yours and adjust the following command:
 
 ```sh
 ln -sf /usr/share/zoneinfo/EST /etc/localtime
@@ -268,10 +262,10 @@ useradd -m -G wheel -s /bin/zsh {{env.username}}
 
 Now run `passwd {{env.username}}` and follow the prompts to set a password for the account.
 
-Run visudo and uncomment the following line, near the bottom of the file:
+Run `visudo -f /etc/sudoers.d/010_admin` and write the following line into the file:
 
 ```etc
-# %wheel ALL=(ALL:ALL) ALL
+%wheel ALL=(ALL:ALL) ALL
 ```
 
 This will allow users in group `wheel` (such as `{{env.username}}`) to run any command via sudo, after providing their password.
@@ -297,10 +291,10 @@ chmod 600 .ssh/authorized_keys
 
 Now run `exit` to return to the `root` user.
 
-Now we need to secure our SSH server a bit. Edit `/etc/ssh/sshd_config`. Change the following lines:
+Now we need to secure our SSH server a bit. Edit `/etc/ssh/sshd_config.d/010_restrict.conf`. Add the following lines:
 
 ```ssh-config
-# Change the port to something less obvious
+# Let's use a less obvious port
 Port {{env.sshport}}
 # We don't need to login as root, our admin can use sudo      
 PermitRootLogin no
@@ -347,3 +341,7 @@ You should now have a minimal, functional Void install on your Raspberry Pi, rea
 For now, see my :i[Void Cheatsheet|info>void-cheatsheet] for useful commands and packages to install.
 
 Good luck!&nbsp;🚀
+
+# History
+
+* Edited **2024-09-15** to correct typo and better reflect best practices in configuring `sudo` and `sshd`.

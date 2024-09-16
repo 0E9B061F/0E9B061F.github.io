@@ -217,13 +217,10 @@ dd if=void-rpi-armv6l-20240314.img of=/dev/sdh bs=1M status=progress
 <p>Perform a system update with <code>xbps-install -Su</code>. Be sure to run this occasionally to keep the system up to date.</p>
 <p>Note that Void comes with <code>vi</code> as its text editor. If you would prefer to use something else, install it now. For example, to install nano: <code>xbps-install nano</code></p>
 <p>Edit <code>/etc/hostname</code> with your hostname of choice (I'll be using <code>Mucor</code>; be sure to change that where you see it)</p>
-<p>Now edit <code>/etc/rc.local</code>, and set the hostname here too:</p>
-<pre><code class="language-sh">HOSTNAME=<span class="pl-s"><span class="pl-pds">"</span>Mucor<span class="pl-pds">"</span></span>
-</code></pre>
-<p>We also need to set our keymap here. You can find available keymaps under <code>/usr/share/kbd/keymaps</code>. For many qwerty keyboard users, <code>us</code> will be sufficient:</p>
+<p>Now edit <code>/etc/rc.conf</code>. We need to set our keymap here. You can find available keymaps under <code>/usr/share/kbd/keymaps</code>. For many qwerty keyboard users, <code>us</code> will be sufficient:</p>
 <pre><code class="language-sh">KEYMAP=<span class="pl-s"><span class="pl-pds">"</span>us<span class="pl-pds">"</span></span>
 </code></pre>
-<p>Now we'll set our timezone. You can find available timezones in <code>/usr/share/zoneinfo</code>. Find yours and adjust the following command:</p>
+<p>We also need to set our timezone in <code>/etc/rc.conf</code>. You can find available timezones in <code>/usr/share/zoneinfo</code>. Find yours and adjust the following command:</p>
 <pre><code class="language-sh">ln -sf /usr/share/zoneinfo/EST /etc/localtime
 </code></pre>
 <p>You can configure your locale in <code>/etc/locale.conf</code>. The default settings are sufficient for me:</p>
@@ -275,8 +272,8 @@ UUID=f3cd6557-f95a-46b8-91fd-9c9d8b9cd979 /mnt/storage ext4 defaults 0 2
 <pre><code class="language-sh">useradd -m -G wheel -s /bin/zsh nn
 </code></pre>
 <p>Now run <code>passwd nn</code> and follow the prompts to set a password for the account.</p>
-<p>Run visudo and uncomment the following line, near the bottom of the file:</p>
-<pre><code class="language-etc"># %wheel ALL=(ALL:ALL) ALL
+<p>Run <code>visudo -f /etc/sudoers.d/010_admin</code> and write the following line into the file:</p>
+<pre><code class="language-etc">%wheel ALL=(ALL:ALL) ALL
 </code></pre>
 <p>This will allow users in group <code>wheel</code> (such as <code>nn</code>) to run any command via sudo, after providing their password.</p>
 <h2 id="ssh-configuration" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#ssh-configuration"><span class="hl-title">§</span><span class="hl-after">SSH Configuration</span></a></h2>
@@ -291,8 +288,8 @@ mkdir .ssh
 <pre><code class="language-sh">chmod 600 .ssh/authorized_keys
 </code></pre>
 <p>Now run <code>exit</code> to return to the <code>root</code> user.</p>
-<p>Now we need to secure our SSH server a bit. Edit <code>/etc/ssh/sshd_config</code>. Change the following lines:</p>
-<pre><code class="language-ssh-config"><span class="pl-c"># Change the port to something less obvious</span>
+<p>Now we need to secure our SSH server a bit. Edit <code>/etc/ssh/sshd_config.d/010_restrict.conf</code>. Add the following lines:</p>
+<pre><code class="language-ssh-config"><span class="pl-c"># Let's use a less obvious port</span>
 <span class="pl-k">Port</span> <span class="pl-c1">22022</span>
 <span class="pl-c"># We don't need to login as root, our admin can use sudo      </span>
 <span class="pl-k">PermitRootLogin</span> <span class="pl-c1">no</span>
@@ -322,6 +319,10 @@ ln -s /etc/sv/ufw /var/service/
 <p>You should now have a minimal, functional Void install on your Raspberry Pi, ready for you to build on. I plan to write more guides around Void Linux in the future, including one on ROOTFS installs.</p>
 <p>For now, see my <span class="hexlink hl-shortcut"><a href="/info/void-cheatsheet" class="hl-inner"><span class="hl-title">Void Cheatsheet</span></a></span> for useful commands and packages to install.</p>
 <p>Good luck! 🚀</p>
+<h1 id="history" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#history"><span class="hl-title">§</span><span class="hl-after">History</span></a></h1>
+<ul>
+<li>Edited <strong>2024-09-15</strong> to correct typo and better reflect best practices in configuring <code>sudo</code> and <code>sshd</code>.</li>
+</ul>
 </div>
 
 
@@ -717,6 +718,9 @@ ln -s /etc/sv/ufw /var/service/
 </li>
 <li>
 <p><span class="hexlink hl-anchor"><a class="hl-inner" href="#finishing-up" hexignore><span class="hl-title">Finishing Up</span></a></span></p>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#history" hexignore><span class="hl-title">History</span></a></span></p>
 </li>
 </ol>
       </div>
