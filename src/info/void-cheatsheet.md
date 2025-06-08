@@ -21,10 +21,13 @@ The Void package manager is :e[XBPS --- the X Binary Package System|{{url.xbps}}
 
 * `xbps-install -Su` --- update the system
 * `xbps-install PACKAGE` --- install PACKAGE
+* `xbps-install -A` --- install a package temporarily, for evaluation. this package and its dependencies will be removed when `xbps-remove -o` is run
 * `xbps-query -Rs QUERY` --- search repositories for packages
 * `xbps-query -f PACKAGE` --- list files provided by PACKAGE
 * `xbps-query -l` --- list all packages with versions and descriptions
 * `xbps-query -l | cut -d " " -f 2 | sed "s/^\(.*\)-.*$/\1/"` --- list all package names (might want to alias this)
+* `xbps-remove -R PACKAGE` --- remove a package and any of its dependendcies that are no longer needed
+* `xbps-remove -Oo` --- remove orphan packages and clean the cache. will also remove packages installed with `xbps-install -A`
 
 Install `xtools` for additional tools:
 
@@ -37,16 +40,16 @@ Install `xtools` for additional tools:
 
 Services are managed with the `sv` command. Usage examples:
 
-* `sv up SERVICES` --- start a service and re-start it as needed
-* `ln -s /etc/sv/SERVICE /var/service/` --- configure a service to start at boot
-* `sv down SERVICES` --- stop a service and do not restart it
-* `rm /var/service/SERVICE` --- stop a service from starting at boot
+* `ln -s /etc/sv/SERVICE /var/service/` --- start a service now and configure it to start at boot
+* `rm /var/service/SERVICE` --- stop a service now and prevent it from starting at boot
+* `sv up SERVICES` --- start a service now and re-start it if it stops, but don't configure it to start at boot
+* `sv down SERVICES` --- stop a service now and do not restart it. doesn't prevent a service from re-starting at boot
 * `sv restart SERVICES`
 * `sv status SERVICES`
 * `ls /var/service` --- contains symlinks for all running services
 * `sv s /var/service/*` --- show status of all running services
 
-Install <code>:gh[rubyists/sv-helper]</code> for some additional tools:
+Install :gh[|rubyists/sv-helper] for some additional tools:
 
 * `sv-list` --- list all available services
 * `svls SERVICE` --- like `sv-list` but you can limit output to a single SERVICE

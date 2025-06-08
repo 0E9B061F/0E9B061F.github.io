@@ -168,10 +168,13 @@
 <ul>
 <li><code>xbps-install -Su</code> — update the system</li>
 <li><code>xbps-install PACKAGE</code> — install PACKAGE</li>
+<li><code>xbps-install -A</code> — install a package temporarily, for evaluation. this package and its dependencies will be removed when <code>xbps-remove -o</code> is run</li>
 <li><code>xbps-query -Rs QUERY</code> — search repositories for packages</li>
 <li><code>xbps-query -f PACKAGE</code> — list files provided by PACKAGE</li>
 <li><code>xbps-query -l</code> — list all packages with versions and descriptions</li>
 <li><code>xbps-query -l | cut -d " " -f 2 | sed "s/^\(.*\)-.*$/\1/"</code> — list all package names (might want to alias this)</li>
+<li><code>xbps-remove -R PACKAGE</code> — remove a package and any of its dependendcies that are no longer needed</li>
+<li><code>xbps-remove -Oo</code> — remove orphan packages and clean the cache. will also remove packages installed with <code>xbps-install -A</code></li>
 </ul>
 <p>Install <code>xtools</code> for additional tools:</p>
 <ul>
@@ -186,16 +189,16 @@
 <h1 id="service-management" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#service-management"><span class="hl-title">§</span><span class="hl-after">Service Management</span></a></h1>
 <p>Services are managed with the <code>sv</code> command. Usage examples:</p>
 <ul>
-<li><code>sv up SERVICES</code> — start a service and re-start it as needed</li>
-<li><code>ln -s /etc/sv/SERVICE /var/service/</code> — configure a service to start at boot</li>
-<li><code>sv down SERVICES</code> — stop a service and do not restart it</li>
-<li><code>rm /var/service/SERVICE</code> — stop a service from starting at boot</li>
+<li><code>ln -s /etc/sv/SERVICE /var/service/</code> — start a service now and configure it to start at boot</li>
+<li><code>rm /var/service/SERVICE</code> — stop a service now and prevent it from starting at boot</li>
+<li><code>sv up SERVICES</code> — start a service now and re-start it if it stops, but don't configure it to start at boot</li>
+<li><code>sv down SERVICES</code> — stop a service now and do not restart it. doesn't prevent a service from re-starting at boot</li>
 <li><code>sv restart SERVICES</code></li>
 <li><code>sv status SERVICES</code></li>
 <li><code>ls /var/service</code> — contains symlinks for all running services</li>
 <li><code>sv s /var/service/*</code> — show status of all running services</li>
 </ul>
-<p>Install <span class="hexlink hl-shortcut hl-external hl-github hl-decorated"><a href="https://github.com/rubyists/sv-helper" class="hl-inner"><span class="hl-title">rubyists/sv-helper</span></a></span> for some additional tools:</p>
+<p>Install <span class="hexlink hl-shortcut hl-external hl-github hl-decorated"><a href="https://github.com/rubyists/sv-helper" class="hl-inner"><span class="hl-title">sv-helper</span></a></span> for some additional tools:</p>
 <ul>
 <li><code>sv-list</code> — list all available services</li>
 <li><code>svls SERVICE</code> — like <code>sv-list</code> but you can limit output to a single SERVICE</li>
@@ -424,7 +427,7 @@
                 
                 
                 
-              "><a class="hl-inner" href="/tags/update/"><span class="hl-title">update</span></a><span class="hl-super">19</span></span></span></div>      <div class="tag tag-link">
+              "><a class="hl-inner" href="/tags/update/"><span class="hl-title">update</span></a><span class="hl-super">20</span></span></span></div>      <div class="tag tag-link">
             <div class="tag-sep">&middot;</div>
             <span class="tag-name">
               <span class="hexlink hl-depth2
@@ -435,7 +438,7 @@
                 
                 
                 
-              "><a class="hl-inner" href="/tags/project_update/"><span class="hl-title">project update</span></a><span class="hl-super">16</span></span></span></div>      <div class="tag tag-link">
+              "><a class="hl-inner" href="/tags/project_update/"><span class="hl-title">project update</span></a><span class="hl-super">17</span></span></span></div>      <div class="tag tag-link">
             <div class="tag-sep">&middot;</div>
             <span class="tag-name">
               <span class="hexlink hl-depth2
@@ -516,14 +519,14 @@
             <div class="tag-sep">&middot;</div>
             <span class="tag-name">
               <span class="hexlink hl-depth2
-                 grouped-projects tagged-scroll
+                 grouped-website tagged-media
                 
                 
                 
                 
                 
                 
-              "><a class="hl-inner" href="/tags/scroll/"><span class="hl-title">scroll</span></a><span class="hl-super">3</span></span></span></div>    </div>
+              "><a class="hl-inner" href="/tags/media/"><span class="hl-title">media</span></a><span class="hl-super">3</span></span></span></div>    </div>
       </div>
     
       <div class="hexblock hexline heading">
@@ -575,6 +578,18 @@
     </div>
 
     <ul class="hexlisting blog-listing">
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/i-ching-stick-drying-rack/"><div class="hl-window">
+            <img src="/site/images/icp-yarrow-001/icp-yarrow-001-64.webp" />
+          </div><span class="hl-date">5-19-2025 </span><span class="hl-namespace">blog </span><span class="hl-title">🔮 <strong>I Ching Project</strong>: Yarrow Stalks, pt. 1</span></a></span>  </li>
   <li class="hexentry he-thumb">
     <span class="hexlink hl-depth2
       
@@ -843,16 +858,6 @@
     "><a class="hl-inner" href="/blog/old-sf-mags-venture-and-fsf-upcoming-reviews/"><div class="hl-window">
             <img src="/site/images/vsf-001-005/vsf-001-005-64.webp" />
           </div><span class="hl-date">3-26-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Old Sci-Fi Magazines — <em>The Magazine of Fantasy &#x26; Science Fiction</em> and <em>Venture Science Fiction</em></span></a></span>  </li>
-  <li class="hexentry">
-    <span class="hexlink hl-depth2
-      
-      
-      
-      
-      
-       hl-thumb
-      
-    "><a class="hl-inner" href="/blog/site-update-2023-03-25-improved-layout-and-future-ideas/"><span class="hl-date">3-25-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">🥳 Site Update: Improved Layout, Plus Observations and Plans</span></a></span>  </li>
 </ul>
 
 

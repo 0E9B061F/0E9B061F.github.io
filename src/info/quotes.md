@@ -101,6 +101,64 @@ Of you, to whom was justice denied?
 ::::
 :::::
 
+::clear
+
+:::::dec{#inset}
+::::dec{#inset-body}
+:::dec{#poetry}
+Setebos, Setebos, and Setebos!
+'Thinketh, He dwelleth i' the cold o' the moon.
+:::
+::dec[--- :w[Robert Browning], :w[Caliban Upon Setebos], lines 24-25]{names="right,valediction"}
+::::
+:::::
+
+::clear
+
+:::::dec{#inset}
+::::dec{#inset-body}
+:::dec{#poetry}
+This Quiet, all it hath a mind to, doth.
+:::
+::dec[--- :w[Robert Browning], :w[Caliban Upon Setebos], line 37]{names="right,valediction"}
+::::
+:::::
+
+::clear
+
+:::::dec{#inset}
+::::dec{#inset-body}
+:::dec{#poetry}
+'Thinketh, such shows nor right nor wrong in Him,
+Nor kind, nor cruel: He is strong and Lord.
+'Am strong myself compared to yonder crabs
+That march now from the mountain to the sea;
+'Let twenty pass, and stone the twenty-first,
+Loving not, hating not, just choosing so. 
+:::
+::dec[--- :w[Robert Browning], :w[Caliban Upon Setebos], lines 98-103]{names="right,valediction"}
+::::
+:::::
+
+::clear
+
+:::::dec{#inset}
+::::dec{#inset-body}
+:::dec{#poetry}
+'Careth but for Setebos
+The many-handed as a cuttle-fish,
+Who, making Himself feared through what He does,
+Looks up, first, and perceives he cannot soar
+To what is quiet and hath happy life;
+Next looks down here, and out of very spite
+Makes this a bauble-world to ape yon real,
+These good things to match those as hips do grapes.
+'Tis solace making baubles, ay, and sport.
+:::
+::dec[--- :w[Robert Browning], :w[Caliban Upon Setebos], lines 141-149]{names="right,valediction"}
+::::
+:::::
+
 # Bible
 
 ::fig{#last-angel pos=center}

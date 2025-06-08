@@ -20,11 +20,11 @@
   text-decoration-color: #D0D5F0 !important;
 }
 .hexlink.hl-external:not(.hl-plain, .hl-current) > .hl-inner > .hl-title, .colorize.hl-external {
-  color: #E5625E !important;
+  color: #CA0600 !important;
 }
 .hexlink.hl-external:not(.hl-plain, .hl-current):hover > .hl-inner > .hl-title {
-  color: #F7CECD !important;
-  text-decoration-color: #F7CECD !important;
+  color: #FF231C !important;
+  text-decoration-color: #FF231C !important;
 }
 .hexlink.hl-anchor:not(.hl-plain, .hl-current) > .hl-inner > .hl-title, .colorize.hl-anchor {
   color: #F37748 !important;

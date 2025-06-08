@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <title>🔮 I Ching Project: Yarrow Stalks, pt. 1 - Work Log - down. translated.</title>
+
+  <meta name="author" content="0E9B061F" />
+  <meta name="description" content="(They&#x27;re actually Goldenrod stalks.) Project updates and notes about programming, design, and other topics. The personal website of 0E9B061F, including open source projects, examples, and a blog." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Courgette&family=Courier+Prime:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Emoji:wght@300..700&display=swap"
+    rel="stylesheet">
+  
+  <link href="/site/hex.css" rel="stylesheet" type="text/css" />
+  <link href="/site/tags.css" rel="stylesheet" type="text/css" />
+  <script defer="defer" src="/site/hex.js"></script>
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/site/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/site/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/site/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/site/favicons/favicon-192x192.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9SRY5HDP0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M9SRY5HDP0');
+  </script>
+
+    <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+  <div class="page">
+    <div class="frontis hexchrome">
+      <div id="dt-sticker">down. translated.</div>
+      <div class="top">
+        <img class="bowler" src="/site/images/bowler3/bowler3-full.webp" />
+        <p class="code">
+          @spec.get_opts.each do |name, opt|
+            options[name] = opt.value
+            counts[name]  = opt.count
+          end
+          @spec.get_args.each do |name, arg|
+            args &lt;&lt; arg.value
+            named[name] = arg.value
+          end
+          args.flatten!
+          args += trailing
+          @report = Report.new(args, named, trailing, options, counts)
+          if @report.opt(:help)
+            self.print_usage()
+          end
+          unless @spec.get_args.values.all? {|arg| arg.fulfilled? }
+            raise InterfaceError, "Required argument '#{name.upcase}' was not given."
+          end
+          if @spec.trailing_error &amp;&amp; !@report.trailing.empty?
+            raise InterfaceError, "Error: got trailing argument(s): #{trailing.join
+        </p>
+      </div>
+      <div class="bottom">
+        <h1 class="title heading">
+          <div class="title-row line1">
+            <span class="software">
+              Software
+            </span>
+          </div>
+          <div class="title-row line2">
+            <span class="byline">by</span>
+            <span class="name">
+              <span class="hexlink hl-depth0
+                
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/"><span class="hl-title">0E9B061F</span></a></span>            </span>
+          </div>
+        </h1>
+      </div>
+    </div>
+    <div class="content blog-content">
+      <div class="deco cat-bar-1">
+        <img src="/site/images/cat-bar-1/cat-bar-1-full.webp" />
+      </div>
+      <div class="centered"><img class="rule" src="/site/images/dash-4/dash-4-full.webp" /></div>
+      <div class="page-content">
+      <div class="page-header hexchrome">
+        <div class="hextitle t1 c1 heading">
+          <span class="hexlink hl-depth1
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/blog/"><span class="hl-title">Work Log</span></a></span>           &mdash; <span>🔮 <strong>I Ching Project</strong>: Yarrow Stalks, pt. 1</span>
+        </div>
+          <div class="page-desc">(They&#x27;re actually Goldenrod stalks.)</div>
+          <div class="postnav">
+            <div class="postnav-labels">
+              <div class="postnav-label postnav-prev" >PREV</div>
+              <div class="page-title heading">
+                <div class="post-info">
+                  <div class="post-date">5-19-2025</div>
+                  <div class="tag-list">
+                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-website tagged-update
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/update/"><span class="hl-title">update</span></a><span class="hl-super">20</span></span></span></div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-programming tagged-project_update
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/project_update/"><span class="hl-title">project update</span></a><span class="hl-super">17</span></span></span></div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-ungrouped tagged-i_ching
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/i_ching/"><span class="hl-title">i ching</span></a><span class="hl-super">1</span></span></span></div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-ungrouped tagged-i_ching_stalks
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/i_ching_stalks/"><span class="hl-title">i ching stalks</span></a><span class="hl-super">1</span></span></span></div>                    <div class="tag tag-link">
+                      <div class="tag-sep">&middot;</div>
+                      <span class="tag-name">
+                        <span class="hexlink hl-depth2
+                           grouped-website tagged-media
+                          
+                          
+                          
+                          
+                          
+                          
+                        "><a class="hl-inner" href="/tags/media/"><span class="hl-title">media</span></a><span class="hl-super">3</span></span></span></div>                  </div>
+                </div>
+              </div>
+              <div class="postnav-label postnav-next" style="visibility:hidden" >NEXT</div>
+            </div>
+            <div class="postnav-titles">
+              <div class="postnav-title postnav-prev">
+                <span class="hexlink hl-depth2
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                "><a class="hl-inner" href="/blog/installing-void-linux-on-raspberry-pi-1/"><span class="hl-title">Installing Void Linux on a Raspberry Pi 1</span></a></span>              </div>
+              <div class="postnav-title postnav-next">
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="post">
+  <figure class="fig-center"><a href="/site/images/icp-yarrow-001/icp-yarrow-001-full.webp"><img src="/site/images/icp-yarrow-001/icp-yarrow-001-450.webp" baseimg="icp-yarrow-001" class="heximage"></a><figcaption><span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://commons.wikimedia.org/wiki/File:Achillea_millefolium_Mann.jpg" class="hl-inner"><span class="hl-title">Yarrow</span></a></span> (<em>Achillea millefolium</em>), Johann Gottlieb Mann, 1828</figcaption></figure>
+<p>It's been awhile since I posted and I've picked up a new project in the meantime (of course). I've been interested in <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/I_Ching" class="hl-inner"><span class="hl-title">the I Ching</span></a></span> (易经) for a few years now, and I decided to create a set of implements for use in the divination process. Currently I'm working on a set of stalks used to cast a <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Hexagram_(I_Ching)" class="hl-inner"><span class="hl-title">Hexagram</span></a></span> (卦, guà), which is the first step in divination. Specifically this post will cover my designs for a <span class="hexlink hl-shortcut hl-anchor"><a href="#drying-rack" class="hl-inner"><span class="hl-title">drying rack</span></a></span> I'll be using to varnish the stalks, but first I'll give some background on the I Ching and the project so far.</p>
+<h1 id="background" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#background"><span class="hl-title">§</span><span class="hl-after">Background</span></a></h1>
+<figure class="fig-right"><a href="/site/images/icp-yarrow-002/icp-yarrow-002-full.webp"><img src="/site/images/icp-yarrow-002/icp-yarrow-002-280.webp" baseimg="icp-yarrow-002" class="heximage"></a><figcaption><span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://commons.wikimedia.org/wiki/File:Achillea_millefolium_Sturm13039.jpg" class="hl-inner"><span class="hl-title">Yarrow</span></a></span> (<em>Achillea millefolium</em>), <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Jacob_Sturm" class="hl-inner"><span class="hl-title">Jacob Sturm</span></a></span>, 1796</figcaption></figure>
+<p>You might be wondering what the I Ching is, or how plant stalks relate to it. Briefly, the I Ching is a divinitory text and one of the <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Four_Books_and_Five_Classics#Five_Classics" class="hl-inner"><span class="hl-title">five Chinese classics</span></a></span>. The current form of its core text was probably finalized in the 9th century BC, although the hexagrams (and various divination systems employing them) must predate this.</p>
+<p>Casting a hexagram is the first step in the divination process, followed by interpretation thereof. This is done by a randomized process; it is a form of <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/cleromancy" class="hl-inner"><span class="hl-title">cleromancy</span></a></span>, other examples of which include <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/kau_chim" class="hl-inner"><span class="hl-title">kau chim</span></a></span> (求签), <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/ifá" class="hl-inner"><span class="hl-title">ifá</span></a></span>, various forms of <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/cartomancy" class="hl-inner"><span class="hl-title">cartomancy</span></a></span>, and Roman <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/sortes_(ancient_Rome)" class="hl-inner"><span class="hl-title">sortes</span></a></span>. Generating randomness can be accomplished by a number of more-or-less traditional means. The most traditional method is by way of yarrow stalks (which could be considered an example of <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/rhabdomancy" class="hl-inner"><span class="hl-title">rhabdomancy</span></a></span>), but one can also use coins, or a computer, or any other means that is suitably random. Different methods may produce different distributions of results, directly affecting divination.</p>
+<p>As to how randomness is generated using plants stalks, I use <span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://en.wikibooks.org/wiki/I_Ching/The_Ancient_Yarrow_Stalk_Method" class="hl-inner"><span class="hl-title">The Ancient Yarrow Stalk Method</span></a></span>, although I've streamlined the process somewhat in practice. The process is too involved to reiterate here, so check the link for details, if you're interested.</p>
+<h2 id="material-selection" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#material-selection"><span class="hl-title">§</span><span class="hl-after">Material Selection</span></a></h2>
+<figure class="fig-left"><a href="/site/images/icp-qal-001/icp-qal-001-full.webp"><img src="/site/images/icp-qal-001/icp-qal-001-280.webp" baseimg="icp-qal-001" class="heximage"></a><figcaption><span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="Queen Anne&#x27;s Lace" class="hl-inner"><span class="hl-title">Queen Anne's Lace|</span></a></span> (<em>Daucus carota</em>), <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Hashime_Murayama" class="hl-inner"><span class="hl-title">Hashime Murayama</span></a></span>, 1937</figcaption></figure>
+<p>As I said in the beginning of this post, I've chosen to use stalks, although my first set uses <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Solidago_gigantea" class="hl-inner"><span class="hl-title">Giant Goldenrod</span></a></span> instead of <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Achillea_millefolium" class="hl-inner"><span class="hl-title">Yarrow</span></a></span> (I've taken to calling them "I Ching sticks" for simplicity). Yarrow is the traditional material, but material selection should also consider the <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Qi" class="hl-inner"><span class="hl-title">chi</span></a></span> (气) of the material and its resonance with the chi of the diviner — so I chose something local to me instead. Originally that was going to be <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Daucus_carota" class="hl-inner"><span class="hl-title">Queen Anne's Lace</span></a></span>, but after processing I realized I didn't have enough material, and it was too late to collect more.</p>
+<figure class="fig-right"><a href="/site/images/icp-gr-001/icp-gr-001-full.webp"><img src="/site/images/icp-gr-001/icp-gr-001-280.webp" baseimg="icp-gr-001" class="heximage"></a><figcaption><span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://commons.wikimedia.org/wiki/File:Solidago_virgaurea_Sturm11.jpg" class="hl-inner"><span class="hl-title">European goldenrod</span></a></span> (<em>Solidago virgaurea</em>), <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Jacob_Sturm" class="hl-inner"><span class="hl-title">Sturm</span></a></span>, 1796</figcaption></figure>
+<p>Fortunately there was still plenty of (Giant) Goldenrod standing and in good condition, so I changed gears. I've haven't heard of Goldenrod being used for this purpose before, but it's worked out well. Goldenrod stalks are long and mostly straight making them suitable for this purpose. However, the stalk does taper along its length, and you may only get one or two sticks of a given diamter from one stalk. The Goldenrod material (I'm not sure if it counts as wood, but it's wood-like, at least) has a relatively course grain and tends to retain some rough spots even after sanding, but does have attractive patterns which are brought out nicely by oiling the material. In contrast the QAL samples I've experimented with have a much finer grain and develop a smooth, almost silky surface with sanding and oiling, but have no interesting pattern. Overall I think QAL is a better material, but Goldenrod is perfectly suitable.</p>
+<figure class="fig-left"><a href="/site/images/icp-gr-002/icp-gr-002-full.webp"><img src="/site/images/icp-gr-002/icp-gr-002-280.webp" baseimg="icp-gr-002" class="heximage"></a><figcaption><span class="hexlink hl-shortcut hl-external hl-generic hl-decorated"><a href="https://commons.wikimedia.org/wiki/File:32_Solidago_virgaurea.jpg" class="hl-inner"><span class="hl-title">European goldenrod</span></a></span> (<em>Solidago virgaurea</em>), <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/Carl_Axel_Magnus_Lindman" class="hl-inner"><span class="hl-title">Carl Lindman</span></a></span>, 1796</figcaption></figure>
+<p>I've also given some thought to the nativity of the materials I'm using and can't decide whether it would be better to use a native or introduced species. Initially I thought that the chi of a native species might be most in tune with my own and with this place. On the other hand, I myself am (I suppose) introduced, by the same process that introduced these plants, and in that sense their chi might resonate better with my own. For now I think I'll produce sets of stalks using both, and take this factor into consideration when divining with either. I also wonder if it wouldn't be better to attempt to allign the chi of the stalks to the questioner and their question, rather then to the diviner (or perhaps with consideration to both), in which case it would be good to have multiple sets to choose from.</p>
+<h1 id="current-work" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#current-work"><span class="hl-title">§</span><span class="hl-after">Current Work</span></a></h1>
+<p>Currently the set has been sanded and treated with <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/linseed_oil" class="hl-inner"><span class="hl-title">linseed oil</span></a></span> (I chose linseed because I had some available; <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/tung_oil" class="hl-inner"><span class="hl-title">tung oil</span></a></span> would have been nicer to work with). The next step is varnishing them with <span class="hexlink hl-shortcut hl-external hl-wiki hl-decorated"><a href="https://en.wikipedia.org/wiki/shellac" class="hl-inner"><span class="hl-title">shellac</span></a></span>, and to that end I'm designing and building a rack for the sticks to hang from while the shellac dries. That's where I'm at with things now, and I'll cover the design below.</p>
+<h2 id="drying-rack" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#drying-rack"><span class="hl-title">§</span><span class="hl-after">Drying Rack</span></a></h2>
+<p>This is the current stage of the project and the focus of this post. I had built an earlier rack for oiling the sticks — for convenience and because of the nature of the process, the sticks sit in that rack laid across two wires, with two points of contact. For this process I wanted them to hang freely without touching anything, to create a smooth surface, so I needed a new rack.</p>
+<p>The first rack was thrown together without much thought and has some issues, so I planned this one more thoroughly. I built a model in Blender to help me think through the design. I learned some CAD last year, but I intend to make this by hand so I stuck to the 3D modeling I know best. Plus, I haven't used Blender in awhile and I had fun playing around with compositing and shading to create my renders.</p>
+<p>I went through multiple versions before settling on the current design, so without further ado, here's my <strong>Varnishing Rack v5</strong>:</p>
+<div class="figallery hexblock b1"><figure class="fig-right"><a href="/site/images/icp-shellac-rack-v5-c1-002/icp-shellac-rack-v5-c1-002-full.webp"><img src="/site/images/icp-shellac-rack-v5-c1-002/icp-shellac-rack-v5-c1-002-280.webp" baseimg="icp-shellac-rack-v5-c1-002" class="heximage"></a><figcaption></figcaption></figure><figure class="fig-right"><a href="/site/images/icp-shellac-rack-v5-c2-002/icp-shellac-rack-v5-c2-002-full.webp"><img src="/site/images/icp-shellac-rack-v5-c2-002/icp-shellac-rack-v5-c2-002-280.webp" baseimg="icp-shellac-rack-v5-c2-002" class="heximage"></a><figcaption></figcaption></figure></div>
+<p>I produced some orthographic views as well:</p>
+<figure class="fig-center"><a href="/site/images/icp-v5-ortho-master/icp-v5-ortho-master-full.webp"><img src="/site/images/icp-v5-ortho-master/icp-v5-ortho-master-450.webp" baseimg="icp-v5-ortho-master" class="heximage"></a><figcaption></figcaption></figure>
+<h2 id="tensioners" class="hexlink hl-anchor hl-title hl2" hexignore><a class="hl-inner" href="#tensioners"><span class="hl-title">§</span><span class="hl-after">Tensioners</span></a></h2>
+<p>The small cylinders on one end of the rack are tensioners to keep the wire taut, in theory. With the last rack I had trouble with the wires becoming loose over time — these are meant to solve that. I'm not sure how well these will actually work (they're not essential to the design), but the idea is simple: each one consists of a spring inside a cylindrical housing open on one end, with a washer at the end of the spring. The wire will be affixed to the washer and the spring will, hopefully, draw the wire taut.</p>
+<p>I may have the outer cylinders 3D printed, or I may weld them together. I haven't decided yet. Either way, I produced a few renders of these as well:</p>
+<div class="figallery hexblock b1"><figure class="fig-right"><a href="/site/images/icp-tens-a-pc-master/icp-tens-a-pc-master-full.webp"><img src="/site/images/icp-tens-a-pc-master/icp-tens-a-pc-master-280.webp" baseimg="icp-tens-a-pc-master" class="heximage"></a><figcaption></figcaption></figure><figure class="fig-right"><a href="/site/images/icp-tens-a-fc-master/icp-tens-a-fc-master-full.webp"><img src="/site/images/icp-tens-a-fc-master/icp-tens-a-fc-master-280.webp" baseimg="icp-tens-a-fc-master" class="heximage"></a><figcaption></figcaption></figure></div>
+<h1 id="future" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#future"><span class="hl-title">§</span><span class="hl-after">Future</span></a></h1>
+<p>After varnishing I'll cut half an inch off each talk (where the hole is located for hanging them) and finish the ends. This will complete my first set of stalks, and my next goal will be building something to store them in. I'll also be producing a concise reference version of the I Ching, and I'll post any progress here. Thank for reading!</p>
+<h1 id="history" class="hexlink hl-anchor hl-title hl1" hexignore><a class="hl-inner" href="#history"><span class="hl-title">§</span><span class="hl-after">History</span></a></h1>
+<ul>
+<li><strong>2025-06-06</strong>
+WIP. The next edit will include additional images of the sticks that I'm working on. I wanted to get this published for now, though.</li>
+</ul>
+</div>
+
+
+
+      </div>
+    </div>
+    <div class="home foot hexchrome">
+    <img class="rule start-contact" src="/site/images/dash-4/dash-4-full.webp" />
+
+    <div class="contact-heading">
+      <img class="phoneman" src="/site/images/contact/contact-full.webp" />
+      <div class="aligner"><h2 id="directory" class="contact-title">Directory</h2></div>
+    </div>
+
+    <div class="contact-area">
+      <img class="phoneman" src="/site/images/contact/contact-full.webp" />
+      <dl class="directory">
+        <div class="pair">
+          <dt>Email</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="mailoto:0E9B061F@protonmail.com">
+    <span class="hl-title">
+      0E9B061F@protonmail.com
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Personal&nbsp;Site</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://0x2764.com">
+    <span class="hl-title">
+      0x2764.com
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="pair">
+          <dt>GitHub</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://github.com/0E9B061F">
+    <span class="hl-title">
+      github.com/0E9B061F
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="pair">
+          <dt>GitLab</dt>
+          <div class="spacer">
+            <div class="bar"></div>
+          </div>
+          <div class="aligner">
+            <dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://gitlab.com/0E9B061F">
+    <span class="hl-title">
+      gitlab.com/0E9B061F
+    </span>
+  </a>
+</span></dd>
+          </div>
+        </div>
+        <div class="pair">
+          <dt>NPM&nbsp;Packages</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://npmjs.com/~0e9b061f">
+    <span class="hl-title">
+      npmjs.com/~0e9b061f
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="pair">
+          <dt>Keybase</dt>
+          <div class="spacer"><div class="bar"></div></div>
+          <div class="aligner"><dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner" href="https://keybase.io/0e9b061f">
+    <span class="hl-title">
+      keybase.io/0e9b061f
+    </span>
+  </a>
+</span></dd></div>
+        </div>
+        <div class="multiline">
+          <div class="pair">
+            <dt>Mirrors</dt>
+            <div class="spacer"><div class="bar"></div></div>
+            <div class="aligner">
+              <dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner autolink" href="https://downtranslated.com">
+    <span class="hl-title">
+      downtranslated.com
+    </span>
+  </a>
+</span></dd>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="spacer">
+            </div>
+            <dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner autolink" href="https://0E9B061F.github.io">
+    <span class="hl-title">
+      0E9B061F.github.io
+    </span>
+  </a>
+</span></dd>
+          </div>
+          <div class="pair">
+            <div class="spacer">
+            </div>
+            <dd><span class="hexlink hl-external hl-generic">
+  <a class="hl-inner autolink" href="https://0E9B061F.gitlab.io">
+    <span class="hl-title">
+      0E9B061F.gitlab.io
+    </span>
+  </a>
+</span></dd>
+          </div>
+        </div>
+      </dl>
+    </div>
+    </div>
+  </div>
+  <div class="sidebar hexchrome">
+    <div class="hexmenu">
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.webp" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading"><span class="hexlink hl-depth1
+      
+      
+      
+      
+      
+      
+      
+    "><a class="hl-inner" href="/blog/"><span class="hl-title">WORK LOG</span></a></span></div>
+          <div class="hexitem-desc">Project updates and notes about programming, design, and other topics.</div>
+        </div>
+      </div>
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.webp" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading"><span class="hexlink hl-depth1
+      
+      
+      
+      
+      
+      
+      
+    "><a class="hl-inner" href="/gallery/"><span class="hl-title">GALLERY</span></a></span></div>
+          <div class="hexitem-desc">Live samples of my work.</div>
+        </div>
+      </div>
+      <div class="hexitem">
+        <img class="hexitem-bullet" src="/site/images/hedera-1/hedera-1-full.webp" />
+        <div class="hexitem-text">
+          <div class="hexitem-title hextitle t3 c2 heading"><span class="hexlink hl-depth1
+      
+      
+      
+      
+      
+      
+      
+    "><a class="hl-inner" href="/docs/"><span class="hl-title">DOCS</span></a></span></div>
+          <div class="hexitem-desc">Technical documentation for my projects.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hexportal">
+    
+      <div class="hexblock hexline heading">
+        <h2 class="hexline-item hextitle t3 c2">
+          <span class="hexlink hl-depth1
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/index/"><span class="hl-title">INDEX</span></a></span>    </h2>
+        <div class="sep hextitle t3 c2">&middot;</div>
+        <h3 class="hexline-item hextitle t4 c2">
+          <span class="hexlink hl-depth1
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/tags/"><span class="hl-title">TAGS</span></a></span>    </h3>
+        <div class="sep hextitle t3 c2">&middot;</div>
+        <div class="tag-list">
+          <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-website tagged-update
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/update/"><span class="hl-title">update</span></a><span class="hl-super">20</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-project_update
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/project_update/"><span class="hl-title">project update</span></a><span class="hl-super">17</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-game_dev
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/game_dev/"><span class="hl-title">game dev</span></a><span class="hl-super">6</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-projects tagged-fantasma
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/fantasma/"><span class="hl-title">fantasma</span></a><span class="hl-super">5</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-svelte
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/svelte/"><span class="hl-title">svelte</span></a><span class="hl-super">5</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-phaser
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/phaser/"><span class="hl-title">phaser</span></a><span class="hl-super">5</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-programming tagged-work_sample
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/work_sample/"><span class="hl-title">work sample</span></a><span class="hl-super">5</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-projects tagged-ghast
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/ghast/"><span class="hl-title">ghast</span></a><span class="hl-super">4</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-projects tagged-majesty
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/majesty/"><span class="hl-title">majesty</span></a><span class="hl-super">4</span></span></span></div>      <div class="tag tag-link">
+            <div class="tag-sep">&middot;</div>
+            <span class="tag-name">
+              <span class="hexlink hl-depth2
+                 grouped-website tagged-media
+                
+                
+                
+                
+                
+                
+              "><a class="hl-inner" href="/tags/media/"><span class="hl-title">media</span></a><span class="hl-super">3</span></span></span></div>    </div>
+      </div>
+    
+      <div class="hexblock hexline heading">
+        <h3 class="hexline-item hextitle t6 c2">
+          <span class="hexlink hl-depth2
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/info/about/"><span class="hl-title">ABOUT</span></a></span>    </h3>
+        <div class="sep hextitle t5 c1">&middot;</div>
+        <h3 class="hexline-item hextitle t6 c2">
+          <span class="hexlink hl-depth2
+            
+            
+            
+            
+            
+            
+            
+          "><a class="hl-inner" href="/info/author/"><span class="hl-title">AUTHOR</span></a></span>    </h3>
+        <div class="sep hextitle t5 c1">&middot;</div>
+        <h3 class="hexline-item hextitle t6 c2">
+          <span class="hexlink hl-depth2
+            
+            
+            
+             hl-anchor
+            
+            
+            
+          "><a class="hl-inner" href="/blog/i-ching-stick-drying-rack/#directory"><span class="hl-title">DIRECTORY</span></a></span>    </h3>
+      </div>
+    
+    </div>
+
+    <div class="toc">
+      <div class="hextitle t3 c2 hexblock">TABLE OF CONTENTS</div>
+      <div class="hextxt t4 c3">
+        <ol>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#background" hexignore><span class="hl-title">Background</span></a></span></p>
+<ol>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#material-selection" hexignore><span class="hl-title">Material Selection</span></a></span></li>
+</ol>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#current-work" hexignore><span class="hl-title">Current Work</span></a></span></p>
+<ol>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#drying-rack" hexignore><span class="hl-title">Drying Rack</span></a></span></li>
+<li><span class="hexlink hl-anchor"><a class="hl-inner" href="#tensioners" hexignore><span class="hl-title">Tensioners</span></a></span></li>
+</ol>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#future" hexignore><span class="hl-title">Future</span></a></span></p>
+</li>
+<li>
+<p><span class="hexlink hl-anchor"><a class="hl-inner" href="#history" hexignore><span class="hl-title">History</span></a></span></p>
+</li>
+</ol>
+      </div>
+    </div>
+
+    <ul class="hexlisting blog-listing">
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+       hl-current
+      
+      
+       hl-thumb
+      
+    "><span class="hl-inner" href="/blog/i-ching-stick-drying-rack/"><div class="hl-window">
+            <img src="/site/images/icp-yarrow-001/icp-yarrow-001-64.webp" />
+          </div><span class="hl-date">5-19-2025 </span><span class="hl-namespace">blog </span><span class="hl-title">🔮 <strong>I Ching Project</strong>: Yarrow Stalks, pt. 1</span></span></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/info/void-cheatsheet/"><div class="hl-window">
+            <img src="/site/images/galactic-filament/galactic-filament-64.webp" />
+          </div><span class="hl-date">9-13-2024 </span><span class="hl-namespace">info </span><span class="hl-title">Void Linux Cheatsheet 📝</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/installing-void-linux-on-raspberry-pi-1/"><div class="hl-window">
+            <img src="/site/images/large-scale-structure/large-scale-structure-64.webp" />
+          </div><span class="hl-date">9-13-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Installing Void Linux on a Raspberry Pi 1</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/info/quotes/"><div class="hl-window">
+            <img src="/site/images/ancient-fragments/ancient-fragments-64.webp" />
+          </div><span class="hl-date">9-5-2024 </span><span class="hl-namespace">info </span><span class="hl-title">Quotes &#x26; Scraps</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/info/about/"><span class="hl-date">6-7-2024 </span><span class="hl-namespace">info </span><span class="hl-title">About <em><strong>down. translated.</strong></em></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/info/author/"><span class="hl-date">6-7-2024 </span><span class="hl-namespace">info </span><span class="hl-title">About the Author</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/scroll-v0.5.2/"><span class="hl-date">6-2-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">📜 <strong>scroll</strong> backup system updated to <code>v0.5.2</code></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/mkv-v0.2.0-and-related-updates/"><span class="hl-date">5-30-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing 🔨 <strong>mkv</strong> (<code>v0.2.0</code>)</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/site-update-2024-05-29-welcome-to-downtranslated-com/"><span class="hl-date">5-29-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">🔔 Site Update: Welcome to <strong>downtranslated.com</strong></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/heretag-v1.1.7/"><span class="hl-date">5-28-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing <strong>heretag</strong> (<code>v1.1.7</code>)</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/waxwing.js-v0.3.4/"><span class="hl-date">5-28-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing 🐦 <strong>waxwing.js</strong> (<code>v0.3.4</code>)</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/ghast.js-v0.6.7/"><span class="hl-date">5-23-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">🏰 <strong>ghast.js</strong> updated to <code>v0.6.7</code></span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/scroll-v0.4.6/"><span class="hl-date">5-23-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing the 📜 <strong>scroll</strong> backup system (<code>v0.4.6</code>)</span></a></span>  </li>
+  <li class="hexentry">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/fantasma.js-v0.4.1/"><span class="hl-date">5-14-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">👻 <strong>fantasma.js</strong> updated to <code>v0.4.1</code></span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/gallery/fantasma-basic-example/"><div class="hl-window">
+            <img src="/site/images/fantasma-basic-screenshot/fantasma-basic-screenshot-64.webp" />
+          </div><span class="hl-date">5-11-2024 </span><span class="hl-namespace">gallery </span><span class="hl-title">fantasma.js Basic Example</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/desdichado-wip-update-1/"><div class="hl-window">
+            <img src="/site/images/dwip-001/dwip-001-64.webp" />
+          </div><span class="hl-date">5-1-2024 </span><span class="hl-namespace">blog </span><span class="hl-title">Desdichado WIP: Update #1</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/gallery/phaser-svelte-ui-example/"><div class="hl-window">
+            <img src="/site/images/phaser-svelte-ui-example/phaser-svelte-ui-example-64.webp" />
+          </div><span class="hl-date">5-29-2023 </span><span class="hl-namespace">gallery </span><span class="hl-title">Phaser Svelte UI Example</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/majesty-update-4-ui-work/"><div class="hl-window">
+            <img src="/site/images/phaser-svelte-ui-example/phaser-svelte-ui-example-64.webp" />
+          </div><span class="hl-date">5-29-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Majesty Update #4: UI Work</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/gallery/majesty/"><div class="hl-window">
+            <img src="/site/images/majesty-mystery/majesty-mystery-64.webp" />
+          </div><span class="hl-date">5-22-2023 </span><span class="hl-namespace">gallery </span><span class="hl-title">Majesty WIP</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/majesty-wip-update-3/"><div class="hl-window">
+            <img src="/site/images/mj-03-001/mj-03-001-64.webp" />
+          </div><span class="hl-date">5-22-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Majesty WIP Update #3: (Intelligent) Agents</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/majesty-wip-update-2/"><div class="hl-window">
+            <img src="/site/images/mj-dev-015/mj-dev-015-64.webp" />
+          </div><span class="hl-date">5-14-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Majesty WIP Update #2: Traversability &#x26; Color</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/majesty-wip-update-1/"><div class="hl-window">
+            <img src="/site/images/mj-dev-001/mj-dev-001-64.webp" />
+          </div><span class="hl-date">5-12-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Majesty WIP: Update #1</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/introducing-weatherman-v0.1.0/"><div class="hl-window">
+            <img src="/site/images/weatherman/weatherman-64.webp" />
+          </div><span class="hl-date">5-4-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Introducing Weatherman (v0.2.2)</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/sketch-poem-1/"><div class="hl-window">
+            <img src="/site/images/hadal-2/hadal-2-64.webp" />
+          </div><span class="hl-date">5-4-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Sketch: Poem #1</span></a></span>  </li>
+  <li class="hexentry he-thumb">
+    <span class="hexlink hl-depth2
+      
+      
+      
+      
+      
+       hl-thumb
+      
+    "><a class="hl-inner" href="/blog/old-sf-mags-venture-and-fsf-upcoming-reviews/"><div class="hl-window">
+            <img src="/site/images/vsf-001-005/vsf-001-005-64.webp" />
+          </div><span class="hl-date">3-26-2023 </span><span class="hl-namespace">blog </span><span class="hl-title">Old Sci-Fi Magazines — <em>The Magazine of Fantasy &#x26; Science Fiction</em> and <em>Venture Science Fiction</em></span></a></span>  </li>
+</ul>
+
+
+    <div class="foot">
+      <div class="centered">
+        <img class="asterism" src="/site/images/frog-bicycle-4/frog-bicycle-4-full.webp" />
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
