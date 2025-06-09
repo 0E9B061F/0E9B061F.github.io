@@ -26,7 +26,7 @@ It's been awhile since I posted and I've picked up a new project in the meantime
 
 ::fig[:e[Yarrow|{{url.yarrow002}}] (*Achillea millefolium*), :w[Jacob Sturm], 1796]{#icp-yarrow-002 pos=right}
 
-You might be wondering what the *I Ching* is, or how plant stalks relate to it. Briefly, the *I Ching* is a divinatory text and one of the :w[five Chinese classics|Four Books and Five Classics#Five Classics]. The current form of its core text was probably finalized in the 9th century BC, although the hexagrams (and various divination systems employing them) must predate this. One tradition has it that the *I Ching* was authored by :w[Tang of Shang], which could date it to as early as the 16th century BC. This tradition doesn't seem to be supported by evidence, but may indicate that *guà*-based divinatory practice has its roots in the early :w[Shang dynasty]. Regardless, the *I Ching* is truly ancient, dating to at least the late Bronze age, and representing a continuous ~3,000-year practice.
+You might be wondering what the *I Ching* is, or how plant stalks are involved. Briefly, the *I Ching* is a divinatory text and one of the :w[five Chinese classics|Four Books and Five Classics#Five Classics]. It's title is usually translated as *Book of Changes*, or *Classic of Changes*. The current form of its core text was finalized between the 9th and 4th century BC. The *guà* (trigrams and hexagrams), and various divination systems employing them, certainly predate this --- oracle bones marked with *guà* have been found dating to the late Shang dynasty[^oraclebones]. The *I Ching* is effectively the culmination of older and poorly known divination traditions using *guà*. Regardless, the *I Ching* is truly ancient, dating to at least the late Bronze age, and representing a continuous ~3,000-year practice.
 
 Casting a hexagram is the first step in the divination process, followed by interpretation thereof. This is done by a randomized process; it is a form of :w[cleromancy], other examples of which include :w[kau chim] (求签), :w[ifá], various forms of :w[cartomancy], and Roman :w[|sortes (ancient Rome)]. Generating randomness can be accomplished by a number of more-or-less traditional means. The most traditional method is by way of yarrow stalks (which could be considered an example of :w[rhabdomancy]), but one can also use coins, or a computer, or any other means that is suitably random. Different methods may produce different distributions of results, directly affecting divination.
 
@@ -44,7 +44,7 @@ Fortunately there was still plenty of (Giant) Goldenrod standing and in good con
 
 ::fig[:e[European goldenrod|{{url.gr002}}] (*Solidago virgaurea*), :w[Carl Lindman|Carl Axel Magnus Lindman], 1796]{#icp-gr-002 pos=left}
 
-I've also given some thought to the nativity of the materials I'm using and can't decide whether it would be better to use a native or introduced species. Initially I thought that the *chi* of a native species might be most in tune with my own and with this place. On the other hand, I myself am (I suppose) introduced, by the same process that introduced these plants, and in that sense their *chi* might resonate better with my own. For now I think I'll produce sets of stalks using both, and take this factor into consideration when divining with either. I also wonder if it wouldn't be better to attempt to align the *chi* of the stalks to the questioner and their question, rather then to the diviner (or perhaps with consideration to both), in which case it would be good to have multiple sets to choose from.
+I've also given some thought to the nativity of the materials I'm using and can't decide whether it would be better to use a native or introduced species. Initially I thought that the *chi* of a native species might be most in tune with my own and with this place. On the other hand, I myself am (I suppose) introduced, by the same process that introduced these plants, and in that sense their *chi* might resonate better with my own. For now I think I'll produce sets of stalks using both, and take this factor into consideration when divining with either. I also wonder if it wouldn't be better to attempt to align the *chi* of the stalks to the questioner and their question, rather than to the diviner (or perhaps with consideration to both), in which case it would be good to have multiple sets to choose from.
 
 # Current Work
 
@@ -85,6 +85,8 @@ After varnishing I'll cut half an inch off each stalk (where the hole is located
 # History
 
 - **2025-06-09**
-  WIP. The next edit will include additional images of the sticks that I'm working on. I wanted to get this published for now, though.
+    🔨 WIP. The next edit will include additional images of the sticks that I'm working on. I wanted to get this published for now, though.
 - **2025-06-09**
-  Fixed typos, etc. and added more background on the *I Ching*. Fixed a broken link.
+    🩹 Fixed typos, etc. and added more background on the *I Ching*. Fixed a broken link. Added citations.
+
+[^oraclebones]: Smith, Richard J. (2012) *The I Ching: A Biography*. Princeton, NJ: Princeton University Press. "We do not know for certain what the numerically generated trigrams and hexagrams in late Shang and early Zhou oracle bones and other sources might have signified ..."
