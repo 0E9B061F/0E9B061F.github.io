@@ -2,7 +2,7 @@
 title: "🔮 ***I Ching*** **Project**: Yarrow Stalks, pt. 1"
 desc: "(They're actually Goldenrod stalks.)"
 date: 2025-06-08T03:49:08.097230294-04:00
-edited: 2025-06-09T00:15:08.097230294-04:00
+edited: 2025-06-10T21:55:08.097230294-04:00
 url:
   aysm: "https://en.wikibooks.org/wiki/I_Ching/The_Ancient_Yarrow_Stalk_Method"
   yarrow001: "https://commons.wikimedia.org/wiki/File:Achillea_millefolium_Mann.jpg"
@@ -26,9 +26,9 @@ It's been awhile since I posted and I've picked up a new project in the meantime
 
 ::fig[:e[Yarrow|{{url.yarrow002}}] (*Achillea millefolium*), :w[Jacob Sturm], 1796]{#icp-yarrow-002 pos=right}
 
-You might be wondering what the *I Ching* is, or how plant stalks are involved. Briefly, the *I Ching* is a divinatory text and one of the :w[five Chinese classics|Four Books and Five Classics#Five Classics]. It's title is usually translated as *Book of Changes*, or *Classic of Changes*. The current form of its core text was finalized between the 9th and 4th century BC. The *guà* (trigrams and hexagrams), and various divination systems employing them, certainly predate this --- oracle bones marked with *guà* have been found dating to the late Shang dynasty[^oraclebones]. The *I Ching* is effectively the culmination of older and poorly known divination traditions using *guà*. Regardless, the *I Ching* is truly ancient, dating to at least the late Bronze age, and representing a continuous ~3,000-year practice.
+You might be wondering what the *I Ching* is, or how plant stalks are involved. Briefly, the *I Ching* is a divinatory text and one of the :w[five Chinese classics|Four Books and Five Classics#Five Classics]. It's title is usually translated as *Book of Changes*, or *Classic of Changes*. The current form of its core text was finalized by the 9th century BC, during the early :w[Zhou dynasty]. The *guà* (trigrams and hexagrams), and various divination systems employing them, certainly predate this --- oracle bones marked with numbers indicating *guà* have been found dating to the late :w[Shang dynasty].[^oraclebones] The *I Ching* is effectively the culmination of older and poorly known divination traditions using *guà*. Regardless, the *I Ching* is truly ancient, dating to at least the late Bronze age, and representing a continuous ~3,000-year practice.
 
-Casting a hexagram is the first step in the divination process, followed by interpretation thereof. This is done by a randomized process; it is a form of :w[cleromancy], other examples of which include :w[kau chim] (求签), :w[ifá], various forms of :w[cartomancy], and Roman :w[|sortes (ancient Rome)]. Generating randomness can be accomplished by a number of more-or-less traditional means. The most traditional method is by way of yarrow stalks (which could be considered an example of :w[rhabdomancy]), but one can also use coins, or a computer, or any other means that is suitably random. Different methods may produce different distributions of results, directly affecting divination.
+Casting a hexagram is the first step in the divination process, followed by interpretation thereof. This is done by a randomized process; it is a form of :w[cleromancy], other examples of which include :w[kau chim] (求签), :w[ifá], various forms of :w[cartomancy], and Roman :w[|sortes (ancient Rome)]. Generating randomness can be accomplished by a number of more-or-less traditional means. The most traditional method is by way of achillomancy[^achillomancy] --- casting yarrow stalks --- a form of :w[rhabdomancy]. Development of achillomancy helped to civilize divination; older traditions not only employed animal sacrifice, but human sacrifice as well.[^sacrifice] One can also use coins, or a computer, or any other means that is suitably random. Different methods may produce different distributions of results, however, directly affecting divination.
 
 As to how randomness is generated using plant stalks, I use :e[The Ancient Yarrow Stalk Method|{{url.aysm}}], although I've streamlined the process somewhat in practice. The process is too involved to reiterate here, so check the link for details, if you're interested.
 
@@ -84,9 +84,17 @@ After varnishing I'll cut half an inch off each stalk (where the hole is located
 
 # History
 
-- **2025-06-09**
-    🔨 WIP. The next edit will include additional images of the sticks that I'm working on. I wanted to get this published for now, though.
-- **2025-06-09**
-    🩹 Fixed typos, etc. and added more background on the *I Ching*. Fixed a broken link. Added citations.
+**2025-06-09**
+: 🔨 WIP. The next edit will include additional images of the sticks that I'm working on. I wanted to get this published for now, though.
+
+**2025-06-09**
+: 🩹 Fixed typos, etc. and added more background on the *I Ching*. Fixed a broken link. Added citations.
+
+**2025-06-10**
+: 📖 Added more historical details and sources.
 
 [^oraclebones]: Smith, Richard J. (2012) *The I Ching: A Biography*. Princeton, NJ: Princeton University Press. "We do not know for certain what the numerically generated trigrams and hexagrams in late Shang and early Zhou oracle bones and other sources might have signified ..."
+
+[^sacrifice]: Minford, John. (2014) *I Ching, The Essential Translation of the Ancient Chinese Oracle*. Viking. "Shang Priest-Kings seem to have been hugely preoccupied with Warfare and Sacrifice, and in particular with large-scale Human Sacrifice. It was a gruesome business. As the contemporary archaeologist Robert Bagley has coolly observed, 'Beheading was the normal method of Sacrifice, but some victims were dismembered or cut in half and a few children seem to have been trussed up and buried alive.'"
+
+[^achillomancy]: Minford, John. (2014) *I Ching, The Essential Translation of the Ancient Chinese Oracle*. Viking. "In the period that followed, the earlier shamanistic practices of Divination gradually lost ground to the more 'civilized' or 'secular' practice of achillomancy --- Yarrow Divination --- performed by casting the dried stalks of the yarrow, or milfoil, plant, Achillea millefolium."
